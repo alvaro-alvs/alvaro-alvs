@@ -6,7 +6,7 @@ import OxxProjects from "../components/ui/projects/OxxProjects"
 
 const oxx_response = await fetch("https://oxx-three.vercel.app/oxx/projects/", {
     headers: {
-        "api-key": "xUp2jAz5hQZM#wCsKb",
+        "api-key": import.meta.env.OXX_KEY,
     },
 });
 

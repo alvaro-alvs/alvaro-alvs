@@ -14,7 +14,7 @@ export default function OxxProjects({ projects }: OxxProjectProps) {
             {
                 projects &&
                 projects.map((project: any) => (
-                    <div className="p-0 flex even:flex-row-reverse grid-cols-2 rounded-lg borde border-gray-800 min-h-52 overflow-hidden group cursor-pointer shadow-lg">
+                    <div key={project.id} className="p-0 flex even:flex-row-reverse grid-cols-2 rounded-lg borde border-gray-800 min-h-52 overflow-hidden group cursor-pointer shadow-lg">
                         <header className="w-1/2 overflow-hidden flex items-center">
                             <img
                                 // inferSize={true}
