@@ -5,10 +5,12 @@ type OxxProject = {
 }
 
 type OxxProjectProps = {
-    projects: OxxProject[]
+    raw_projects: OxxProject[]
 }
 
-export default function OxxProjects({ projects }: OxxProjectProps) {
+export default function OxxProjects({ raw_projects }: OxxProjectProps) {
+    const projects = Array.isArray(raw_projects) ? raw_projects : [];
+
     return (
         <>
             {

@@ -30,7 +30,7 @@ const oxx_project = await oxx_response.json();
         <div
             class="grid 2xl:grid-cols-2 sm:gap-20 max-sm:gap-10 py-10 px-20 "
         >
-            <OxxProjects projects={oxx_project} client:load />
+            <OxxProjects raw_projects={oxx_project} client:load />
         </div>
     </section>
 </PageProvider>
