@@ -2,15 +2,15 @@
 import BackButton from "../components/ui/BackButton.astro";
 import PageProvider from "../PageProvider.astro";
 import OxxProjects from "../components/ui/projects/OxxProjects";
-// import { oxx_project } from "../data/oxx_projects";
+import { oxx_project } from "../data/oxx_projects";
 
-const oxx_response = await fetch("https://oxx-three.vercel.app/oxx/projects/", {
-    headers: {
-        "api-key": import.meta.env.OXX_KEY,
-    },
-});
+// const oxx_response = await fetch("https://oxx-three.vercel.app/oxx/projects/", {
+//     headers: {
+//         "api-key": import.meta.env.OXX_KEY,
+//     },
+// });
 
-const oxx_project = await oxx_response.json();
+// const oxx_project = await oxx_response.json();
 
 // console.log(oxx_project);
 ---
