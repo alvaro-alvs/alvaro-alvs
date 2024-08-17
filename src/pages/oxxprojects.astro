@@ -1,6 +1,8 @@
 ---
-import BackButton from "../components/ui/BackButton.astro";
+import { BackButton } from "../components/ui/BackButton";
 import PageProvider from "../PageProvider.astro";
+import OxxHeader from "../components/OxxHeader.astro";
+
 import OxxProjects from "../components/ui/projects/OxxProjects";
 // import { oxx_project } from "../data/oxx_projects";
 
@@ -16,7 +18,11 @@ const oxx_project = await oxx_response.json();
 ---
 
 <PageProvider title="Projetos OXX">
-    <section class="grid space-y-10 justify-center min-w-screen p-12">
+    <OxxHeader />
+
+    <section
+        class="relative top-24 grid space-y-10 justify-center min-w-screen p-12"
+    >
         <header
             class="flex items-baseline space-x- border-b border-b-white pb-2"
         >

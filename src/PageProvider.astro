@@ -1,11 +1,20 @@
 ---
+import { Suspense } from "astro-suspense/components";
 import Layout from "./layouts/Layout.astro";
 const { title } = Astro.props;
 ---
 
 <!-- Importar Page Provider e passar um children para o conteudo da pagina -->
-<Layout title={title}>
-    <main class="w-full min-h-screen text-white">
-        <slot />
-    </main>
-</Layout>
+<Suspense>
+    <div slot="fallback" class="bg-white absolute w-full h-full z-50">
+        Carregando...
+    </div>
+    
+    <p slot="error">Deu Ruim</p>
+
+    <Layout title={title}>
+        <main class="w-full max-w-screen min-h-screen text-white">
+            <slot />
+        </main>
+    </Layout>
+</Suspense>
