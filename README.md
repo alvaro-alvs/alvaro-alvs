@@ -1,6 +1,6 @@
 
 
-# Bem vindo! ✌️ Eu sou o Álvaro Nascimento
+<h1 style="text-align: center;">Bem vindo! ✌️ Eu sou o Álvaro Nascimento</h1>
 
 <p align='center'> Sou <b>Desenvolvedor Fullstack</b> com foco em tecnologia para negocios. </p>
 
