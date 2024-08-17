@@ -27,7 +27,7 @@ Em computação, um conjunto de soluções, também conhecido como pilha de solu
   <img src="https://kphlyejmohszzhqnexpf.supabase.co/storage/v1/object/sign/oxx-assets/OxxTechStack.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJveHgtYXNzZXRzL094eFRlY2hTdGFjay5wbmciLCJpYXQiOjE3MjM4NzUxMDksImV4cCI6MTc1NTQxMTEwOX0._N5Bp4AjjBaozlXdqTSrnonRNuDGWPa5Q0NMAa5qxEY&t=2024-08-17T05%3A58%3A30.026Z" alt="Tech  Stack Alvaro Nascimento (Astro, React, Typescript, Python, C sharp e SQL)" />
 </p>
 
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=alvaro-alves-oxx&hide=javascript,css,scss,html&theme=tokyonight)
+![Top Linguagens](https://github-readme-stats.vercel.app/api/top-langs/?username=alvaro-alvs&hide=javascript,css,scss,html&theme=tokyonight)
 
 - **Astro**:  
   - *Sites rápidos*  
