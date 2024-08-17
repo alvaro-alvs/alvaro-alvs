@@ -1,54 +1,64 @@
-# Astro Starter Kit: Basics
 
-```sh
-npm create astro@latest -- --template basics
-```
+![tech stack banner](https://kphlyejmohszzhqnexpf.supabase.co/storage/v1/object/sign/oxx-assets/banner_techstack.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJveHgtYXNzZXRzL2Jhbm5lcl90ZWNoc3RhY2suanBnIiwiaWF0IjoxNzIzODc1OTg1LCJleHAiOjE3NTU0MTE5ODV9.cIYI6jqHTX6QZL_v2LJ7FlppHAVww0m8crSnJ-LIqkk&t=2024-08-17T06%3A13%3A05.968Z)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+<h1 align='center'>Bem vindo! ✌️ Eu sou o Álvaro Nascimento</h1>
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+<p align='center'> Sou <b>Desenvolvedor Fullstack</b> com foco em tecnologia para negocios. </p>
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+ - 🖥️ Sou um desenvolvedor full stack com mais de 4 anos de experiência em web e mobile. Tenho um sólido domínio em linguagens como JavaScript, Python e C#, além de tecnologias modernas como Astro e TypeScript.
+ 
+ - ☯️ Com um forte compromisso com a qualidade e responsabilidade, trabalho bem tanto de forma independente quanto em equipe, e mantenho ótimos relacionamentos com clientes e colegas.
+ 
+ - 🏹 Sempre em busca de novos desafios e aprendizado contínuo, estou pronto para trazer contribuições valiosas para o seu projeto.
 
-## 🚀 Project Structure
+## 📠 Contato
+#### Email: alvaro.nrx88@gmail.com
+#### Celular: (11) 9 4916-4181
+#### <a>  <img width="40" src="https://kphlyejmohszzhqnexpf.supabase.co/storage/v1/object/sign/oxx-assets/oxx_logo.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJveHgtYXNzZXRzL294eF9sb2dvLnBuZyIsImlhdCI6MTcyMzg3NzI2NywiZXhwIjoxNzU1NDEzMjY3fQ.Q3KSkdIuWwluddO7MEPfK6RcbAflmVBSpcuPV0OgAZI&t=2024-08-17T06%3A34%3A28.037Z" /> Portfolio Online </a>
+#### <a href="https://www.linkedin.com/in/alvaro-nascimento-986407286/"> <img width="35" src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" />  ---Alvaro Nascimento <a>
 
-Inside of your Astro project, you'll see the following folders and files:
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🧩 Tech Stack
+Em computação, um conjunto de soluções, também conhecido como pilha de soluções ou pilha de software é um conjunto de subsistemas ou componentes de software necessários para criar uma plataforma completa, de modo que nenhum software adicional seja necessário para suportar os aplicativos. [Wikipédia](https://pt.wikipedia.org/wiki/Conjunto_de_solu%C3%A7%C3%B5es_(computa%C3%A7%C3%A3o))!
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-Any static assets, like images, can be placed in the `public/` directory.
+<p align="center">
+  <img src="https://kphlyejmohszzhqnexpf.supabase.co/storage/v1/object/sign/oxx-assets/OxxTechStack.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJveHgtYXNzZXRzL094eFRlY2hTdGFjay5wbmciLCJpYXQiOjE3MjM4NzUxMDksImV4cCI6MTc1NTQxMTEwOX0._N5Bp4AjjBaozlXdqTSrnonRNuDGWPa5Q0NMAa5qxEY&t=2024-08-17T05%3A58%3A30.026Z" alt="Tech  Stack Alvaro Nascimento (Astro, React, Typescript, Python, C sharp e SQL)" />
+</p>
 
-## 🧞 Commands
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=alvaro-alves-oxx&hide=javascript,css,scss,html&theme=tokyonight)
 
-All commands are run from the root of the project, from a terminal:
+- **Astro**:  
+  - *Sites rápidos*  
+  - *HTML otimizado*  
+  - *Framework-agnostic*
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+- **React**:  
+  - *Interfaces dinâmicas*  
+  - *Componentes reutilizáveis*  
+  - *SPA (Single Page Applications)*
 
-## 👀 Want to learn more?
+- **TypeScript**:  
+  - *Tipagem estática*  
+  - *Segurança no código*  
+  - *JavaScript aprimorado*
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- **Python**:  
+  - *Versatilidade*  
+  - *Automação*  
+  - *Análise de dados*  
+  - *Inteligência Artificial*
+
+- **C#**:  
+  - *Desenvolvimento de software empresarial*  
+  - *Aplicações desktop*  
+  - *Backend robusto*  
+  - *.NET Framework*
+
+- **SQL**:  
+  - *Gerenciamento de banco de dados*  
+  - *Consulta de dados*  
+  - *Relacional*
+
+##### Essas tecnologias se complementam perfeitamente. Por exemplo, Astro pode usar React para construir componentes interativos, e TypeScript pode ser usado para garantir que esses componentes sejam robustos e livres de erros. Python pode ser usado no back-end para processar dados e executar lógica complexa, enquanto SQL gerencia o armazenamento e recuperação de dados. Essa integração permite criar aplicações completas, desde a interface do usuário até o processamento e armazenamento de dados, garantindo que os negócios possam oferecer soluções eficazes e escaláveis.
