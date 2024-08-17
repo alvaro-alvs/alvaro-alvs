@@ -5,12 +5,18 @@
 
 <p align='center'> Sou <b>Desenvolvedor Fullstack</b> com foco em tecnologia para negocios. </p>
 
-## Contato
+ - 🖥️ Sou um desenvolvedor full stack com mais de 4 anos de experiência em web e mobile. Tenho um sólido domínio em linguagens como JavaScript, Python e C#, além de tecnologias modernas como Astro e TypeScript.
+ 
+ - ☯️ Com um forte compromisso com a qualidade e responsabilidade, trabalho bem tanto de forma independente quanto em equipe, e mantenho ótimos relacionamentos com clientes e colegas.
+ 
+ - 🏹 Sempre em busca de novos desafios e aprendizado contínuo, estou pronto para trazer contribuições valiosas para o seu projeto.
+
+## 📠 Contato
 #### Email: alvaro.nrx88@gmail.com
 #### Celular: (11) 9 4916-4181
 #### Portfolio Online: ![Portfolio](https://oxx-digital.vercel.app)
 
-## Tech Stack
+## 🧩 Tech Stack
 Em computação, um conjunto de soluções, também conhecido como pilha de soluções ou pilha de software é um conjunto de subsistemas ou componentes de software necessários para criar uma plataforma completa, de modo que nenhum software adicional seja necessário para suportar os aplicativos. [Wikipédia](https://pt.wikipedia.org/wiki/Conjunto_de_solu%C3%A7%C3%B5es_(computa%C3%A7%C3%A3o))!
 
 
