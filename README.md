@@ -14,7 +14,10 @@
 ## 📠 Contato
 #### Email: alvaro.nrx88@gmail.com
 #### Celular: (11) 9 4916-4181
-#### Portfolio Online: ![Portfolio](https://oxx-digital.vercel.app)
+#### <a>  <img width="40" src="https://kphlyejmohszzhqnexpf.supabase.co/storage/v1/object/sign/oxx-assets/oxx_logo.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJveHgtYXNzZXRzL294eF9sb2dvLnBuZyIsImlhdCI6MTcyMzg3NzI2NywiZXhwIjoxNzU1NDEzMjY3fQ.Q3KSkdIuWwluddO7MEPfK6RcbAflmVBSpcuPV0OgAZI&t=2024-08-17T06%3A34%3A28.037Z" /> Portfolio Online </a>
+#### <a href="https://www.linkedin.com/in/alvaro-nascimento-986407286/"> <img width="35" src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" />  ---Alvaro Nascimento <a>
+
+
 
 ## 🧩 Tech Stack
 Em computação, um conjunto de soluções, também conhecido como pilha de soluções ou pilha de software é um conjunto de subsistemas ou componentes de software necessários para criar uma plataforma completa, de modo que nenhum software adicional seja necessário para suportar os aplicativos. [Wikipédia](https://pt.wikipedia.org/wiki/Conjunto_de_solu%C3%A7%C3%B5es_(computa%C3%A7%C3%A3o))!
