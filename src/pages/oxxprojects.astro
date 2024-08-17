@@ -32,7 +32,7 @@ import { oxx_project } from "../data/oxx_projects";
         <div class="grid 2xl:grid-cols-2 sm:gap-20 max-sm:gap-10 py-10 px-20">
             {
                 oxx_project && (
-                    <OxxProjects raw_projects={oxx_project} client:only="react" />
+                    <OxxProjects raw_projects={oxx_project} client:load />
                 )
             }
         </div>
