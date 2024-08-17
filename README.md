@@ -1,4 +1,5 @@
 
+´![tech stack banner](https://kphlyejmohszzhqnexpf.supabase.co/storage/v1/object/sign/oxx-assets/banner_techstack.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJveHgtYXNzZXRzL2Jhbm5lcl90ZWNoc3RhY2suanBnIiwiaWF0IjoxNzIzODc1OTg1LCJleHAiOjE3NTU0MTE5ODV9.cIYI6jqHTX6QZL_v2LJ7FlppHAVww0m8crSnJ-LIqkk&t=2024-08-17T06%3A13%3A05.968Z)
 
 <h1 style="text-align: center;">Bem vindo! ✌️ Eu sou o Álvaro Nascimento</h1>
 
