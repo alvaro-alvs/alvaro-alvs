@@ -1,0 +1,11 @@
+---
+import PageProvider from "../PageProvider.astro";
+import DasboardProvider from "../components/dashboard/DashboardProvider";
+if (Astro.request.body) {
+    console.log('Recebido: ', JSON.stringify(Astro.request.body));
+}
+---
+
+<PageProvider title="Login - Dashboard">
+    <DasboardProvider client:load />
+</PageProvider>

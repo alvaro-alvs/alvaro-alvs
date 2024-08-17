@@ -1,0 +1,34 @@
+---
+    import OxxLink from "./ui/OxxLink.astro"
+    import { IoMdPaper } from "react-icons/io";
+    import { AiOutlineSend } from "react-icons/ai";
+    import { PiBookOpenText } from "react-icons/pi";
+    import { TbDeviceDesktopCode } from "react-icons/tb";
+---
+
+<header class="fixed flex justify-center items-center w-full p-3 backdrop-blur">
+    <nav class="flex space-x-20 justify-center w-1/2">
+        
+        <OxxLink Label="Sobre" Url="/sobre">
+            <PiBookOpenText className="w-6 h-6"  />
+        </OxxLink>
+
+        <OxxLink Label="Termos" Url="/termos">
+            <IoMdPaper className="w-6 h-6"  />
+        </OxxLink>
+
+        <OxxLink>
+            <figure class="header-content rounded-xl transition">
+                <img class="aspect-square w-12 transition duration-500 group-hover:rotate-[360deg]" src="/oxx_logo.png" alt="">
+            </figure>
+        </OxxLink>
+
+        <OxxLink Label="Projetos" Url="/oxxprojects" Right={true}>
+            <TbDeviceDesktopCode className="w-6 h-6"  />
+        </OxxLink>
+
+        <OxxLink Label="Contato" Right={true}>
+            <AiOutlineSend className="w-6 h-6"  />
+        </OxxLink>
+    </nav>
+</header>

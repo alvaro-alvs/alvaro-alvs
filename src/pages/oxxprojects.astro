@@ -1,0 +1,74 @@
+---
+import BackButton from "../components/ui/BackButton.astro";
+import PageProvider from "../PageProvider.astro";
+// import { oxx_project } from "../data/oxx_projects";
+import TechStackBadge from "../components/ui/TechStackBadge.astro";
+import { Image } from "astro:assets";
+
+const oxx_response = await fetch("https://oxx-three.vercel.app/oxx/projects/", {
+    headers: {
+        "api-key": import.meta.env.PUBLIC_OXX_KEY,
+    },
+});
+const oxx_project = await oxx_response.json();
+
+// console.log(oxx_project);
+---
+
+<PageProvider title="Projetos OXX">
+    <section class="grid space-y-10 justify-center">
+        <header class="flex items-baseline space-x- border-b border-b-white pb-2">
+            <h1 class="text-4xl font-thin mt-2"> Projetos </h1>
+    
+            <!-- <div class="w-full h-px bg-white"></div> -->
+        </header>
+    
+        <nav class="w-1/2 mx-auto">
+            <BackButton />
+        </nav>
+    
+        <div
+            class="grid 2xl:grid-cols-2 sm:gap-20 max-sm:gap-10 py-10 px-20 "
+        >
+            {
+                oxx_project &&
+                    oxx_project.map((project: any) => (
+                        <div class="p-0 flex even:flex-row-reverse grid-cols-2 rounded-lg borde border-gray-800 min-h-52 overflow-hidden group cursor-pointer shadow-lg">
+                            <header class="w-1/2 overflow-hidden flex items-center">
+                                <Image
+                                    inferSize={true}
+                                    class="w-full rounded-lg transition duration- group-hover:scale- group-hover:object-center group-hover:blur-sm"
+                                    src={project.bg_public_url}
+                                    alt=""
+                                />
+                            </header>
+    
+                            <article class="w-1/2 flex flex-col justify-between p-8 space-y-5">
+                                <h1 class="text-2xl "> {project.title} </h1>
+    
+                                <p class="project-desc text-sm max-h-20 overflow-y-scroll">{project.description}</p>
+    
+                                <footer class="flex flex-wrap gap-3">
+                                    {project.tech_stack.map((tech: string) => (
+                                        <TechStackBadge> {tech} </TechStackBadge>
+                                    ))}
+                                </footer>
+                            </article>
+                        </div>
+                    ))
+            }
+        </div>
+    </section>
+</PageProvider>
+<style>
+    .project-desc::-webkit-scrollbar {
+        display: none;
+    }
+    .tech-stack-badg {
+        font-size: 0.8rem;
+        border-radius: 10px;
+        border: 1px solid white;
+        width: auto;
+        padding: 0.25rem;
+    }
+</style>

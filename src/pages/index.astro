@@ -1,0 +1,44 @@
+---
+import OxxHeader from "../components/OxxHeader.astro";
+import Layout from "../layouts/Layout.astro";
+import PageProvider from "../PageProvider.astro";
+---
+
+<Layout title="OXX - Digital Solution">
+	<PageProvider>
+		
+		<figure class="oxx-index-header w-full mx-auto">
+			<OxxHeader />
+
+			<img class="w-full rounded-lg" src="/portfolio_banner.svg" alt="" />
+
+			<!-- <div class="header-content w-full h-full">
+			</div> -->
+		</figure>
+
+		<section class="w-1/2 mx-auto h-screen">
+			content
+		</section>
+	</PageProvider>
+</Layout>
+
+<style>
+	.oxx-index-header {
+		background: url('/earth.jpg') center no-repeat fixed;
+		background-size: cover;
+		animation: showcase 13s infinite ease-in-out alternate-reverse;
+	}
+
+	@keyframes showcase {
+		from {
+			background-position: center;
+		}
+		to {
+			background-position: bottom;
+		}
+	}
+	.header-content {
+        background: url('/portfolio_banner.svg') center no-repeat;
+		background-size: cover;
+    }
+</style>
