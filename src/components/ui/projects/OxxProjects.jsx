@@ -22,8 +22,8 @@ export default function OxxProjects({ raw_projects }) {
         <>
             {
                 Array.isArray(projects) && projects.map((project) => (
-                    <div key={project.id} className="p-0 flex even:flex-row-reverse grid-cols-2 rounded-lg borde border-gray-800 min-h-52 overflow-hidden group cursor-pointer shadow-lg">
-                        <header className="w-1/2 overflow-hidden flex items-center">
+                    <div key={project.id} className="p-0 flex max-lg:flex-col lg:even:flex-row-reverse grid-cols-2 rounded-lg borde border-gray-800 min-h-52 overflow-hidden group cursor-pointer shadow-lg">
+                        <header className="lg:w-1/2 overflow-hidden flex items-center">
                             <img
                                 // inferSize={true}
                                 className="w-full rounded-lg transition duration- group-hover:scale- group-hover:object-center group-hover:blur-sm"
@@ -32,7 +32,7 @@ export default function OxxProjects({ raw_projects }) {
                             />
                         </header>
 
-                        <article className="w-1/2 flex flex-col justify-between p-8 space-y-5">
+                        <article className="lg:w-1/2 flex flex-col justify-between p-8 space-y-5">
                             <h1 className="text-2xl "> {project.title} </h1>
 
                             <p className="project-desc text-sm max-h-20 overflow-y-scroll no-scrollbar">{project.description}</p>
