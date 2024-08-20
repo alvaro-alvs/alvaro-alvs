@@ -4,38 +4,30 @@ import PageProvider from "../PageProvider.astro";
 import OxxHeader from "../components/OxxHeader.astro";
 
 import OxxProjects from "../components/ui/projects/OxxProjects";
-// import { oxx_project } from "../data/oxx_projects";
+import { oxx_project } from "../data/oxx_projects";
 
-const oxx_response = await fetch("https://oxx-three.vercel.app/oxx/projects/", {
-    headers: {
-        "api-key": import.meta.env.OXX_KEY,
-    },
-});
+// const oxx_response = await fetch("https://oxx-three.vercel.app/oxx/projects/", {
+//     headers: {
+//         "api-key": import.meta.env.OXX_KEY,
+//     },
+// });
 
-const oxx_project = await oxx_response.json();
+// const oxx_project = await oxx_response.json();
 
 // console.log(oxx_project);
 ---
 
 <PageProvider title="Projetos OXX">
-    <OxxHeader />
+    <OxxHeader title="Projetos" />
 
     <section
-        class="relative top-14 grid space-y-10 justify-center min-w-screen p-12"
+        class="relative grid space-y-10 justify-center min-w-screen p-12 pt-0"
     >
-        <header
-            class="flex items-baseline space-x- border-b border-b-white pb-2"
-        >
-            <h1 class="text-4xl font-thin mt-2">Projetos</h1>
-
-            <!-- <div class="w-full h-px bg-white"></div> -->
-        </header>
-
         <nav class="max-w-96 w-96 mx-auto">
             <BackButton />
         </nav>
 
-        <div class="grid 2xl:grid-cols-2  max-sm:gap-5 lg:py-10 lg:px-20">
+        <div class="grid 2xl:grid-cols-2 gap-10 max-sm:gap-5 lg:py-10 lg:px-20">
             {
                 oxx_project && (
                     <OxxProjects raw_projects={oxx_project} client:load />

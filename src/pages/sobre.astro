@@ -1,50 +1,60 @@
 ---
+import HeaderPageTransition from "@/components/HeaderPageTransition.astro";
+import OxxArticle from "@/components/OxxArticle.astro";
 import PageProvider from "../PageProvider.astro";
 import OxxHeader from "../components/OxxHeader.astro";
-import {BackButton} from "../components/ui/BackButton"
+import { BackButton } from "../components/ui/BackButton";
 ---
 
-
 <PageProvider title="Sobre | OXX Soluções Digitais">
-    <OxxHeader />
+    <OxxHeader title="Sobre" />
 
-    <section class="w-1/2 max-lg:w-full max-lg:p-10 mx-auto top-24 relative grid grid-cols-2 space-y-10">
-        <article class="border p-10 col-span-2 rounded">
-            <h1>
-                Estratégia de Negócios Orientada por Software: A Vantagem
-                Competitiva
-            </h1>
-            <br />
-            <p>
-                No mundo atual, o desenvolvimento de software é um motor
-                estratégico crucial para inovação e crescimento.
+    <section
+        class="w-1/2 max-lg:w-full max-lg:p-10 mx-auto top-24 relative grid grid-cols-2 space-y-10"
+    >
+        <OxxArticle FullW>
+            <div class="w-full">
+                <h1 class="text-2xl">
+                    Estratégia de Negócios Orientada por Software: A Vantagem
+                    Competitiva
+                </h1>
                 <br />
                 <p>
-                    Empresas que tratam o software como um ativo estratégico
-                    estão à frente na disrupção de seus setores.
+                    No mundo atual, o desenvolvimento de software é um motor
+                    estratégico crucial para inovação e crescimento.
+                    <br />
+                    <p>
+                        Empresas que tratam o software como um ativo estratégico
+                        estão à frente na disrupção de seus setores.
+                    </p>
+                    <br />
+                    <p>
+                        Integrar o desenvolvimento de software na estratégia de
+                        negócios permite uma resposta rápida às mudanças de mercado,
+                        personalização de experiências e otimização de operações.
+                    </p>
+                    Práticas ágeis e DevOps aceleram o lançamento no mercado e aumentam
+                    a resiliência. A transformação digital, guiada por um software ágil
+                    e centrado no cliente, cria novos modelos de negócios e fortalece
+                    a lealdade do cliente. Investir em uma cultura sólida de engenharia
+                    de software é essencial para liderar e moldar o futuro dos negócios.
                 </p>
-                <br />
-                <p>
-                    Integrar o desenvolvimento de software na estratégia de
-                    negócios permite uma resposta rápida às mudanças de mercado,
-                    personalização de experiências e otimização de operações.
-                </p>
-                Práticas ágeis e DevOps aceleram o lançamento no mercado e
-                aumentam a resiliência. A transformação digital, guiada por um
-                software ágil e centrado no cliente, cria novos modelos de
-                negócios e fortalece a lealdade do cliente. Investir em uma
-                cultura sólida de engenharia de software é essencial para
-                liderar e moldar o futuro dos negócios.
-            </p>
-        </article>
+            </div>
+        </OxxArticle>
 
         <div class="flex justify-center col-span-2">
             <BackButton />
         </div>
 
-        <article class="border p-10 col-span-1 rounded">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quos eos eius delectus ipsam adipisci sed consequuntur natus inventore expedita itaque ratione blanditiis quia quasi odit similique, porro non consequatur?
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quos eos eius delectus ipsam adipisci sed consequuntur natus inventore expedita itaque ratione blanditiis quia quasi odit similique, porro non consequatur?
-        </article>
+        <OxxArticle>
+            As tecnologias mais recentes, como Inteligência Artificial,
+            automação, e frameworks avançados, são essenciais para destacar seu
+            produto online. Elas permitem personalização em tempo real, melhoram
+            a experiência do usuário com interfaces intuitivas e otimizam a
+            performance do site para carregamentos mais rápidos. Isso tudo se
+            traduz em maior engajamento, conversões elevadas e um posicionamento
+            forte no mercado digital. Investir nessas inovações é garantir que
+            seu produto se destaque e conquiste a atenção do público.
+        </OxxArticle>
     </section>
 </PageProvider>

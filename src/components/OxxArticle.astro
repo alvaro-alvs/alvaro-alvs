@@ -1,0 +1,8 @@
+---
+    const { FullW, orientation } = Astro.props;
+---
+
+
+<article class={`xl:grid-flow-row bg-rose-950/10 border border-rose-900 z-40 backdrop-blur-sm max-lg:h-max grid grid-flow-col max-lg:grid-flow-row items-center space-x-10 max-lg:space-y-10 p-7 rounded ${FullW ? 'w-full' : 'max-lg:w-max'} ${orientation === 'horizontal' ? 'flex' : 'grid'}`}>
+    <slot />
+</article>

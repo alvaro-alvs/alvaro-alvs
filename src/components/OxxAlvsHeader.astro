@@ -1,0 +1,38 @@
+---
+import { GoChevronUp } from "react-icons/go";
+import HeaderPageTransition from "./HeaderPageTransition.astro";
+---
+
+<figure
+    class={`oxx-index-header w-full flex sm:h-max bg-cover`}
+>
+    <img class="max-sm:block hidden" src="/banner_mobile.svg" alt="">
+
+    <div class="grid w-full mx-auto max-sm:hidden max-lg:h-[25rem] max-sm:aspect-square h-screen overflow-hidden">
+        <img
+            class="banner-item w-full flex-1 self-end scale-125 max-sm:scale-[150%] fade-in"
+            src="/banner_atom.svg"
+            alt=""
+        />
+        <img
+            class="banner-item w-full flex-1 self-center z-10 fade-in"
+            src="/banner_title.svg"
+            alt=""
+        />
+        <img
+            class="banner-item w-full flex-1 self-center fade-in"
+            src="/banner_text2.svg"
+            alt=""
+        />
+    </div>
+
+    <HeaderPageTransition>
+        <GoChevronUp className="animate-bounce w-7 h-7" />
+    </HeaderPageTransition>
+</figure>
+
+<style>
+    .banner-item {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+</style>

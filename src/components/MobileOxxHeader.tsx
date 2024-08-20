@@ -9,6 +9,7 @@ import {
     PopoverTrigger,
 } from "../components/ui/shadcn-ui/popover"
 import { OxxLink } from "./ui/OxxLink"
+import { OxxContatoDialog } from "./ui/OxxContatoDialog";
 
 
 export default function MobileOxxHeader() {
@@ -27,12 +28,14 @@ export default function MobileOxxHeader() {
                 </div>
             </PopoverTrigger>
 
-            <PopoverContent className="text-white w-96 space-y-5 divide-y divide-rose-900 grid bg-[#13151a10] backdrop-blur border-dotted border-rose-500/50 min-h-72 shadow-lg">
+            <PopoverContent className="text-white w-96 space-y-5 grid bg-[#13151a10] backdrop-blur border-dotted border-rose-500/50 min-h-72 shadow-lg">
                 <OxxLink FullW Label="Home" Url="/">
                     <GoHome
                         className="w-6 h-6 group-hover:fill-rose-100 transition duration-300"
                     />
                 </OxxLink>
+
+                <OxxContatoDialog mobile />
 
                 <OxxLink FullW Label="Sobre" Url="/sobre">
                     <PiBookOpenText
@@ -52,11 +55,6 @@ export default function MobileOxxHeader() {
                     />
                 </OxxLink>
 
-                <OxxLink FullW Label="Contato">
-                    <AiOutlineSend
-                        className="w-6 h-6 group-hover:fill-rose-100 transition duration-300"
-                    />
-                </OxxLink>
             </PopoverContent>
         </Popover>
     )

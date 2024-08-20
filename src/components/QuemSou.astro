@@ -1,0 +1,96 @@
+---
+import Image from "astro/components/Image.astro";
+import { getImage } from "astro:assets";
+import OxxArticle from "./OxxArticle.astro";
+
+import profile from "../assets/image.png";
+import iconLinkedin from "../assets/icons/icon_linkedin.svg";
+import iconGithub from "../assets/icons/icon_github.svg";
+import iconMarketplace from "../assets/icons/icon_marketplace.svg";
+import iconAstro from "../assets/icons/icon_astro.svg";
+import iconPython from "../assets/icons/icon_python.svg";
+
+const iconData = [
+    {
+        src: iconLinkedin,
+        link: "https://linkedin.com/in/alvaro-nascimento-986407286",
+    },
+    {
+        src: iconGithub,
+        link: "https://github.com/alvaro-alvs",
+    },
+    {
+        src: iconMarketplace,
+        link: "https://oxx-marketplace.vercel.app/",
+    },
+    { src: iconAstro, link: "https://astro.build/" },
+    {
+        src: iconPython,
+        link: "https://www.w3schools.com/python/default.asp",
+    },
+];
+
+// Mapeie os dados para adicionar os resultados de getImage
+const icons = await Promise.all(
+    iconData.map(async (icon) => {
+        const image = await getImage({ src: icon.src });
+        return { ...image, link: icon.link };
+    }),
+);
+
+---
+
+<OxxArticle>
+    <!--* wrapper -->
+    <div
+        id="quem-sou"
+        class="max-lg:max-w-96 lg:w-full h-[30rem] max-lg:h-max grid grid-flow-col max-lg:grid-flow-row items-center sm:space-x-10 max-lg:space-y-10 rounded"
+    >
+        <figure
+            class="max-lg:w-full max-h-full max-lg:aspect-square border border-rose-900 aspect-square rounded-lg overflow-hidden"
+        >
+            <Image class="h-full object-cover" src={profile} alt="" />
+        </figure>
+
+        <div class="max-w-full h-max space-y-">
+            <header class="space-y-2">
+                <h3 class="text- text-xl text-rose-200">Quem Sou</h3>
+
+                <h1 class="text-3xl">Álvaro Nascimento</h1>
+                <h2 class="text-md">Desenvolvedor Full Stack</h2>
+            </header>
+
+            <p class="my-12 sm:max-w-[32rem]">
+                Desenvolvedor full stack com mais de 4 anos de experiência em
+                web e mobile, especializado em JavaScript, Python, C#, Astro e
+                TypeScript. Comprometido com a qualidade, trabalho bem em equipe
+                ou de forma independente, mantendo ótimos relacionamentos. Estou
+                sempre em busca de novos desafios e aprendizado contínuo para
+                contribuir significativamente para seu projeto.
+            </p>
+
+            <footer class="flex justify-between h-14 max-sm:h-10 flex-wrap">
+                {
+                    icons.map((icon) => (
+                        <a
+                            target="_blank"
+                            class="h-full"
+                            href={icon.link}
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                class={
+                                    "h-full transition hover:scale-110 cursor-pointer"
+                                }
+                                src={icon.src}
+                                alt={""}
+                            />
+                        </a>
+                    ))
+                }
+            </footer>
+
+            <!-- <img class="" src="/OxxTechStack.svg" alt=""> -->
+        </div>
+    </div>
+</OxxArticle>

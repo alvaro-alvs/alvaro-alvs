@@ -1,12 +1,50 @@
 ---
-import OxxDefaultNav from "./ui/OxxDefaultNav"
+import { getImage } from "astro:assets";
+import HeaderPageTransition from "./HeaderPageTransition.astro";
+import OxxDefaultNav from "./ui/OxxDefaultNav";
 import MobileOxxHeader from "./MobileOxxHeader";
+import { MdOutlineSwipeUp } from "react-icons/md";
+
+const { title } = Astro.props;
+
+import main_bg from "../../src/assets/earth.jpg";
+import fallback from "../../src/assets/banner_fallback.svg"
+
+const opt_earth = await getImage({ src: main_bg });
+const opt_fallback = await getImage({ src: fallback });
 ---
 
-<header
-    class="fixed flex justify-center items-center w-full h-20 max-h-20 p-3 max-xl: z-50 backdrop-blur shadow-lg transition-all"
->
-    <OxxDefaultNav client:load />
+<header class="">
+    <nav
+        class="fixed w-full h-20 max-h-20 p-3 z-50 flex justify-center items-center backdrop-blur-md shadow-lg transition-all"
+    >
+        <OxxDefaultNav client:load />
 
-    <MobileOxxHeader client:load />
+        <MobileOxxHeader client:load />
+    </nav>
+
+    <header
+        style={`background: url('${opt_fallback.src}') center/cover no-repeat, url('${opt_earth.src}') center/cover no-repeat`}
+        class="oxx-index-header flex items-baseline"
+    >
+        {
+            title != "index" && title != "termos" && (
+                <h1 class="text-7xl px-10 pb-24 pt-40 font-extralight text-rose-100 select-none">
+                    {title}
+                </h1>
+            )
+        }
+
+        <slot />
+
+        <HeaderPageTransition>
+            {
+                title === "index" && (
+                    <a class="" href="#quem-sou">
+                        <MdOutlineSwipeUp className="w-8 h-8 animate-bounce fill-rose-100" />
+                    </a>
+                )
+            }
+        </HeaderPageTransition>
+    </header>
 </header>

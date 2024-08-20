@@ -12,7 +12,7 @@ export const POST: APIRoute = async ({ request }) => {
             return new Response("Missing username or password", { status: 400 });
         }
 
-        const validation_res = await fetch('https://oxx-three.vercel.app/oxx_auth/auth_dashboard_login/', {
+        const validation_res = await fetch(import.meta.env.URL_OXX_API_LOGIN, {
             method: 'POST',
             body: JSON.stringify({
                 username: username,
@@ -26,7 +26,7 @@ export const POST: APIRoute = async ({ request }) => {
         const validation_data = await validation_res.json();
 
         if (validation_data.status === 'success') {
-            console.log(validation_data);
+            // console.log(validation_data);
             
             return new Response(
                 JSON.stringify({

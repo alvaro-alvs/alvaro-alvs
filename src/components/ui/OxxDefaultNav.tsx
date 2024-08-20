@@ -1,9 +1,9 @@
 import { IoMdPaper } from "react-icons/io";
-import { AiOutlineSend } from "react-icons/ai";
 import { PiBookOpenText } from "react-icons/pi";
 import { TbDeviceDesktopCode } from "react-icons/tb";
 
 import { OxxLink } from "./OxxLink"
+import { OxxContatoDialog } from "./OxxContatoDialog";
 
 
 export default function OxxDefaultNav({mobile} : {mobile?: boolean | false}) {
@@ -41,11 +41,7 @@ export default function OxxDefaultNav({mobile} : {mobile?: boolean | false}) {
                 />
             </OxxLink>
 
-            <OxxLink Label="Contato" Right={true}>
-                <AiOutlineSend
-                    className="w-6 h-6 group-hover:fill-rose-100 transition duration-300"
-                />
-            </OxxLink>
+            <OxxContatoDialog />
         </nav>
     )
 }

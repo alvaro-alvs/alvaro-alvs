@@ -2,53 +2,22 @@
 import OxxHeader from "../components/OxxHeader.astro";
 import Layout from "../layouts/Layout.astro";
 import PageProvider from "../PageProvider.astro";
+import QuemSou from "../components/QuemSou.astro";
+import OxxAlvsHeader from "../components/OxxAlvsHeader.astro";
 ---
 
 <Layout title="OXX - Digital Solution">
 	<PageProvider>
-		
-		<OxxHeader />
-		<figure class="oxx-index-header grid h-max w-full mx-auto max-lg:h-[25rem] max-sm:h-[20%] max-sm:pt-14">
+		<OxxHeader title="index">
+			<OxxAlvsHeader />
+		</OxxHeader>
 
-			<!-- <img class="banner-item w-full flex-1  fade-in" src="/banner_fallback.svg" alt=""> -->
-			<img class="banner-item w-full flex-1 self-end fade-in" src="/banner_atom.svg" alt="">
-			<img class="banner-item w-full flex-1 self-end fade-in" src="/banner_text.svg" alt="">
-			
-			<!-- <img class="w-full rounded-lg" src="/portfolio_banner.svg" alt="" /> -->
+		<section
+			class="z-20 flex flex-col items-center max-lg:p-5 w-full mx-auto h-screen px-10 pt-20"
+		>
+			<QuemSou />
 
-			<!-- <div class="header-content w-full h-full">
-			</div> -->
-
-			<div class="absolute self-end w-full h-24 bg-gradient-to-b from-5% from-transparent to-70% to-[#13151a]"></div>
-		</figure>
-
-		<section class="w-1/2 mx-auto h-screen">
-			
+			<article class="min-h-screen"></article>
 		</section>
 	</PageProvider>
 </Layout>
-
-<style>
-	.banner-item {
-		grid-area: 1 / 1 / 2 / 2;
-	}
-	.oxx-index-header {
-		background: url('/banner_fallback.svg') center no-repeat, url('/earth.jpg') bottom no-repeat fixed;
-		/* background: url('/banner_fallback.svg') center no-repeat, url('/nasa_city.jpg') bottom no-repeat fixed; */
-		background-size: cover;
-		animation: showcase 13s infinite ease-in-out alternate-reverse;
-	}
-	/* .header-content {
-        background: url('/portfolio_banner.svg') center/cover no-repeat;
-		background-size: contain;
-    } */
-
-	@keyframes showcase {
-		from {
-			background-position: bottom;
-		}
-		to {
-			background-position: center;
-		}
-	}
-</style>

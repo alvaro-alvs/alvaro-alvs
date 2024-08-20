@@ -1,4 +1,5 @@
 import { TechStackBadge } from "../TechStackBadge"
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 // type OxxProject = {
 //     id: number,
@@ -15,18 +16,18 @@ import { TechStackBadge } from "../TechStackBadge"
 //     raw_projects: OxxProject[]
 // }
 
-export default function OxxProjects({ raw_projects }) {
+export default function OxxProjects({ raw_projects }: any) {
     const projects = raw_projects.reverse()
 
     return (
         <>
             {
-                Array.isArray(projects) && projects.map((project) => (
-                    <div key={project.id} className="p-0 flex max-lg:flex-col lg:even:flex-row-reverse grid-cols-2 rounded-lg borde border-gray-800 min-h-52 overflow-hidden group cursor-pointer shadow-lg">
-                        <header className="lg:w-1/2 overflow-hidden flex items-center">
+                projects.map((project: any) => (
+                    <div key={project.id} className="p-7 bg-rose-900/10 flex lg:even:flex-row-reverse grid-cols-2 rounded-lg border border-rose-900 min-sm:h-[20rem] overflow-hidden group cursor-pointer shadow-lg max-lg:flex-col">
+                        <header className="lg:w-1/2 max-sm:h-56 max-sm:aspect-auto overflow-hidden flex items-center">
                             <img
                                 // inferSize={true}
-                                className="w-full rounded-lg transition duration- group-hover:scale- group-hover:object-center group-hover:blur-sm"
+                                className="w-full h-full object-cover object-left rounded-lg transition-all duration-500 group-hover:scale- group-hover:object-right"
                                 src={project.bg_public_url}
                                 alt=""
                             />
@@ -38,11 +39,16 @@ export default function OxxProjects({ raw_projects }) {
                             <p className="project-desc text-sm max-h-20 overflow-y-scroll no-scrollbar">{project.description}</p>
 
                             <footer className="flex flex-wrap gap-3">
-                                {project.tech_stack.map((tech) => (
+                                {project.tech_stack.map((tech: any) => (
                                     <TechStackBadge> {tech} </TechStackBadge>
                                 ))}
                             </footer>
+
                         </article>
+
+                        <footer className="self-end drop-shadow decoration-rose-400 group-hover:*:scale-110">
+                            <FaExternalLinkAlt className="" />
+                        </footer>
                     </div>
                 ))
             }

@@ -9,5 +9,5 @@ import suspense from "astro-suspense";
 export default defineConfig({
   output: 'server',
   integrations: [tailwind(), react(), suspense()],
-  adapter: vercel()
+  adapter: vercel(),
 });

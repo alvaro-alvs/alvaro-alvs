@@ -6,6 +6,13 @@ interface Props {
 const { title } = Astro.props;
 
 import "../global.css";
+
+const config = {
+	bg_color: "#13151a",
+	bg_color_primary: "#140309",
+	rose: "#881337",
+};
+
 ---
 
 <!doctype html>
@@ -37,7 +44,8 @@ import "../global.css";
 	}
 	html {
 		font-family: "Quicksand", sans-serif;
-		background: #13151a;
+		scroll-behavior: smooth;
+		background: #0c0812;
 	}
 	html::-webkit-scrollbar {
 		display: none;
@@ -61,5 +69,44 @@ import "../global.css";
 	.no-scrollbar {
 		-ms-overflow-style: none; /* IE and Edge */
 		scrollbar-width: none; /* Firefox */
+	}
+	.bg-animate {
+		background: linear-gradient(to right, #b91c1c, #312e81, #881337);
+		background-size: 500%;
+		background-position: center;
+		transition: all;
+		transition-duration: 400ms;
+		animation: animate-bg 10s infinite ease-in-out alternate-reverse;
+	}
+	.bg-animate:hover {
+		box-shadow: 0 0 2rem #b91c1c50;
+		background-size: 1000%;
+	}
+
+	.oxx-index-header {
+		/* background: url('/banner_fallback.svg') center no-repeat, url('/nasa_city.jpg') bottom no-repeat fixed; */
+		animation: showcase 9s infinite ease-in-out alternate-reverse;
+	}
+	/* .header-content {
+        background: url('/portfolio_banner.svg') center/cover no-repeat;
+		background-size: contain;
+    } */
+
+	@keyframes animate-bg {
+		from {
+			background-position: left;
+		}
+		to {
+			background-position: right;
+		}
+	}
+
+	@keyframes showcase {
+		from {
+			background-position: bottom;
+		}
+		to {
+			background-position: center;
+		}
 	}
 </style>
