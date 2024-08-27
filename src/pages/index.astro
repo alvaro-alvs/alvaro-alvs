@@ -6,18 +6,32 @@ import QuemSou from "../components/QuemSou.astro";
 import OxxAlvsHeader from "../components/OxxAlvsHeader.astro";
 ---
 
-<Layout title="OXX - Digital Solution">
+<Layout title="Alvaro Alves - OXX - Digital Solutions">
 	<PageProvider>
 		<OxxHeader title="index">
 			<OxxAlvsHeader />
 		</OxxHeader>
 
 		<section
-			class="z-20 flex flex-col items-center max-lg:p-5 w-full mx-auto h-screen px-10 pt-20 max-sm:px-10"
+			class="z-20 flex flex-col items-center max-lg:p-5 w-full mx-auto h-screen px- pt-20 max-sm:px-10"
 		>
-			<QuemSou />
+			<div class="min-h-">
+				<QuemSou />
+			</div>
 
-			<article class="min-h-screen"></article>
+			
+			
+			<article class="flex w-full space-y-10 flex-col min-h-screen mt-20 p-10 hidden">
+				<h1 class="text-left text-2xl">Projetos Pessoais</h1>
+
+				<div class="flex space-x-10">
+					<img class="border rounded-xl w-[30rem] bg-center overflow-hidden rounded-t-full aspect-square object-cover" src="/" alt="">
+	
+					<div class="w-2/3 grid grid-cols-3 gap-10 group">
+						
+					</div>
+				</div>
+			</article>
 		</section>
 	</PageProvider>
 </Layout>
