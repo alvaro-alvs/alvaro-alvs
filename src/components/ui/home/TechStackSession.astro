@@ -1,0 +1,52 @@
+---
+import { getImage } from "astro:assets"
+import OxxTopic from "./OxxTopic.astro"
+import { OXXAPICONSOLE } from "./OXXAPICONSOLE"
+
+import FrontEnd from '../../../assets/tech_stack/front.jpg'
+import BackEnd from '../../../assets/tech_stack/backend.jpg'
+import Dados from '../../../assets/tech_stack/dados.jpg'
+
+const opt_front = await getImage({src: FrontEnd})
+const opt_back = await getImage({src: BackEnd})
+const opt_dados = await getImage({src: Dados})
+
+// const navigatorName = navigator.userAgent
+---
+
+<div class="flex flex-col justify-center w-full min-h-screen h-max mt-">
+
+    <header class="px-20 space-y-5 my-3">
+        <h1 class="text-4xl my-10"> Full Stack </h1>
+        <p class="max-w-[40rem] hidden">
+            Um desenvolvedor full stack cria e mantém aplicações web completas, trabalhando tanto no front-end quanto no back-end, garantindo uma experiência de usuário fluida e sistemas eficientes e escaláveis.
+        </p>
+    </header>
+
+    <section class="grid lg:grid-cols-3 w-full">
+        <OxxTopic title="Front End" bg={opt_front.src}>
+            <p class="h-full">
+                O front-end é a camada da aplicação que o usuário vê e interage, responsável por exibir conteúdo de forma atraente e responsiva. Utiliza linguagens e técnicas de desenvolvimento web para criar interfaces intuitivas e acessíveis, melhorando a experiência do usuário.
+            </p>
+
+            <button class="bg-animate w-full p-3 bg-gradient-to-r from-teal-800 via-sky-500 to-rose-800 self-end">
+                Ver Interfaces
+            </button>
+        </OxxTopic>
+
+        <OxxTopic title="Back End" bg={opt_back.src}>
+            <p>
+                Nos bastidores, onde as regras de negócio são gerenciadas e a comunicação com o banco de dados é realizada, utilizamos APIs de alta performance para garantir a máxima eficiência e velocidade de processamento.
+            </p>
+
+            <OXXAPICONSOLE client:load />
+        </OxxTopic>
+
+        <OxxTopic title="Dados" bg={opt_dados.src}>
+            <p>
+                A camada de dados é responsável por armazenar, organizar e gerenciar as informações utilizadas pela aplicação, garantindo a integridade e a segurança dos dados. Ela suporta operações de consulta, atualização e análise, fornecendo informações precisas e em tempo real para o front-end e back-end.
+            </p>
+        </OxxTopic>
+    </section>
+
+</div>

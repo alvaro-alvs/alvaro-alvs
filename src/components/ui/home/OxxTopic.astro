@@ -1,0 +1,17 @@
+---
+
+const { title, bg } = Astro.props;
+---
+
+
+<article style={`background-image: url('${bg}')`} class={` flex items-stretch transition-all bg-no-repeat bg-cover h- w-full border-rose-900`}>
+    <div class="h-full w-full p-10 backdrop-blur backdrop-brightness-50">
+        <header class="w-full self">
+            <h1 class="text-2xl text-left"> {title} </h1>
+        </header>
+
+        <div class="grid p-5 h-full">
+            <slot />
+        </div>
+    </div>
+</article>

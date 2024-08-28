@@ -4,6 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import PageProvider from "../PageProvider.astro";
 import QuemSou from "../components/QuemSou.astro";
 import OxxAlvsHeader from "../components/OxxAlvsHeader.astro";
+import TechStackSession from "@/components/ui/home/TechStackSession.astro";
 ---
 
 <Layout title="Alvaro Alves - OXX - Digital Solutions">
@@ -13,13 +14,13 @@ import OxxAlvsHeader from "../components/OxxAlvsHeader.astro";
 		</OxxHeader>
 
 		<section
-			class="z-20 flex flex-col items-center max-lg:p-5 w-full mx-auto h-screen px- pt-20 max-sm:px-10"
+			class="z-20 flex flex-col items-center w-full mx-auto min-h-screen pt-20"
 		>
-			<div class="min-h-">
+			<div class="lg:px-20">
 				<QuemSou />
 			</div>
 
-			
+			<TechStackSession />
 			
 			<article class="flex w-full space-y-10 flex-col min-h-screen mt-20 p-10 hidden">
 				<h1 class="text-left text-2xl">Projetos Pessoais</h1>

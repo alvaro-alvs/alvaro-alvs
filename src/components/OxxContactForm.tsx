@@ -53,7 +53,7 @@ export default function OxxContactForm() {
                         console.log('a');
                     }
                 }}
-                    className="bg-animate mt-7 w-full p-3 text-center border-none rounded cursor-pointer hover:scale-110 active:scale-100 active:shadow-inner hover:rounded-tl-2xl hover:rounded-br-2xl"
+                    className="bg-animate bg-gradient-to-r from-indigo-800 via-pink-800 to-rose-800 mt-7 w-full p-3 text-center border-none rounded cursor-pointer hover:scale-110 active:scale-100 active:shadow-inner hover:rounded-tl-2xl hover:rounded-br-2xl"
                 >
                     {status === 'enviado' ? '✔️' : 'Enviar 💌'}
                 </div>
