@@ -1,4 +1,6 @@
 ---
+import { GiTechnoHeart } from "react-icons/gi";
+
 import { getImage } from "astro:assets"
 import OxxTopic from "./OxxTopic.astro"
 import { OXXAPICONSOLE } from "./OXXAPICONSOLE"
@@ -6,7 +8,6 @@ import { OXXAPICONSOLE } from "./OXXAPICONSOLE"
 import FrontEnd from '../../../assets/tech_stack/front.jpg'
 import BackEnd from '../../../assets/tech_stack/backend.jpg'
 import Dados from '../../../assets/tech_stack/dados.jpg'
-import { BsWindowStack } from "react-icons/bs";
 
 const opt_front = await getImage({src: FrontEnd})
 const opt_back = await getImage({src: BackEnd})
@@ -19,15 +20,14 @@ const opt_dados = await getImage({src: Dados})
 
     <header class="px-20 space-y-5 my-5">
         <h1 class="text-6xl flex items-center space-x-5">
-            <BsWindowStack className="fill-rose-900" />
+            <GiTechnoHeart className="fill-rose-900" />
             <p class="bg-gradient-to-r from-rose-500 to-indigo-500 bg-clip-text text-transparent">
                 Full Stack
             </p>
         </h1>
 
         <p class="w-1/2">
-            Fullstack é um profissional que desenvolve tanto a parte visual e interativa de um site ou aplicativo (front-end) quanto a parte que processa dados e executa ações no servidor (back-end). Ele trabalha com todos os aspectos da criação e manutenção de software.
-        </p>
+            Fullstack é o desenvolvedor que cria e gerencia tanto o visual quanto os processos internos de sites e aplicativos, garantindo o funcionamento completo.        </p>
     </header>
 
     <section class="grid lg:grid-cols-3 w-full">

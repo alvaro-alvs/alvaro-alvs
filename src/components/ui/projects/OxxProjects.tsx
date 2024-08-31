@@ -25,7 +25,7 @@ export default function OxxProjects({ raw_projects }: any) {
                 projects.map((project: any) => (
                     <a href={project.link} target="_blank">
 
-                        <div key={project.id} className="p-7 bg-rose-900/10 flex lg:even:flex-row-reverse grid-cols-2 rounded-lg border border-rose-900 min-sm:h-[20rem] overflow-hidden group cursor-pointer shadow-lg max-lg:flex-col">
+                        <div key={project.id} className="h-full p-7 bg-rose-900/10 flex lg:even:flex-row-reverse grid-cols-2 rounded-lg border border-rose-900 min-sm:h-[20rem] overflow-hidden group cursor-pointer shadow-lg max-lg:flex-col">
                             <header className="lg:w-1/2 max-sm:h-56 max-sm:aspect-auto overflow-hidden flex items-center">
                                 <img
                                     // inferSize={true}

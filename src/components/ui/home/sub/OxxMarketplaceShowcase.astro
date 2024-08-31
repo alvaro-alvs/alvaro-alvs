@@ -1,10 +1,14 @@
 ---
-import oxxMarketplacePage from '../../../../assets/pages/marketplace_landing.png'
-
 import Showcase from "./Showcase.astro"
+
+
+import oxxMarketplacePage from '../../../../assets/pages/interfaces_banner.jpg'
+import marketplace_globe from '../../../../assets/pages/marketplace_landing.png'
+
 import { getImage } from "astro:assets"
 
 const marketplace_bg =  await getImage({src: oxxMarketplacePage})
+const personaliza = await getImage({src: marketplace_globe})
 ---
 
 
@@ -13,9 +17,14 @@ const marketplace_bg =  await getImage({src: oxxMarketplacePage})
         max-lg:grid-cols-1
     ">
 
-    <Showcase src={marketplace_bg.src} />
-    <Showcase src={marketplace_bg.src} />
+    <Showcase bg_src={personaliza.src} title="🎨 Personalização: A Interface Feita para Você">
+        Com recursos de personalização, o site ou aplicativo se adapta às suas preferências, proporcionando uma experiência mais relevante e agradável. Isso significa que você vê apenas o que é mais importante para você, facilitando suas decisões e ações. É como ter um assistente digital que entende exatamente o que você precisa.    </Showcase>
+    <Showcase bg_src={marketplace_bg.src} title="🧩 Responsividade: A Experiência Perfeita em Qualquer Dispositivo">
+        Com o design responsivo, você pode acessar um site ou aplicativo de qualquer dispositivo—seja um computador, tablet ou smartphone—e ele sempre se ajustará perfeitamente à sua tela. Isso significa que você terá uma experiência consistente e otimizada, sem precisar fazer ajustes manuais, o que facilita sua navegação e interação.
+    </Showcase>
 
-    <Showcase src={marketplace_bg.src} span />
+    <Showcase bg_src={marketplace_bg.src} title="🏍️ Como a Simplicidade nas Interfaces Pode Facilitar Sua Navegação" span>
+        Ao usar um site ou aplicativo com uma interface simples e intuitiva, você encontra o que precisa de forma rápida e sem complicações. Elementos bem organizados e claros ajudam você a concluir suas tarefas com menos esforço, proporcionando uma experiência agradável e eficiente. Você se sente confiante navegando sem precisar de explicações complexas.
+    </Showcase>
 
 </div>
