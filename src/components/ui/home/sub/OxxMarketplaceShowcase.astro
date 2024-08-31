@@ -1,5 +1,4 @@
 ---
-import Showcase from "./Showcase.astro"
 
 
 import oxxMarketplacePage from '../../../../assets/pages/interfaces_banner.jpg'
@@ -9,6 +8,9 @@ import { getImage } from "astro:assets"
 
 const marketplace_bg =  await getImage({src: oxxMarketplacePage})
 const personaliza = await getImage({src: marketplace_globe})
+
+
+import Showcase from "./Showcase.astro"
 ---
 
 
