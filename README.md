@@ -1,5 +1,5 @@
 
-![tech stack banner](https://kphlyejmohszzhqnexpf.supabase.co/storage/v1/object/sign/oxx-assets/banner_techstack.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJveHgtYXNzZXRzL2Jhbm5lcl90ZWNoc3RhY2suanBnIiwiaWF0IjoxNzIzODc1OTg1LCJleHAiOjE3NTU0MTE5ODV9.cIYI6jqHTX6QZL_v2LJ7FlppHAVww0m8crSnJ-LIqkk&t=2024-08-17T06%3A13%3A05.968Z)
+![tech stack banner](https://kphlyejmohszzhqnexpf.supabase.co/storage/v1/object/sign/oxx-assets/banner_techstack.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJveHgtYXNzZXRzL2Jhbm5lcl90ZWNoc3RhY2suanBnIiwiaWF0IjoxNzI1MTQzMjc2LCJleHAiOjE3NTY2NzkyNzZ9.0kycolAZ0MEYbC8hRU6DOk93nqmDXiQFmy9h8g1ozag&t=2024-08-31T22%3A12%3A16.701Z)
 
 <h1 align='center'>Bem vindo! ✌️ Eu sou o Álvaro Nascimento</h1>
 
@@ -14,7 +14,7 @@
 ## 📠 Contato
 #### Email: alvaro.nrx88@gmail.com
 <!-- #### Celular: (11) 9 4916-4181 -->
-#### <a href="https://oxx-digital.vercel.app"> <img width="40" src="https://kphlyejmohszzhqnexpf.supabase.co/storage/v1/object/sign/oxx-assets/oxx_logo.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJveHgtYXNzZXRzL294eF9sb2dvLnBuZyIsImlhdCI6MTcyMzg3NzI2NywiZXhwIjoxNzU1NDEzMjY3fQ.Q3KSkdIuWwluddO7MEPfK6RcbAflmVBSpcuPV0OgAZI&t=2024-08-17T06%3A34%3A28.037Z" /> Portfolio Online </a>
+#### <a href="https://oxx.digital/"> <img width="40" src="https://kphlyejmohszzhqnexpf.supabase.co/storage/v1/object/sign/oxx-assets/oxx_logo.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJveHgtYXNzZXRzL294eF9sb2dvLnBuZyIsImlhdCI6MTcyMzg3NzI2NywiZXhwIjoxNzU1NDEzMjY3fQ.Q3KSkdIuWwluddO7MEPfK6RcbAflmVBSpcuPV0OgAZI&t=2024-08-17T06%3A34%3A28.037Z" /> Portfolio Online </a>
 #### <a href="https://www.linkedin.com/in/alvaro-nascimento-986407286/"> <img width="35" src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" />  Alvaro Nascimento <a>
 
 

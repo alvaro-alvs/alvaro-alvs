@@ -5,6 +5,7 @@ import PageProvider from "../PageProvider.astro";
 import QuemSou from "../components/QuemSou.astro";
 import OxxAlvsHeader from "../components/OxxAlvsHeader.astro";
 import TechStackSession from "@/components/ui/home/TechStackSession.astro";
+import InterfacesShowcase from "@/components/ui/home/InterfacesShowcase.astro";
 ---
 
 <Layout title="Alvaro Alves - OXX - Digital Solutions">
@@ -16,23 +17,13 @@ import TechStackSession from "@/components/ui/home/TechStackSession.astro";
 		<section
 			class="z-20 flex flex-col items-center w-full mx-auto min-h-screen pt-20"
 		>
-			<div class="lg:px-20 max-lg:px-10">
+			<div class="flex items-center lg:px-20 h-screen">
 				<QuemSou />
 			</div>
 
-			<TechStackSession />
+			<InterfacesShowcase />
 			
-			<article class="flex w-full space-y-10 flex-col min-h-screen mt-20 p-10 hidden">
-				<h1 class="text-left text-2xl">Projetos Pessoais</h1>
-
-				<div class="flex space-x-10">
-					<img class="border rounded-xl w-[30rem] bg-center overflow-hidden rounded-t-full aspect-square object-cover" src="/" alt="">
-	
-					<div class="w-2/3 grid grid-cols-3 gap-10 group">
-						
-					</div>
-				</div>
-			</article>
+			<TechStackSession />
 		</section>
 	</PageProvider>
 </Layout>

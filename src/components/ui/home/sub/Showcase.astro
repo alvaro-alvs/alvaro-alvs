@@ -1,0 +1,21 @@
+---
+import { FaExternalLinkAlt } from "react-icons/fa"
+
+const {src, span} = Astro.props
+---
+
+<figure style={`background: url('${src}') fixed`} class={`w-full h-max bg-cover bg-no-repeat rounded-xl ${span && 'col-span-2'}`}>
+
+    <div class="flex flex-col max-h-full my-auto drop-shadow bg-gradient-to-r from-indigo-950/40 to-transparent group cursor-pointer">
+        <h1 class="p-10 pb-3 text-2xl text-rose-300"> 🗳️ OXX Marketplace | E-commerce </h1>
+
+        <p class="max-w-full p-5 px-20">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum ea, dignissimos nemo architecto autem sit, est, maiores corporis asperiores qui commodi. Placeat, autem! Odio odit inventore ipsum dolorum quia dignissimos? Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque dolores quas iure ducimus odit consequatur cum nam pariatur debitis? Velit eos itaque adipisci illum exercitationem esse error optio neque asperiores.
+        </p>
+
+        <footer class="p-10 mt-auto self-end drop-shadow decoration-rose-400 group-hover:*:scale-110">
+            <FaExternalLinkAlt />
+        </footer>
+    </div>
+
+</figure>

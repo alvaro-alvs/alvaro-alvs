@@ -1,0 +1,21 @@
+---
+import oxxMarketplacePage from '../../../../assets/pages/marketplace_landing.png'
+
+import Showcase from "./Showcase.astro"
+import { getImage } from "astro:assets"
+
+const marketplace_bg =  await getImage({src: oxxMarketplacePage})
+---
+
+
+
+<div class="w-full grid grid-cols-2 gap-20 px-20 mt-20 overflow-hidden border-rose-900
+        max-lg:grid-cols-1
+    ">
+
+    <Showcase src={marketplace_bg.src} />
+    <Showcase src={marketplace_bg.src} />
+
+    <Showcase src={marketplace_bg.src} span />
+
+</div>
