@@ -4,7 +4,7 @@ import { FaExternalLinkAlt } from "react-icons/fa"
 const {title, bg_src, span} = Astro.props
 ---
 
-<figure style={`background: url('${bg_src}')`} class={`w-full h-full max-lg:h-[30rem] bg-cover bg-no-repeat rounded-xl ${span && 'col-span-2'}`}>
+<figure style={`background: url('${bg_src}')`} class={`w-full h-full max-lg:h-max bg-cover bg-no-repeat rounded-xl ${span && 'col-span-2'}`}>
 
     <div class="flex flex-col h-full my-auto drop-shadow backdrop-blur backdrop-brightness-[20%] bg-gradient-to-r from-indigo-950/40 to-transparent group cursor-pointer">
         <h1 class="p-10 pb-3 text-2xl font-bold bg-gradient-to-r from-rose-500 to-indigo-500 bg-clip-text text-transparent"> {title} </h1>
