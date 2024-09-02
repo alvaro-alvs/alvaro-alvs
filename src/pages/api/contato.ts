@@ -15,7 +15,7 @@ export const POST: APIRoute = async ({ request }) => {
         // }
 
         //* Envia os dados de contato para a OXX API
-        const send_data = await fetch(import.meta.env.URL_OXX_API_OXX_CONTACT_dev, {
+        const send_data = await fetch(import.meta.env.URL_OXX_API_OXX_CONTACT, {
             method: 'POST',
             body:
                 JSON.stringify(data),
