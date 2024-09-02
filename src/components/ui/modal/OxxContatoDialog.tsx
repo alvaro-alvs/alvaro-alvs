@@ -6,9 +6,9 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/shadcn-ui/ui/dialog"
-import { OxxLink } from "./OxxLink"
+import { OxxLink } from "../ui-assets/OxxLink"
 import { AiOutlineSend } from "react-icons/ai";
-import OxxContactForm from "../OxxContactForm";
+import OxxContactForm from "./OxxContactForm";
 
 
 export const OxxContatoDialog = ({ mobile }: { mobile?: boolean }) => {

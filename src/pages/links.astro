@@ -1,0 +1,48 @@
+---
+import { getImage } from "astro:assets";
+
+
+import PageProvider from "@/PageProvider.astro"
+import OxxHeader from "@/components/ui/base/OxxHeader.astro"
+
+import { iconData } from "@/components/ui/home/QuemSou.astro"
+
+
+export const icons = await Promise.all(
+    iconData.map(async (icon) => {
+        const image = await getImage({ src: icon.src });
+        return { ...image, link: icon.link };
+    }),
+);
+---
+
+<PageProvider>
+    <OxxHeader title="Links">
+        <p> Álvaro Nascimento </p>
+
+    </OxxHeader>
+
+    <section class="w-full h-full min-h-screen justify-center p-20 pt-40 hidden">
+
+        <div class="flex w-full  border-t border-l border-rose-900 rounded">
+            
+            <header class="w-full p- h-60">
+                <figure class="absolute border border-slate-900 backdrop-blur-lg bg-rose-900/5 rounded-full aspect-square w-60 scale-150">
+    
+                </figure>
+                Title
+            </header>
+
+            <!-- * Wrapper dos links -->
+            <div class="w-full grid grid-cols-3 items-center justify-end pl-96 p-20 space-x-10">
+                {
+                    icons?.map((icon) => (
+                        <a style={{background: `url('${icon.src}') no-repeat center center / cover`}} class="h-96 w-72 border bg-cover bg-no-repeat" >
+
+                        </a>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+</PageProvider>

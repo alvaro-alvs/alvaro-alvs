@@ -4,12 +4,12 @@ import { FaExternalLinkAlt } from "react-icons/fa"
 const {title, bg_src, span} = Astro.props
 ---
 
-<figure style={`background: url('${bg_src}')`} class={`w-full h-full max-lg:h-max bg-cover bg-no-repeat rounded-xl ${span && 'col-span-2'}`}>
+<figure  class={`animate-bg w-full h-full max-lg:h-max border border-rose-900 bg-gradient-to-r from-pink-900/10 to-rose-900/10 bg-cover bg-no-repeat rounded ${span && 'col-span-2'}`}>
 
-    <div class="flex flex-col h-full my-auto drop-shadow backdrop-blur backdrop-brightness-[20%] bg-gradient-to-r from-indigo-950/40 to-transparent group cursor-pointer">
-        <h1 class="p-10 pb-3 text-2xl font-bold bg-gradient-to-r from-rose-500 to-indigo-500 bg-clip-text text-transparent"> {title} </h1>
+    <div class="flex flex-col h-full my-auto backdrop-brightness- group cursor-pointer rounded">
+        <h1 class="p-10 pb-3 max-sm:p-5 text-3xl max-sm:text-xl font-bold bg-gradient-to-r from-rose-500 to-indigo-500 bg-clip-text text-transparent"> {title} </h1>
 
-        <p class="max-w-full p-5 px-20">
+        <p class="max-w-full p-5 px-10 max-sm:px-5 max-sm:text-xs">
             <slot />
         </p>
 

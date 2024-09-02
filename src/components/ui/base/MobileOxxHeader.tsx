@@ -7,9 +7,9 @@ import {
     Popover,
     PopoverContent,
     PopoverTrigger,
-} from "./ui/shadcn-ui/ui/popover"
-import { OxxLink } from "./ui/OxxLink"
-import { OxxContatoDialog } from "./ui/OxxContatoDialog";
+} from "../shadcn-ui/ui/popover"
+import { OxxLink } from "../ui-assets/OxxLink"
+import { OxxContatoDialog } from "../modal/OxxContatoDialog";
 
 
 export default function MobileOxxHeader() {
@@ -19,7 +19,7 @@ export default function MobileOxxHeader() {
                 <div
                     className={`lg:hidden flex justify-center border border-transparent group rounded cursor-pointer transition hover:border-rose-900 hover:bg-rose-900/10`}
                 >
-                    <span className={` items-center h-full p-2 px-5 space-x-3 rounded select-none`}>
+                    <span className={`items-center h-full p-2 px-5 space-x-3 rounded select-none`}>
                         <figure className="aspect-square header-content rounded-xl transition h-full">
                             <img className="w-12 transition duration-500 group-hover:animate-spin" src="/oxx_logo.png" alt="" />
                         </figure>
@@ -28,7 +28,7 @@ export default function MobileOxxHeader() {
                 </div>
             </PopoverTrigger>
 
-            <PopoverContent className="text-white w-96 space-y-5 grid bg-[#13151a10] backdrop-blur border-dotted border-rose-500/50 min-h-72 shadow-lg">
+            <PopoverContent className="text-white w-96 max-sm:w-max space-y-5 grid bg-[#13151a10] backdrop-blur border-dotted border-rose-500/50 min-h-72 shadow-lg">
                 <OxxLink FullW Label="Home" Url="/">
                     <GoHome
                         className="w-6 h-6 group-hover:fill-rose-100 transition duration-300"
@@ -49,7 +49,7 @@ export default function MobileOxxHeader() {
                     />
                 </OxxLink>
 
-                <OxxLink FullW Label="Projetos" Url="/oxxprojects">
+                <OxxLink FullW Label="Projetos" Url="/projetos">
                     <TbDeviceDesktopCode
                         className="w-6 h-6 group-hover:stroke-rose-300 transition duration-300"
                     />

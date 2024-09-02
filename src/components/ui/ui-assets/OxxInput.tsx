@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { OxxContactContext } from "../OxxContactForm"
+import { OxxContactContext } from "../modal/OxxContactForm"
 
 
 type OxxInputType = {

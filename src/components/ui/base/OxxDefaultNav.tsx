@@ -1,9 +1,9 @@
 import { IoMdPaper } from "react-icons/io";
 import { PiBookOpenText } from "react-icons/pi";
 import { TbDeviceDesktopCode } from "react-icons/tb";
-
-import { OxxLink } from "./OxxLink"
-import { OxxContatoDialog } from "./OxxContatoDialog";
+import { FaLink } from "react-icons/fa6";
+import { OxxLink } from "../ui-assets/OxxLink"
+import { OxxContatoDialog } from "../modal/OxxContatoDialog";
 
 
 export default function OxxDefaultNav({mobile} : {mobile?: boolean | false}) {
@@ -23,6 +23,12 @@ export default function OxxDefaultNav({mobile} : {mobile?: boolean | false}) {
                 />
             </OxxLink>
 
+            {/* <OxxLink Label="Links" Url="/links">
+                <FaLink 
+                    className="w-6 h-6 group-hover:fill-rose-100 transition duration-300"
+                />
+            </OxxLink> */}
+
             <OxxLink Url="/">
                 <figure
                     className="aspect-square header-content rounded-xl transition h-full"
@@ -35,7 +41,7 @@ export default function OxxDefaultNav({mobile} : {mobile?: boolean | false}) {
                 </figure>
             </OxxLink>
 
-            <OxxLink Label="Projetos" Url="/oxxprojects" Right={true}>
+            <OxxLink Label="Projetos" Url="/projetos" Right={true}>
                 <TbDeviceDesktopCode
                     className="w-6 h-6 group-hover:stroke-rose-300 transition duration-300"
                 />

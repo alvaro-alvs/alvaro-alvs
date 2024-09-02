@@ -18,7 +18,7 @@ export const oxx_project =
       "logo": "no",
       "tech_stack": [],
       "order": null,
-      "bg_public_url": "https://kphlyejmohszzhqnexpf.supabase.co/storage/v1/object/public/oxx_projects/toque_de_vitoria/toque_de_vitoria_banner.png"
+      "bg_public_url": "https://kphlyejmohszzhqnexpf.supabase.co/storage/v1/object/public/oxx_projects/toque_de_vitoria/toque_de_vitoria_banner.jpg"
     },
     {
       "id": 3,

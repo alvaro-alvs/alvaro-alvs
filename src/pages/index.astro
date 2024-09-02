@@ -1,10 +1,10 @@
 ---
-import OxxHeader from "../components/OxxHeader.astro";
+import OxxHeader from "../components/ui/base/OxxHeader.astro";
 import Layout from "../layouts/Layout.astro";
 import PageProvider from "../PageProvider.astro";
 import QuemSou from "../components/ui/home/QuemSou.astro";
-import OxxAlvsHeader from "../components/OxxAlvsHeader.astro";
-import TechStackSession from "@/components/ui/home/TechStackSession.astro";
+import OxxAlvsHeader from "../components/ui/landing/OxxAlvsHeader.astro";
+import TechStackSession from "@/components/ui/home/FullStackArticle.astro";
 import InterfacesShowcase from "@/components/ui/home/InterfacesShowcase.astro";
 ---
 
@@ -17,7 +17,7 @@ import InterfacesShowcase from "@/components/ui/home/InterfacesShowcase.astro";
 		<section
 			class="z-20 flex flex-col items-center w-full mx-auto min-h-screen pt-20"
 		>
-			<div class="flex items-center lg:px-20 h-screen">
+			<div class="flex items-center lg:px-10 max-lg:px-10 max-sm:px-3 min-h-screen">
 				<QuemSou />
 			</div>
 

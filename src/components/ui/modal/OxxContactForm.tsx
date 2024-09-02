@@ -1,5 +1,5 @@
 import { useState, createContext } from "react"
-import { OxxInput } from "./ui/OxxInput"
+import { OxxInput } from "../ui-assets/OxxInput"
 
 
 //* Caro analista, Bem vindo. não repara na bagunça :>

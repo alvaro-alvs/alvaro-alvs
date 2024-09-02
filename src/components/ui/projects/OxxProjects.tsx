@@ -1,4 +1,4 @@
-import { TechStackBadge } from "../TechStackBadge"
+import { TechStackBadge } from "../ui-assets/TechStackBadge"
 import { FaExternalLinkAlt } from "react-icons/fa";
 
 // type OxxProject = {
