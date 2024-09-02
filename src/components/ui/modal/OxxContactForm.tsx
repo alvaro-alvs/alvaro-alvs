@@ -2,7 +2,9 @@ import { useState, createContext } from "react"
 import { OxxInput } from "../ui-assets/OxxInput"
 
 
-//* Caro analista, Bem vindo. não repara na bagunça :>
+/*  Caro analista, Bem vindo.
+     não repara na bagunça :>
+*/
 
 
 export const OxxContactContext = createContext(null as any)
@@ -50,7 +52,7 @@ export default function OxxContactForm() {
                     if (status === 'idle') {
                         handleSubmit();
                     } else {
-                        console.log('a');
+                        window.alert('Tente novamente mais tarde');
                     }
                 }}
                     className="bg-animate bg-gradient-to-r from-indigo-800 via-pink-800 to-rose-800 mt-7 w-full p-3 text-center border-none rounded cursor-pointer hover:scale-110 active:scale-100 active:shadow-inner hover:rounded-tl-2xl hover:rounded-br-2xl"
