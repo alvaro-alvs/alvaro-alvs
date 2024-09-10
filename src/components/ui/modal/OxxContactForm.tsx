@@ -11,11 +11,20 @@ export const OxxContactContext = createContext(null as any)
 
 export default function OxxContactForm() {
     const [status, setStatus] = useState('idle')
+
     const [formData, setFormData] = useState({
         nome: '',
+        email: '',
         message: '',
         telefone: '',
         product: 'contato_simples',
+    })
+
+    const [validate, setValidate] = useState<{ name: boolean, email: boolean, telefone: boolean, message: boolean }>({
+        name: false,
+        email: false,
+        telefone: false,
+        message: false,
     })
 
     const handleSubmit = async () => {
@@ -42,9 +51,13 @@ export default function OxxContactForm() {
     }
 
     return (
-        <OxxContactContext.Provider value={{ formData, setFormData }}>
-            <div className="flex flex-col gap-y-5 p-7 text-white border- border-indigo-900 rounded h-full max-h-96">
-                <OxxInput field="nome" label="Seu Nome" type="text" placeholder="seu nome" />
+        <OxxContactContext.Provider value={{ formData, setFormData, validate, setValidate }}>
+            <div className="flex flex-col gap-y-5 p-7 text-white border- border-indigo-900 rounded h-full ">
+                <OxxInput field="nome" label="Seu Nome" type="text" placeholder="seu nome" required />
+
+                <OxxInput field="email" label="Email" type="text" placeholder="Seu Email Principal 📧" required />
+
+                <OxxInput field="telefone" label="Celular/Telefone" type="text" placeholder="Celular para Contato 📱" />
 
                 <OxxInput field="message" label="Mensagem" type="text" placeholder="Mensagem 💬" />
 
