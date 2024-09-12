@@ -18,11 +18,7 @@ export const POST: APIRoute = async ({ request }) => {
         
 
         //* Recebe a resposta do servidor de transforma em Json
-        const send_data_response = await send_data.json()
-
-        console.log('Dados recebidos do envio à api oxx: ', send_data_response);
-        
-        
+        const send_data_response = await send_data.json()        
 
         //* se a resposta do servidor for correta retorna
         if (send_data_response.nome) {
