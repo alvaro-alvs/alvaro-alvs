@@ -14,17 +14,28 @@ export const OxxInput = ({ field, type, label, placeholder, required = false }: 
 
     const InputStyles = "p-2 text-indigo-100 border border-indigo-900 bg-slate-950 rounded hover:scale-105 focus-visible:scale-110 hover:shadow-xl hover:shadow-indigo-700/10 focus-visible:border-[1px_solid_#3e1d63] focus-visible:ring-indigo-900 focus-visible:outline-0 focus-visible:border-indigo-700 transition-all duration-200"
 
-    const validateField = (field: string) => {
+    const validateField = (field: string): boolean => {
         if (formData[field] && formData[field].length > 2) {
             setValidate({ ...validate, [field]: false })
+            return true;
         } else {
             setValidate({ ...validate, [field]: true })
+            return false;
         }
     }
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>, field: string) => {
         const value = e.target.value
+
         setFormData({ ...formData, [field]: value })
+
+        function validateEmail(email: string): boolean {
+            if (validateField(email) && value.includes('@')) {
+                return true;
+            } else {
+                return false
+            }
+        }
 
         switch (field) {
             case 'nome':
@@ -35,7 +46,7 @@ export const OxxInput = ({ field, type, label, placeholder, required = false }: 
                 }
                 break;
             case 'email':
-                if (value.length > 3 && value.includes('@')) {
+                if (validateEmail(value)) {
                     setValidate({ ...validate, [field]: false })
                 } else {
                     setValidate({ ...validate, [field]: true })

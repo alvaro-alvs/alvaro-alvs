@@ -9,13 +9,15 @@ import {
 import { OxxLink } from "../ui-assets/OxxLink"
 import { AiOutlineSend } from "react-icons/ai";
 import OxxContactForm from "./OxxContactForm";
+import { useState } from "react";
 
 
 export const OxxContatoDialog = ({ mobile }: { mobile?: boolean }) => {
+    const [isOpen, setIsOpen] = useState(false)
 
     return (
-        <Dialog>
-            <DialogTrigger className="flex justify-center  h-full p-0 m-0">
+        <Dialog modal>
+            <DialogTrigger onClick={() => setIsOpen(true)} className="flex justify-center h-full p-0 m-0">
                 <OxxLink Label="Contato" Right={!mobile} >
                     <AiOutlineSend
                         className="w-6 h-6 group-hover:fill-rose-100 transition duration-300"
@@ -29,13 +31,12 @@ export const OxxContatoDialog = ({ mobile }: { mobile?: boolean }) => {
                     </DialogTitle>
                     <DialogDescription className="text-white text-center text-xs">
                         <p>Adoraríamos ouvir você! Seja para tirar dúvidas, compartilhar ideias ou simplesmente dizer "Oi" 👋, estamos aqui para ajudar. 😊</p>
-
                     </DialogDescription>
 
                 </DialogHeader>
 
                 <article className="h-max min-h-[18rem]">
-                    <OxxContactForm />
+                    <OxxContactForm setIsOpen={setIsOpen} />
                 </article>
             </DialogContent>
         </Dialog>

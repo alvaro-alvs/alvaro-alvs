@@ -1,5 +1,6 @@
-import { useState, createContext } from "react"
+import { useState, createContext, type SetStateAction } from "react"
 import { OxxInput } from "../ui-assets/OxxInput"
+import type { ContactType } from "@/types/OxxTypes"
 
 
 /*  Caro analista, Bem vindo.
@@ -9,7 +10,7 @@ import { OxxInput } from "../ui-assets/OxxInput"
 
 export const OxxContactContext = createContext(null as any)
 
-export default function OxxContactForm() {
+export default function OxxContactForm(setIsOpen: { setIsOpen: React.Dispatch<React.SetStateAction<boolean>> }) {
     const [status, setStatus] = useState('idle')
 
     const [formData, setFormData] = useState({
@@ -30,23 +31,42 @@ export default function OxxContactForm() {
     const handleSubmit = async () => {
         setStatus('enviando')
 
-        const submit_response = await fetch('/api/contato', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData)
-        })
+        const SubmitContato = async (formData: ContactType) => {
+            const submit_response = await fetch('/api/contato', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
 
-        const data = await submit_response.json()
+            const data = await submit_response.json()
 
-        if (data.status && data.status === 'ok') {
-            console.log('Enviado');
-            setStatus('enviado')
-        } else if (data.status && data.status === 'ok_falso') {
-            setStatus('simulado_envio')
+            if (data.status && data.status === 'ok') {
+                console.log('Enviado');
+                setStatus('enviado')
+            } else if (data.status && data.status === 'ok_falso') {
+                setStatus('simulado_envio')
+            } else {
+                setStatus('erro')
+            }
+
+        }
+
+        //* Validação de meio de contato -> Verifica se Email ou Telefone estão preenchidos, senão gera um erro
+        if (formData.email === '' && formData.telefone === '') {
+            setValidate((prevState) => ({
+                ...prevState,
+                email: true,
+                telefone: true
+            }));
+            window.alert('Preencha pelo menos um meio de contato');
+            setStatus('idle');
+            return;
         } else {
-            setStatus('erro')
+            window.alert('Sua Mensagem foi Enviada')
+            setStatus('enviado')
+            console.log(formData);
         }
     }
 
@@ -61,10 +81,13 @@ export default function OxxContactForm() {
 
                 <OxxInput field="message" label="Mensagem" type="text" placeholder="Mensagem 💬" />
 
+                {/* Botao de envio */}
                 <div onClick={() => {
                     if (status === 'idle') {
                         handleSubmit();
                     } else {
+                        console.log(status);
+
                         window.alert('Tente novamente mais tarde');
                     }
                 }}
