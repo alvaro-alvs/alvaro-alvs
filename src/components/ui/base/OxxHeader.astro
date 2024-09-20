@@ -2,13 +2,13 @@
 import { getImage } from "astro:assets";
 import HeaderPageTransition from "./HeaderPageTransition.astro";
 import OxxDefaultNav from "./OxxDefaultNav";
-import MobileOxxHeader from "./MobileOxxHeader"
+import MobileOxxHeader from "./MobileOxxHeader";
 import { MdOutlineSwipeUp } from "react-icons/md";
 
 const { title } = Astro.props;
 
 import main_bg from "../../../../src/assets/earth.jpg";
-import fallback from "../../../../src/assets/banner_fallback.svg"
+import fallback from "../../../../src/assets/banner_fallback.svg";
 
 const opt_earth = await getImage({ src: main_bg });
 const opt_fallback = await getImage({ src: fallback });
@@ -16,11 +16,21 @@ const opt_fallback = await getImage({ src: fallback });
 
 <header class="">
     <nav
-        class="fixed w-full h-20 max-h-20 p-3 z-50 flex justify-center items-center backdrop-blur-md shadow-lg transition-all max-[320px]:pt-0"
+        class="overflow-hidden fixed bottom-0 w-full h-20 max-h-20 z-50 backdrop-blur-xl sm:backdrop-blur-md shadow-lg"
     >
-        <OxxDefaultNav client:load />
+        <!-- border animation -->
+        <div class="w-full h-px overflow-hidden bg-transparency relative">
+            <div
+                class="border-animation blur-2xl absolute h-20 w-full rounded-full bg-gradient-to-r from-rose-500 to-indigo-400 backdrop-blur-lg"
+            >
+            </div>
+        </div>
 
-        <MobileOxxHeader client:load />
+        <div class="relative flex items-center justify-center h-full w-full p-3">
+            <OxxDefaultNav client:load />
+
+            <MobileOxxHeader client:load />
+        </div>
     </nav>
 
     <header
@@ -48,3 +58,18 @@ const opt_fallback = await getImage({ src: fallback });
         </HeaderPageTransition>
     </header>
 </header>
+<style>
+    /* * Hi Dev! :D */
+    .border-animation {
+        animation: animate-cross infinite alternate-reverse 5s;
+    }
+
+    @keyframes animate-cross {
+        from {
+            transform: translateX(0%);
+        }
+        to {
+            transform: translateX(100%);
+        }
+    }
+</style>

@@ -21,6 +21,7 @@ export default function MobileOxxHeader() {
                 >
                     <span className={`items-center h-full p-2 px-5 space-x-3 rounded select-none`}>
                         <figure className="aspect-square header-content rounded-xl transition h-full">
+                            <code className="text-xs text-rose-100"> Menu </code>
                             <img className="w-12 transition duration-500 group-hover:animate-spin" src="/oxx_logo.png" alt="" />
                         </figure>
                         {/* <p className="text-center">Menu</p> */}
@@ -28,7 +29,7 @@ export default function MobileOxxHeader() {
                 </div>
             </PopoverTrigger>
 
-            <PopoverContent className="text-white w-96 max-sm:w-max space-y-5 grid bg-[#13151a10] backdrop-blur border-dotted border-rose-500/50 min-h-72 shadow-lg">
+            <PopoverContent className="text-white w-96 max-sm:w-max h-max space-y-5 grid bg-transparency backdrop-blur-2xl border-dashed border-rose-500/50  shadow-lg">
                 <OxxLink FullW Label="Home" Url="/">
                     <GoHome
                         className="w-6 h-6 group-hover:fill-rose-100 transition duration-300"

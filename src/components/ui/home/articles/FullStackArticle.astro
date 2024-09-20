@@ -2,12 +2,14 @@
 import { GiTechnoHeart } from "react-icons/gi";
 
 import { getImage } from "astro:assets"
-import OxxTopic from "./OxxTopic.astro"
-import { OXXAPICONSOLE } from "./OXXAPICONSOLE"
+import OxxTopic from "../sub/OxxTopic.astro"
+import { OXXAPICONSOLE } from "../OXXAPICONSOLE"
 
-import FrontEnd from '../../../assets/tech_stack/front.jpg'
-import BackEnd from '../../../assets/tech_stack/backend.jpg'
-import Dados from '../../../assets/tech_stack/dados.jpg'
+
+import FrontEnd from '@/assets/tech_stack/front.jpg'
+import BackEnd from '@/assets/tech_stack/backend.jpg'
+import Dados from '@/assets/tech_stack/dados.jpg'
+import ArticleHeader from "../../base/ArticleHeader.astro";
 
 const opt_front = await getImage({src: FrontEnd})
 const opt_back = await getImage({src: BackEnd})
@@ -18,13 +20,11 @@ const opt_dados = await getImage({src: Dados})
 
 <div class="flex flex-col justify-center w-full min-h-screen h-max mt-20">
 
+    <ArticleHeader article_title="Full Stack" big>
+        <GiTechnoHeart className='fill-rose-600' />
+    </ArticleHeader>
+    
     <header class="px-20 space-y-5 my-5 max-lg:px-5">
-        <h1 class="text-6xl max-sm:text-5xl flex items-center space-x-5">
-            <GiTechnoHeart className="fill-rose-900" />
-            <p class="bg-gradient-to-r from-rose-500 to-indigo-500 bg-clip-text text-transparent">
-                Full Stack
-            </p>
-        </h1>
 
         <p class="w-1/2 max-lg:w-full">
             Fullstack é o desenvolvedor que cria e gerencia tanto o visual quanto os processos internos de sites e aplicativos, garantindo o funcionamento completo.        </p>

@@ -2,10 +2,11 @@
 import OxxHeader from "../components/ui/base/OxxHeader.astro";
 import Layout from "../layouts/Layout.astro";
 import PageProvider from "../PageProvider.astro";
-import QuemSou from "../components/ui/home/QuemSou.astro";
+import QuemSou from "../components/ui/home/articles/QuemSou.astro";
 import OxxAlvsHeader from "../components/ui/landing/OxxAlvsHeader.astro";
-import TechStackSession from "@/components/ui/home/FullStackArticle.astro";
-import InterfacesShowcase from "@/components/ui/home/InterfacesShowcase.astro";
+import TechStackSession from "@/components/ui/home/articles/FullStackArticle.astro";
+import InterfacesShowcase from "@/components/ui/home/articles/InterfacesShowcase.astro";
+import MainTech from "@/components/ui/home/articles/MainTech.astro";
 
 export const prefetch = true;
 ---
@@ -23,9 +24,25 @@ export const prefetch = true;
 				<QuemSou />
 			</div>
 
-			<InterfacesShowcase />
+			<MainTech />
 			
 			<TechStackSession />
 		</section>
 	</PageProvider>
 </Layout>
+
+<style>
+	.oxx-index-header {
+		/* background: url('/banner_fallback.svg') center no-repeat, url('/nasa_city.jpg') bottom no-repeat fixed; */
+		animation: showcase 9s infinite ease-in-out alternate-reverse;
+	}
+	
+	@keyframes showcase {
+		from {
+			background-position: bottom;
+		}
+		to {
+			background-position: center;
+		}
+	}
+</style>
