@@ -22,7 +22,7 @@ export const OxxContatoDialog = ({ mobile }: { mobile?: boolean }) => {
                     />
                 </OxxLink>
             </DialogTrigger>
-            <DialogContent className="border-rose-900 text-white bg-slate-950/20 backdrop-blur min-h-32 h-max">
+            <DialogContent className="border-transparent sm:border-rose-900 text-white bg-slate-950/20 backdrop-blur min-h-32 h-max">
                 <DialogHeader className="grid space-y- pb-5 border- border-rose-900 select-none">
                     <DialogTitle className="text-4xl font-normal mt-5 mb-2">
                         📬 Envie uma Mensagem
