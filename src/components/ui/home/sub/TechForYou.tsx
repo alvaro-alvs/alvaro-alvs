@@ -24,7 +24,7 @@ const Content: ForYouContentType[] = [{
     items: ['Até 100 links para organizar',
         'Links destacados por estrelas, mostrados no topo',
         'Cores e temas personalizáveis para links e fundo',
-        'Plano de R$ 12,90 por mês ou R$ 49,90 VITALÌCIO',
+        'Plano VITALÌCIO',
         'Prioridade de desenvolvimento com pagamento adiantado para funcionalidades exclusivas'
     ],
     icon: <img src={links.src} className="group-hover:scale-125 transition w-16 z-10" />,
