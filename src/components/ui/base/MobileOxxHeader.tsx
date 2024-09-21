@@ -7,7 +7,7 @@ import {
     Popover,
     PopoverContent,
     PopoverTrigger,
-} from "../shadcn-ui/ui/popover"
+} from "../shadcn-ui/popover"
 import { OxxLink } from "../ui-assets/OxxLink"
 import { OxxContatoDialog } from "../modal/OxxContatoDialog";
 

@@ -3,6 +3,8 @@ interface Props {
 	title: string;
 }
 
+import { Toaster } from "@/components/ui/shadcn-ui/sonner"
+
 const { title } = Astro.props;
 
 import "../global.css";
@@ -27,6 +29,7 @@ const config = {
 	</head>
 	<body>
 		<slot />
+		<Toaster position="bottom-center" richColors client:load />
 	</body>
 </html>
 <style is:global>

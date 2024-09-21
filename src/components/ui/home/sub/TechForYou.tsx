@@ -4,7 +4,7 @@ import type { ForYouContentType } from "@/types/OxxTypes";
 import { GrSystem } from "react-icons/gr";
 import { MdSettingsSystemDaydream } from "react-icons/md";
 import { IoIosLink } from "react-icons/io";
-
+import { toast } from "sonner";
 import www from "@/assets/icons/www.png"
 import system from "@/assets/icons/system.png"
 import links from "@/assets/icons/data-link.png"
@@ -49,9 +49,17 @@ const Content: ForYouContentType[] = [{
 
 export const TechForYou = () => {
 
+    const Loading = () => {
+        return (
+            <div>
+                Em Breve...
+            </div>
+        )
+    }
+
     const FeatureCard = (Product: ForYouContentType) => {
         return (
-            <div className="flex flex-col w-full h-full gap-2 p-7 rounded-xl backdrop-blur-2xl border border-transparent cursor-pointer bg-gradient-to-b from-[#0e0e1bc0] to-rose-700/10 hover:border-rose-900 transition group">
+            <div onClick={() => toast.info(<Loading />)} className="flex flex-col w-full h-full gap-2 p-7 rounded-xl backdrop-blur-2xl border border-transparent cursor-pointer bg-gradient-to-b from-[#0e0e1bc0] to-rose-700/10 hover:border-rose-900 transition group">
                 <header className="pb-5">
                     <div className="absolute -top-8 transform -translate-x-14">
                         {Product.icon ? Product.icon : <MdOutlineWeb className="text-4xl text-red-500" />}

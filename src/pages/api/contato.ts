@@ -4,6 +4,8 @@ import type { APIRoute } from "astro";
 export const POST: APIRoute = async ({ request }) => {
     try {
         const data = await request.json()
+
+        // console.log('realizando envio dos dados: ',  data)
         
         //* Envia os dados de contato para a OXX API
         const send_data = await fetch(import.meta.env.URL_OXX_API_OXX_CONTACT, {
@@ -16,7 +18,6 @@ export const POST: APIRoute = async ({ request }) => {
         })
 
         
-
         //* Recebe a resposta do servidor de transforma em Json
         const send_data_response = await send_data.json()        
 

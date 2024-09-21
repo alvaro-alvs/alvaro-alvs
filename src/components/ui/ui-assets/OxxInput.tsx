@@ -9,6 +9,8 @@ type OxxInputType = {
     required?: boolean
 }
 
+// todo refatorar usando ZOD
+
 export const OxxInput = ({ field, type, label, placeholder, required = false }: OxxInputType) => {
     const { formData, setFormData, validate, setValidate } = useContext(OxxContactContext)
 
@@ -52,6 +54,12 @@ export const OxxInput = ({ field, type, label, placeholder, required = false }: 
                     setValidate({ ...validate, [field]: true })
                 }
                 break;
+            case 'telefone':
+                if (validateField(value)) {
+                    setValidate({...validate, email: false, telefone: false})
+                } else {
+                    setValidate({...validate, email: true, telefone: true})
+                }
             default:
                 validateField(field)
         }
