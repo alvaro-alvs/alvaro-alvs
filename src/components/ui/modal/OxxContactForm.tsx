@@ -62,7 +62,7 @@ export default function OxxContactForm() {
             setStatus('enviado')
         }
     }
-    toast.success(<MensagemEnviada />)
+
     return (
         <OxxContactContext.Provider value={{ formData, setFormData, validate, setValidate }}>
             <div className="flex flex-col gap-y-5 p-7 text-white border- border-indigo-900 rounded h-full ">
