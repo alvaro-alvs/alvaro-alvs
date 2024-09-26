@@ -40,7 +40,6 @@ export default function OxxContactForm() {
 
     const handleSubmit = async () => {
         setStatus('enviando')
-        toast.info('Enviando Mensagem...')
 
         //* Validação de meio de contato -> Verifica se Email ou Telefone estão preenchidos, senão gera um erro
         if (formData.email === '' && formData.telefone === '') {
@@ -53,6 +52,8 @@ export default function OxxContactForm() {
             setStatus('idle');
             return;
         } else {
+            toast.info('Enviando Mensagem...')
+
             const res = await SubmitContato(formData as ContactType)
 
             if (res.status === 'ok') {
@@ -76,21 +77,21 @@ export default function OxxContactForm() {
 
                 {status === 'erro' && <p className="text-red-500"> Tente Novamente Mais Tarde :( </p>}
 
-            {/* Botao de envio */}
-            <div onClick={() => {
-                if (status === 'idle') {
-                    handleSubmit();
-                } else {
-                    console.log(status);
+                {/* Botao de envio */}
+                <div onClick={() => {
+                    if (status === 'idle') {
+                        handleSubmit();
+                    } else {
+                        console.log(status);
 
-                    window.alert('Tente novamente mais tarde');
-                }
-            }}
-                className="bg-animate bg-gradient-to-r from-indigo-800 via-pink-800 to-rose-800 mt-7 w-full p-3 text-center border-none rounded cursor-pointer hover:scale-110 active:scale-100 active:shadow-inner hover:rounded-tl-2xl hover:rounded-br-2xl"
-            >
-                {status === 'enviado' ? '✔️' : 'Enviar 💌'}
+                        window.alert('Tente novamente mais tarde');
+                    }
+                }}
+                    className="bg-animate bg-gradient-to-r from-indigo-800 via-pink-800 to-rose-800 mt-7 w-full p-3 text-center border-none rounded cursor-pointer hover:scale-110 active:scale-100 active:shadow-inner hover:rounded-tl-2xl hover:rounded-br-2xl"
+                >
+                    {status === 'enviado' ? '✔️' : 'Enviar 💌'}
+                </div>
             </div>
-        </div>
         </OxxContactContext.Provider >
     )
 }
