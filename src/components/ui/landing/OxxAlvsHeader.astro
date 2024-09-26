@@ -1,6 +1,8 @@
 ---
+import Image from "astro/components/Image.astro";
 import { GoChevronUp } from "react-icons/go";
 import HeaderPageTransition from "../base/HeaderPageTransition.astro";
+
 ---
 
 <figure
@@ -8,7 +10,7 @@ import HeaderPageTransition from "../base/HeaderPageTransition.astro";
 >
     <img class="max-sm:block hidden" src="/banner_mobile.svg" alt="">
 
-    <div class="grid w-full mx-auto max-sm:hidden max-lg:h-[25rem] max-sm:aspect-square h-max overflow-hidden pt-20">
+    <picture class="grid w-full mx-auto max-sm:hidden max-lg:h-[25rem] max-sm:aspect-square h-max overflow-hidden pt-20">
         <img
             class="banner-item w-full flex-1 self-end scale-125 max-sm:scale-[150%] fade-in"
             src="/banner_atom.svg"
@@ -24,7 +26,7 @@ import HeaderPageTransition from "../base/HeaderPageTransition.astro";
             src="/banner_text2.svg"
             alt=""
         />
-    </div>
+    </picture>
 
     <HeaderPageTransition>
         <GoChevronUp className="animate-bounce w-7 h-7" />
