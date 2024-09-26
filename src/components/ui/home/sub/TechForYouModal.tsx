@@ -14,7 +14,7 @@ import { MdOutlineWeb } from "react-icons/md"
 export const TechForYouModal = ({ Product }: { Product: ForYouContentType }) => {
 
     return (
-        <Dialog>
+        <Dialog open={false}>
             <DialogTrigger>
                 <div onClick={() => ('a')} className=" text-lef flex flex-col w-full h-full gap-2 p-7 rounded-xl backdrop-blur-2xl border border-transparent cursor-pointer bg-gradient-to-b from-[#0e0e1bc0] to-rose-700/10 hover:border-rose-900 transition group">
 
