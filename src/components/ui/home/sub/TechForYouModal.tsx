@@ -7,17 +7,51 @@ import {
     DialogTrigger,
 } from "@/components/ui/shadcn-ui/dialog"
 import type { ForYouContentType } from "@/types/OxxTypes"
-import { IoIosLink } from "react-icons/io"
+import { IoIosLink, IoMdArrowBack } from "react-icons/io"
 import { MdOutlineWeb } from "react-icons/md"
+import { Button } from '@/components/ui/shadcn-ui/button'
+import { FaQrcode } from "react-icons/fa";
+import { BackButton } from "../../ui-assets/BackButton"
+import { useState } from "react"
 
 
 export const TechForYouModal = ({ Product }: { Product: ForYouContentType }) => {
+    const [open, setOpen] = useState(false)
+
+    const handleAquire = async () => {
+
+        const res = await fetch('api/payment', {
+            body: JSON.stringify({
+                correlationID: Product.pricing.correlationId,
+                value: Product.pricing.value
+            }),
+            method: 'POST',
+            headers: {
+                'Authorization': import.meta.env.OPEN_PIX_KEY,
+                'Content-Type': 'application/json'
+            }
+        })
+
+        if (res.ok) {
+            const data = await res.json()
+
+            console.log(data)
+        } else {
+            console.log(res)
+        }
+    }
+
+    const formatarEmReais = (valorEmCentavos: number) => {
+        // Converte de centavos para reais
+        const valorEmReais = valorEmCentavos / 100;
+        // Formata com ponto de milhar e duas casas decimais
+        return valorEmReais.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    }
 
     return (
-        <Dialog open={false}>
+        <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger>
-                <div onClick={() => ('a')} className=" text-lef flex flex-col w-full h-full gap-2 p-7 rounded-xl backdrop-blur-2xl border border-transparent cursor-pointer bg-gradient-to-b from-[#0e0e1bc0] to-rose-700/10 hover:border-rose-900 transition group">
-
+                <div onClick={() => ('a')} className=" text-left flex flex-col w-full h-full gap-2 p-7 rounded-xl backdrop-blur-2xl border border-transparent cursor-pointer bg-gradient-to-b from-[#0e0e1bc0] to-rose-700/10 hover:border-rose-900 transition group">
 
                     <header className="pb-5">
                         <div className="absolute -top-8 transform -translate-x-14">
@@ -28,9 +62,8 @@ export const TechForYouModal = ({ Product }: { Product: ForYouContentType }) => 
                         <h4 className="text-xs text-rose-300"> {Product.subtitle} </h4>
                     </header>
 
-                    <ul className="space-y-2 mb-5 overflow-hidden">
-                        {Product.items?.map((item) => (<li className="text-sm">. {item}</li>))}
-
+                    <ul className="space-y-2 mb-5 overflow-hidden text-left">
+                        {Product.items?.map((item) => (<li className="text">. {item}</li>))}
                     </ul>
 
                     <a href="#" className="flex items-center justify-center xl:justify-start space-x-1 group-hover:space-x-3 text-rose-300 mt-auto group-hover:underline">
@@ -39,20 +72,42 @@ export const TechForYouModal = ({ Product }: { Product: ForYouContentType }) => 
                     </a>
                 </div>
             </DialogTrigger>
-            <DialogContent className="min-w-full h-full border-none backdrop-blur-xl">
-                <DialogHeader className="text-rose-400">
+
+            <DialogContent className="flex flex-col w-full max-w-full h-full border-none backdrop-blur-xl">
+
+                <DialogHeader className="text-rose-400 space-y-5 h-max m-0">
                     <DialogTitle className="text-5xl font-thin"> {Product.title} </DialogTitle>
-                    <DialogDescription className="text-rose-100 max-w-">
-                        LinkStream OXX é a solução definitiva para organizar e personalizar seus links favoritos. Com capacidade para armazenar até 100 links, você pode destacar os mais importantes com estrelas, garantindo que fiquem sempre no topo.
+                    <DialogDescription className="text-rose-100 sm:pt-5">
+                        {Product.description}
                     </DialogDescription>
 
-                    <main className="p-10">
-                        <figure className="w-full border !aspect-video h-[30rem] border-rose-900">
-
-                        </figure>
-
-                    </main>
+                    <div onClick={() => setOpen(false)} className="flex items-center space-x-3 border mt-10 border-rose-900 p-2 px-5 rounded-xl w-max">
+                        <IoMdArrowBack />
+                        <p>Voltar</p>
+                    </div>
                 </DialogHeader>
+
+                <div className="flex flex-col sm:p-10 flex-1 max-h-screen">
+                    <figure className="w-full h-full border border-rose-900 rounded-xl">
+                        {Product.image}
+                    </figure>
+
+                    <footer className="flex justify-stretch h-[10rem] space-x-5 w-full py-5">
+
+                        <Button className="grid flex-1 bg-rose-900/20 justify-center items-center border border-rose-600 h-full max-w-[20rem] hover:border-rose-600 hover:bg-rose-900/30 hover:text-rose-200 rounded-xl group" onClick={() => handleAquire()}>
+                            <FaQrcode className="w-10 h-10 mx-auto" />
+                            <p className="grid text-lg sm:text-xl">
+                                {'Comprar com PIX'}
+                                <sub className="text-xs">A Vista</sub>
+                            </p>
+                        </Button>
+
+                        <div className="border flex-1 border-rose-600 rounded-xl bg-rose-900/20">
+                            <p>Pagar Entrada</p>
+                        </div>
+                    </footer>
+                </div>
+
             </DialogContent>
         </Dialog>
     )

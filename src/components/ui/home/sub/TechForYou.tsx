@@ -1,6 +1,11 @@
 
 import { WavyBackground } from "../../aceternity-ui/wavy-background";
 import type { ForYouContentType } from "@/types/OxxTypes";
+
+//* Demos
+import { StarsBackground } from "../../aceternity-ui/stars-background";
+
+//* Icons
 import www from "@/assets/icons/www.png"
 import system from "@/assets/icons/system.png"
 import links from "@/assets/icons/data-link.png"
@@ -8,24 +13,35 @@ import links from "@/assets/icons/data-link.png"
 const Content: ForYouContentType[] = [{
     title: "Desenvolvimento de Website",
     subtitle: 'Exclusividade Garantida',
-    items: ['Site Global com otimização internacional',
+    items: [
+        'Site Global com otimização internacional',
         'CI/CD – Updates em tempo real com integração contínua',
         'Design único e personalizado, voltado para identidade visual da marca'
     ],
+    description: 'LinkStream OXX é a solução definitiva para organizar e personalizar seus links favoritos. Com capacidade para armazenar até 100 links, você pode destacar os mais importantes com estrelas, garantindo que fiquem sempre no topo.',
+    pricing: {
+        correlationId: 'Compra de Website OXX',
+        value: 31900
+    },
+    image: <></>,
     icon: <img src={www.src} className="group-hover:scale-125 transition w-16 z-10" />,
-    link: "./assets/"
 }, {
     title: "LinkStream",
     subtitle: 'Exclusividade Garantida',
-    items: ['Até 100 links para organizar',
+    items: [
+        'Até 100 links para organizar',
         'Links destacados por estrelas, mostrados no topo',
         'Cores e temas personalizáveis para links e fundo',
         'Plano VITALÌCIO',
         'Prioridade de desenvolvimento com pagamento adiantado para funcionalidades exclusivas'
     ],
+    description: 'LinkStream OXX é a solução definitiva para organizar e personalizar seus links favoritos. Com capacidade para armazenar até 100 links, você pode destacar os mais importantes com estrelas, garantindo que fiquem sempre no topo.',
+    pricing: {
+        correlationId: 'Compra-de-LinkStream-OXX',
+        value: 9900
+    },
     icon: <img src={links.src} className="group-hover:scale-125 transition w-16 z-10" />,
-    image: <></>,
-    link: ""
+    image: <p className="py-10">LinkStream Demo :D</p>,
 }, {
     title: "Sistemas de Gestão Personalizados",
     subtitle: 'Exclusividade Garantida',
@@ -35,12 +51,14 @@ const Content: ForYouContentType[] = [{
         'Integração com sistemas externos (APIs, ERPs, CRMs)',
         'Segurança avançada com diferentes níveis de permissões',
         'Integração com sistemas de terceiros (APIs, ERPs, CRMs)',
-        'Painel de controle intuitivo com gráficos de desempenho',
-        'Relatórios em tempo real e exportação de dados'
     ],
+    description: 'LinkStream OXX é a solução definitiva para organizar e personalizar seus links favoritos. Com capacidade para armazenar até 100 links, você pode destacar os mais importantes com estrelas, garantindo que fiquem sempre no topo.',
+    pricing: {
+        correlationId: 'Sistema de Personalizado OXX',
+        value: 190000
+    },
     icon: <img src={system.src} className="group-hover:scale-125 transition w-16 z-10" />,
     image: <></>,
-    link: ""
 }]
 
 import { TechForYouModal } from "./TechForYouModal";
