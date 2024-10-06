@@ -3,9 +3,9 @@ import OxxHeader from "../components/ui/base/OxxHeader.astro";
 import Layout from "../layouts/Layout.astro";
 import PageProvider from "../PageProvider.astro";
 import QuemSou from "../components/ui/home/articles/QuemSou.astro";
-import OxxAlvsHeader from "../components/ui/landing/OxxAlvsHeader.astro";
+import OxxAlvsHeader from "@/components/ui/home/articles/OxxAlvsHeader.astro";
 import TechStackSession from "@/components/ui/home/articles/FullStackArticle.astro";
-import MainTech from "@/components/ui/home/articles/MainTech.astro";
+import MainTech from "@/components/ui/home/articles/TechForYouSection.astro";
 
 export const prefetch = true;
 ---
@@ -23,6 +23,7 @@ export const prefetch = true;
 				<QuemSou />
 			</div>
 
+			<!-- tech for you -->
 			<MainTech />
 			
 			<TechStackSession />

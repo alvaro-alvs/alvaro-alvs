@@ -3,7 +3,7 @@ import { WavyBackground } from "../../aceternity-ui/wavy-background";
 import type { ForYouContentType } from "@/types/OxxTypes";
 
 //* Demos
-import { StarsBackground } from "../../aceternity-ui/stars-background";
+import { LinkStreamDemo } from "../../demo/linkstream/LinkStreamDemo";
 
 //* Icons
 import www from "@/assets/icons/www.png"
@@ -41,7 +41,7 @@ const Content: ForYouContentType[] = [{
         value: 9900
     },
     icon: <img src={links.src} className="group-hover:scale-125 transition w-16 z-10" />,
-    image: <p className="py-10">LinkStream Demo :D</p>,
+    image: <LinkStreamDemo />,
 }, {
     title: "Sistemas de Gestão Personalizados",
     subtitle: 'Exclusividade Garantida',
@@ -67,9 +67,9 @@ export const TechForYou = () => {
 
 
     return (
-        <WavyBackground backgroundFill="#0c0812" blur={20} colors={['#9F1111', '#570C0C', '#e11d48', '#C21A9D', '#0e0e1b']} className="w-full h-full sm:p-0">
+        <WavyBackground backgroundFill="#0c0812" blur={20} colors={['#9F1111', '#570C0C', '#e11d48', '#C21A9D', '#0e0e1b']} className="w-full h-screen sm:p-0">
 
-            <div className="grid xl:grid-cols-3 sxlgrid-flow-col w-full sm:h-max gap-10 sm:px-0">
+            <div className="grid xl:grid-cols-3 xl:grid-flow-col w-full sm:h-max gap-24 sm:px-0">
                 {Content.map((product) => (
                     <TechForYouModal key={product.title} Product={product} />
                 ))}

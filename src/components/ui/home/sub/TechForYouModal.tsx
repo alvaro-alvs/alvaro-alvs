@@ -87,17 +87,17 @@ export const TechForYouModal = ({ Product }: { Product: ForYouContentType }) => 
                     </div>
                 </DialogHeader>
 
-                <div className="flex flex-col sm:p-10 flex-1 max-h-screen">
-                    <figure className="w-full h-full border border-rose-900 rounded-xl">
+                <div className="flex flex-col sm:p- flex-1 max-h-screen">
+                    <figure className="w-full h-full  border-rose-900 rounded-xl  ">
                         {Product.image}
                     </figure>
 
-                    <footer className="flex justify-stretch h-[10rem] space-x-5 w-full py-5">
+                    <footer className="flex justify-stretch h-max sm:h-[10rem] space-x-5 w-full py-5">
 
                         <Button className="grid flex-1 bg-rose-900/20 justify-center items-center border border-rose-600 h-full max-w-[20rem] hover:border-rose-600 hover:bg-rose-900/30 hover:text-rose-200 rounded-xl group" onClick={() => handleAquire()}>
-                            <FaQrcode className="w-10 h-10 mx-auto" />
-                            <p className="grid text-lg sm:text-xl">
-                                {'Comprar com PIX'}
+                            <FaQrcode className="sm:w-10 sm:h-10 mx-auto" />
+                            <p className="grid text-lg sm:text-">
+                                {'Comprar'}
                                 <sub className="text-xs">A Vista</sub>
                             </p>
                         </Button>
