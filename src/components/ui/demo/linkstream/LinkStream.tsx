@@ -1,7 +1,7 @@
 import { useEffect, type ReactNode } from "react"
 import { useLinkStream } from "./LinkStreamProvider"
 
-export const LinkStream = ({ Label, Icon, Content }: { Label: string, Icon: ReactNode, Content: string }) => {
+export const LinkStream = ({ Label, Icon, Content }: { Label: string, Icon?: ReactNode, Content?: string }) => {
     const { theme } = useLinkStream()
 
     return (
