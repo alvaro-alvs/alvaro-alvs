@@ -73,7 +73,7 @@ export const TechForYouModal = ({ Product }: { Product: ForYouContentType }) => 
                 </div>
             </DialogTrigger>
 
-            <DialogContent className="flex flex-col w-full max-w-full h-full border-none backdrop-blur-xl">
+            <DialogContent className="flex flex-col h-screen max-h-screen max-w-full border-none backdrop-blur-xl">
 
                 <DialogHeader className="text-rose-400 space-y-5 h-max m-0">
                     <DialogTitle className="text-5xl font-thin"> {Product.title} </DialogTitle>
@@ -81,24 +81,26 @@ export const TechForYouModal = ({ Product }: { Product: ForYouContentType }) => 
                         {Product.description}
                     </DialogDescription>
 
-                    <div onClick={() => setOpen(false)} className="flex items-center space-x-3 border mt-10 border-rose-900 p-2 px-5 rounded-xl w-max">
+                    <div onClick={() => setOpen(false)} className="flex items-center space-x-3 border mt-10 border-rose-900 p-2 px-5 rounded-xl w-max cursor-pointer hover:bg-rose-800 transition hover:text-rose-100">
                         <IoMdArrowBack />
                         <p>Voltar</p>
                     </div>
                 </DialogHeader>
 
-                <div className="flex flex-col sm:p- flex-1 max-h-screen">
-                    <figure className="w-full h-full  border-rose-900 rounded-xl  ">
+                <div className="flex flex-col flex-1 overflow-hidden">
+
+                    <h1 className="text-rose-100 text-2xl text-center pb-5 border-b border-rose-900">{Product.header}</h1>
+
+                    <figure className="relative flex-1 w-full overflow-hidden border-rose-900 rounded-xl">
                         {Product.image}
                     </figure>
 
-                    <footer className="flex justify-stretch h-max sm:h-[10rem] space-x-5 w-full py-5">
+                    <footer className="flex justify-stretch h-max sm:h-[5rem] space-x-5 w-full py-3">
 
-                        <Button className="grid flex-1 bg-rose-900/20 justify-center items-center border border-rose-600 h-full max-w-[20rem] hover:border-rose-600 hover:bg-rose-900/30 hover:text-rose-200 rounded-xl group" onClick={() => handleAquire()}>
-                            <FaQrcode className="sm:w-10 sm:h-10 mx-auto" />
-                            <p className="grid text-lg sm:text-">
-                                {'Comprar'}
-                                <sub className="text-xs">A Vista</sub>
+                        <Button className="flex flex-1 bg-rose-900/20 space-x-5 items-center border border-rose-600 h-full max-w-[20rem] hover:border-rose-600 hover:bg-rose-900/30 hover:text-rose-200 rounded-xl group" onClick={() => handleAquire()}>
+                            <FaQrcode className="sm:w-5 sm:h-5 " />
+                            <p className="grid text-lg py-2">
+                                {'Comprar Template'}
                             </p>
                         </Button>
 
@@ -107,7 +109,6 @@ export const TechForYouModal = ({ Product }: { Product: ForYouContentType }) => 
                         </div>
                     </footer>
                 </div>
-
             </DialogContent>
         </Dialog>
     )

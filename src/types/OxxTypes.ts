@@ -3,6 +3,7 @@
 export type ForYouContentType = {
     title?: string,
     subtitle?: string,
+    header: string | React.ReactNode,
     items?: string[],
     pricing: {
         correlationId: string,

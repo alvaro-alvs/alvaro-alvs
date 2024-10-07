@@ -40,21 +40,42 @@ export default function LinkStreamProvider({ children }: { children: any }) {
 
     return (
         <LinkStreamContext.Provider value={{ addedLinks, setAddedLinks, theme, setTheme }}>
-            <div className="relative p- h-full space-y-10 overflow-y-scroll">
+            <ThemePicker />
+            <div className="relative flex flex-col h-full space-y-10 overflow-hidden">
                 {/* Colors Palletes */}
-                <ThemePicker />
 
-                <section className="flex flex-col items-center h-full rounded ">
-                    <Avatar className={`w-32 h-32 rounded-full`}>
-                        <AvatarImage className="rounded-full" src="https://github.com/shadcn.png" />
-                        <AvatarFallback>CN</AvatarFallback>
-                    </Avatar>
+                <section className="relative flex flex-col items-center rounded overflow-y-scroll">
 
-                    {/* Links */}
-                    <div className="flex flex-col space-y-5 mt-20">
-                        <LinkStream Icon={<img src={InstaIcon.src} className="h-full max-h-10" />} Label='Instagram' />
-                        <LinkStream Icon={<img src={WhatsIcon.src} className="h-full max-h-10" />} Label='Whatsapp' />
-                        {children}
+                    <figure className="relative grid min-h-[15rem] w-11/12 rounded-b-2xl overflow-hidden">
+                        {/* fallback */}
+                        <div className="absolute inset-0 z-10 bg-rose-900/50 backdrop-blur-xl"></div>
+
+                        {/* image */}
+                        <img
+                            className="absolute inset-0 w-full h-full object-cover"
+                            src="https://github.com/shadcn.png"
+                            alt="Imagem de Exemplo"
+                        />
+                    </figure>
+
+                    <div className="relative flex flex-col items-center justify-center pb-24">
+
+                        <Avatar className={`absolute flex flex-col justify-center items-center space-y-3 z-30 -top-14`}>
+                            <AvatarImage className="rounded-full w-32 h-32" src="https://github.com/shadcn.png" />
+                            <AvatarFallback>CN</AvatarFallback>
+                        </Avatar>
+
+                        {/* identificação */}
+                        <div className="mt-32 mb-10">
+                            <h1 className="text-white text-center text-3xl"> Marceline Abadeer </h1>
+                            <h2 className="text-rose-100 text-center text-lg"> Cantora/Produtora </h2>
+                        </div>
+                        {/* Links */}
+                        <div className="flex flex-col space-y-5">
+                            <LinkStream Icon={<img src={InstaIcon.src} className="h-full max-h-10" />} Label='Instagram' Content='@marcy_' />
+                            <LinkStream Icon={<img src={WhatsIcon.src} className="h-full max-h-10" />} Label='Whatsapp' Content='+281-541-568-180' />
+                            {children}
+                        </div>
                     </div>
                 </section>
             </div>
