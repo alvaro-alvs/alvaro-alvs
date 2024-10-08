@@ -15,7 +15,7 @@ export const DemoUsersSearch = () => {
             </div>
 
             <div className="flex text-indigo-100 space-x-10">
-                <figure className="flex items-center space-x-3">
+                <figure className="flex items-center space-x-3 border-b border-indigo-900 p-2">
                     <CiFilter />
                     <p>Filtros</p>
                 </figure>
@@ -23,7 +23,7 @@ export const DemoUsersSearch = () => {
                 <div className="">
                     <h1 className="text-white mr-5"> Genero </h1>
 
-                    <div className="flex ">
+                    <div className="hidden sm:flex">
                         <button className={`text-indigo-300 text-2xl p-2 pr  rounded-l ${activeGender === 'male' ? 'bg-indigo-900' : 'bg-indigo-900/10'}`} onClick={() => setActiveGender('male')}>
                             <IoIosMale />
                         </button>

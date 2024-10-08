@@ -98,13 +98,13 @@ export const TechForYouModal = ({ Product }: { Product: ForYouContentType }) => 
                     <footer className="flex justify-stretch h-max sm:h-[5rem] space-x-5 w-full py-3">
 
                         <Button className="flex flex-1 bg-rose-900/20 space-x-5 items-center border border-rose-600 h-full max-w-[20rem] hover:border-rose-600 hover:bg-rose-900/30 hover:text-rose-200 rounded-xl group" onClick={() => handleAquire()}>
-                            <FaQrcode className="sm:w-5 sm:h-5 " />
+                            <FaQrcode className="sm:w-5 sm:h-5" />
                             <p className="grid text-lg py-2">
                                 {'Comprar Template'}
                             </p>
                         </Button>
 
-                        <div className="border flex-1 border-rose-600 rounded-xl bg-rose-900/20">
+                        <div className="border flex-1 border-rose-600 rounded-xl bg-rose-900/20 hidden">
                             <p>Pagar Entrada</p>
                         </div>
                     </footer>
