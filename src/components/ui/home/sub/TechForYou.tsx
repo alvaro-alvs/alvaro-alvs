@@ -74,9 +74,9 @@ export const TechForYou = () => {
 
 
     return (
-        <WavyBackground backgroundFill="#0c0812" blur={20} colors={['#9F1111', '#570C0C', '#e11d48', '#C21A9D', '#0e0e1b']} className="w-full h-screen sm:p-0">
+        <WavyBackground backgroundFill="#0c0812" blur={20} colors={['#9F1111', '#570C0C', '#e11d48', '#C21A9D', '#0e0e1b']} className="w-full h-full sm:p-0">
 
-            <div className="grid xl:grid-cols-3 xl:grid-flow-col w-full sm:h-max gap-24 sm:px-0">
+            <div className="grid h-full xl:grid-cols-3 xl:grid-flow-col w-full sm:h-max gap-24 sm:px-0">
                 {Content.map((product) => (
                     <TechForYouModal key={product.title} Product={product} />
                 ))}

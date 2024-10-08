@@ -68,7 +68,7 @@ export default function LinkStreamProvider({ children }: { children: any }) {
                         {/* identificação */}
                         <div className="mt-32 mb-10">
                             <h1 className="text-white text-center text-3xl"> Marceline Abadeer </h1>
-                            <h2 className="text-rose-100 text-center text-lg"> Cantora/Produtora </h2>
+                            <h2 className={`text-${theme}-100 text-center text-lg`}> Cantora/Produtora </h2>
                         </div>
                         {/* Links */}
                         <div className="flex flex-col space-y-5">

@@ -1,6 +1,13 @@
 import OxxLogoBg from "@/assets/icons/oxx-logo-bg.jpg"
 import { useState } from "react"
-
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
+} from "@/components/ui/shadcn-ui/dropdown-menu"
 
 export const WebsiteDemo = () => {
     const [title, setTitle] = useState('Digite Aqui...')
@@ -17,6 +24,17 @@ export const WebsiteDemo = () => {
                     </a>
 
                     <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                        <DropdownMenu>
+                            <DropdownMenuTrigger>Open</DropdownMenuTrigger>
+                            <DropdownMenuContent>
+                                <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                                <DropdownMenuSeparator />
+                                <DropdownMenuItem>Profile</DropdownMenuItem>
+                                <DropdownMenuItem>Billing</DropdownMenuItem>
+                                <DropdownMenuItem>Team</DropdownMenuItem>
+                                <DropdownMenuItem>Subscription</DropdownMenuItem>
+                            </DropdownMenuContent>
+                        </DropdownMenu>
                         <button type="button" className="text-white hidden sm:block bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center">Get started</button>
                         <button data-collapse-toggle="navbar-sticky" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
                             <span className="sr-only">Open main menu</span>

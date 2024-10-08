@@ -4,7 +4,7 @@
 module.exports = {
 	safelist: [
 		{
-			pattern: /(bg|border)-(slate|rose|teal|indigo)-(500|800|900)/,
+			pattern: /(bg|border|text)-(slate|rose|teal|indigo)-(100|500|600|800|900)/,
 		},
 	],
 	darkMode: ["class"],

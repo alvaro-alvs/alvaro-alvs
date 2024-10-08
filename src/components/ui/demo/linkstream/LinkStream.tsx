@@ -9,7 +9,7 @@ export const LinkStream = ({ Label, Icon, Content }: { Label: string, Icon?: Rea
             {Icon}
             <div>
                 <p>{Label}</p>
-                <p className={theme === 'slate' ? 'text-slate-100 text-xs font-bold' : `text-${theme}-900 text-xs font-bold`}>{Content}</p>
+                <p className={theme === 'slate' ? 'text-slate-100 text-xs font-bold' : `text-${theme}-600 text-xs font-bold`}>{Content}</p>
             </div>
         </div>
     )
