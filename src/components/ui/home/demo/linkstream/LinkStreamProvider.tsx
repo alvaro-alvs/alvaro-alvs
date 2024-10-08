@@ -1,6 +1,7 @@
 import { Avatar, AvatarImage, AvatarFallback } from "@radix-ui/react-avatar"
 import { createContext, useContext, useState } from "react"
 
+import MarcyIcon from "@/assets/icons/marcy.jpeg"
 
 //* Icons
 import InstaIcon from "@/assets/icons/instagram.png"
@@ -37,23 +38,20 @@ export default function LinkStreamProvider({ children }: { children: any }) {
     //* Config
     const Links = ['Instagram', 'Linkedin', 'Portfólio', 'Whatsapp']
 
-
     return (
         <LinkStreamContext.Provider value={{ addedLinks, setAddedLinks, theme, setTheme }}>
-            <ThemePicker />
             <div className="relative flex flex-col h-full space-y-10 overflow-hidden">
-                {/* Colors Palletes */}
 
                 <section className="relative flex flex-col items-center rounded overflow-y-scroll">
 
-                    <figure className="relative grid min-h-[15rem] w-11/12 rounded-b-2xl overflow-hidden">
+                    <figure className="relative min-h-[15rem] w-11/12 rounded-b-2xl overflow-hidden">
                         {/* fallback */}
-                        <div className="absolute inset-0 z-10 bg-rose-900/50 backdrop-blur-xl"></div>
+                        <div className={`absolute h-full w-full inset-0 z-10 bg-${theme}-500/30 shadow-xl shadow-${theme}-100 rounded-b-2xl backdrop-blur-2xl transition duration-1000`}></div>
 
                         {/* image */}
                         <img
                             className="absolute inset-0 w-full h-full object-cover"
-                            src="https://github.com/shadcn.png"
+                            src={MarcyIcon.src}
                             alt="Imagem de Exemplo"
                         />
                     </figure>
@@ -61,8 +59,8 @@ export default function LinkStreamProvider({ children }: { children: any }) {
                     <div className="relative flex flex-col items-center justify-center pb-24">
 
                         <Avatar className={`absolute flex flex-col justify-center items-center space-y-3 z-30 -top-14`}>
-                            <AvatarImage className="rounded-full w-32 h-32" src="https://github.com/shadcn.png" />
-                            <AvatarFallback>CN</AvatarFallback>
+                            <AvatarImage className="rounded-full w-32 h-32" src={MarcyIcon.src} />
+                            <AvatarFallback>MA</AvatarFallback>
                         </Avatar>
 
                         {/* identificação */}
@@ -70,6 +68,10 @@ export default function LinkStreamProvider({ children }: { children: any }) {
                             <h1 className="text-white text-center text-3xl"> Marceline Abadeer </h1>
                             <h2 className={`text-${theme}-100 text-center text-lg`}> Cantora/Produtora </h2>
                         </div>
+
+                        {/* Theme Picker */}
+                        <ThemePicker />
+
                         {/* Links */}
                         <div className="flex flex-col space-y-5">
                             <LinkStream Icon={<img src={InstaIcon.src} className="h-full max-h-10" />} Label='Instagram' Content='@marcy_' />

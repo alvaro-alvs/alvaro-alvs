@@ -1,17 +1,20 @@
 ---
+import { Meteors } from "@/components/ui/aceternity-ui/meteors"
 
 const { title, bg } = Astro.props;
 ---
 
 
-<article style={`background-image: url('${bg}')`} class={` flex items-stretch transition-all bg-no-repeat bg-cover h- w-full border-rose-900`}>
-    <div class="h-full w-full p-10 backdrop-blur backdrop-brightness-50">
+<article style={``} class={` flex bg-gradient-to-b from-indigo-900/10 to-rose-900/20 items-stretch transition-all bg-no-repeat bg-cover w-full rounded-2xl  border-rose-900`}>
+    <div class="relative overflow-hidden h-full w-full p-10 sm:rounded-2xl backdrop-blur">
         <header class="w-full self">
-            <h1 class="text-2xl text-left"> {title} </h1>
+            <h1 class="text-3xl text-left"> {title} </h1>
         </header>
 
         <div class="grid p-5 h-full">
             <slot />
         </div>
+
+        <Meteors number={20} />
     </div>
 </article>

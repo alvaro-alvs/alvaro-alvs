@@ -3,11 +3,11 @@ import { WavyBackground } from "../../aceternity-ui/wavy-background";
 import type { ForYouContentType } from "@/types/OxxTypes";
 
 import { TechForYouModal } from "./TechForYouModal";
-import UserManagementDemo from "../../demo/systems/UserManagemensDemo";
+import UserManagementDemo from "@/components/ui/home/demo/systems/UserManagemensDemo";
 
 //* Demos
-import { WebsiteDemo } from "../../demo/website/WebsiteDemo";
-import { LinkStreamDemo } from "../../demo/linkstream/LinkStreamDemo";
+import { WebsiteDemo } from "@/components/ui/home/demo/website/WebsiteDemo";
+import { LinkStreamDemo } from "@/components/ui/home/demo/linkstream/LinkStreamDemo";
 
 
 //* Icons
@@ -72,11 +72,10 @@ const Content: ForYouContentType[] = [{
 
 export const TechForYou = () => {
 
-
     return (
-        <WavyBackground backgroundFill="#0c0812" blur={20} colors={['#9F1111', '#570C0C', '#e11d48', '#C21A9D', '#0e0e1b']} className="w-full h-full sm:p-0">
+        <WavyBackground backgroundFill="#0c0812" blur={20} colors={['#9F1111', '#570C0C', '#e11d48', '#C21A9D', '#0e0e1b']} className="w-full h-max sm:h-max sm:p-0">
 
-            <div className="grid h-full xl:grid-cols-3 xl:grid-flow-col w-full sm:h-max gap-10 2xl:gap-24 py-10 sm:py-0 sm:px-0">
+            <div className="grid h-full gap-10 xl:grid-cols-3 xl:grid-flow-col w-full sm:h-max 2xl:gap-20 py-10 sm:py-0 sm:px-0">
                 {Content.map((product) => (
                     <TechForYouModal key={product.title} Product={product} />
                 ))}

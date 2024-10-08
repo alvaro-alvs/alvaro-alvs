@@ -8,7 +8,7 @@ export default function WebsiteDemoFooter() {
                     <div className="mb-6 md:mb-0">
                         <a href="#" className="flex items-center">
                             <img src="https://github.com/shadcn.png" className="h-8 me-3 rounded-2xl" alt="FlowBite Logo" />
-                            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Model By OXX Digital Solutions</span>
+                            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">ACME Industries Ltd.</span>
                         </a>
                     </div>
                     <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
@@ -16,10 +16,10 @@ export default function WebsiteDemoFooter() {
                             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Recursos</h2>
                             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                                 <li className="mb-4">
-                                    <a href="https://astro.build/" className="hover:underline">Astro</a>
+                                    <a target="_blank" href="https://astro.build/" className="hover:underline">Astro</a>
                                 </li>
                                 <li>
-                                    <a href="https://tailwindcss.com/" className="hover:underline">Tailwind CSS</a>
+                                    <a target="_blank" href="https://tailwindcss.com/" className="hover:underline">Tailwind CSS</a>
                                 </li>
                             </ul>
                         </div>
@@ -27,10 +27,10 @@ export default function WebsiteDemoFooter() {
                             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
                             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                                 <li className="mb-4">
-                                    <a href="https://github.com/themesberg/flowbite" className="hover:underline ">Github</a>
+                                    <a target="_blank" href="https://github.com/themesberg/flowbite" className="hover:underline ">Github</a>
                                 </li>
                                 <li>
-                                    <a href="https://discord.gg/4eeurUVvTy" className="hover:underline">Discord</a>
+                                    <a target="_blank" href="https://discord.gg/4eeurUVvTy" className="hover:underline">Discord</a>
                                 </li>
                             </ul>
                         </div>
