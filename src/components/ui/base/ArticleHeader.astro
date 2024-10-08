@@ -1,9 +1,11 @@
 ---
-const { article_title, big } = Astro.props
+const { article_title } = Astro.props
 ---
 
-<header class={`${big && 'text-5xl'} flex items-center text-3xl px-2 space-x-2 lg:px-10 lg:text-6xl lg:space-x-5 w-full first:stroke-rose-600`}>
-    <slot />
+<header class={`sm:px-10 space-y-3 py-10 flex flex-col justify-center items-center w-full z-50 first:stroke-rose-600`}>
+    <h3 class="animate-bg bg-gradient-to-br text-base from-rose-500 to-indigo-500 bg-clip-text text-transparent select-none"> { article_title } </h3>
 
-    <h1 class="bg-gradient-to-r from-rose-500 to-indigo-500 bg-clip-text text-transparent select-none h-[5rem]"> { article_title } </h1>
+    <h1 class="text-center text-2xl xl:text-5xl lg:text-4xl md:text-3xl ">
+        <slot />
+    </h1>
 </header>

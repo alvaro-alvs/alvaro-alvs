@@ -29,7 +29,7 @@ const Content: ForYouContentType[] = [{
         correlationId: 'Compra de Website OXX',
         value: 31900
     },
-    icon: <img src={www.src} className="group-hover:scale-125 transition w-16 z-10" />,
+    icon: <img src={www.src} className="group-hover:scale-125 transition w-10 z-10" />,
     image: <WebsiteDemo />,
 }, {
     title: "LinkStream",
@@ -47,7 +47,7 @@ const Content: ForYouContentType[] = [{
         correlationId: 'Compra-de-LinkStream-OXX',
         value: 9900
     },
-    icon: <img src={links.src} className="group-hover:scale-125 transition w-16 z-10" />,
+    icon: <img src={links.src} className="group-hover:scale-125 transition w-10 z-10" />,
     image: <LinkStreamDemo />,
 }, {
     title: "Sistemas de Gestão Personalizados",
@@ -65,7 +65,7 @@ const Content: ForYouContentType[] = [{
         correlationId: 'Sistema de Personalizado OXX',
         value: 190000
     },
-    icon: <img src={system.src} className="group-hover:scale-125 transition w-16 z-10" />,
+    icon: <img src={system.src} className="group-hover:scale-125 transition w-10 z-10" />,
     image: <UserManagementDemo />
 }]
 
@@ -76,7 +76,7 @@ export const TechForYou = () => {
     return (
         <WavyBackground backgroundFill="#0c0812" blur={20} colors={['#9F1111', '#570C0C', '#e11d48', '#C21A9D', '#0e0e1b']} className="w-full h-full sm:p-0">
 
-            <div className="grid h-full xl:grid-cols-3 xl:grid-flow-col w-full sm:h-max gap-24 sm:px-0">
+            <div className="grid h-full xl:grid-cols-3 xl:grid-flow-col w-full sm:h-max gap-10 2xl:gap-24 py-10 sm:py-0 sm:px-0">
                 {Content.map((product) => (
                     <TechForYouModal key={product.title} Product={product} />
                 ))}

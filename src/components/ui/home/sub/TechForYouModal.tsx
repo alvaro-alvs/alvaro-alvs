@@ -54,7 +54,7 @@ export const TechForYouModal = ({ Product }: { Product: ForYouContentType }) => 
                 <div onClick={() => ('a')} className=" text-left flex flex-col w-full h-full gap-2 p-7 rounded-xl backdrop-blur-2xl border border-transparent cursor-pointer bg-gradient-to-b from-[#0e0e1bc0] to-rose-700/10 hover:border-rose-900 transition group">
 
                     <header className="pb-5">
-                        <div className="absolute -top-8 transform -translate-x-14">
+                        <div className="absolute -top-3 transform -translate-x-10">
                             {Product.icon ? Product.icon : <MdOutlineWeb className="text-4xl text-red-500" />}
                         </div>
 

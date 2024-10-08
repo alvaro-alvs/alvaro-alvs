@@ -4,13 +4,14 @@ import ArticleHeader from "../../base/ArticleHeader.astro";
 import { TechForYou } from "../sub/TechForYou";
 ---
 
-<section class="relative w-full min-h-screen pt-24">
-    <ArticleHeader article_title="Tecnologias Para Você!">
-        <GrTechnology className="stroke-rose-600" />
-    </ArticleHeader>
+<ArticleHeader article_title="Tecnologias Para Você">
+    Principais Modelos de Sites
+</ArticleHeader>
 
+<section class="relative w-full min-h-screen">
+    
     <div
-        class="px-10 py-10 sm:px-24 sm:py-20 overflow-hidden"
+    class="px-10  sm:px-24 sm:py-20 overflow-hidden"
     >
         <TechForYou client:load />
     </div>
