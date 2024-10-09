@@ -12,11 +12,11 @@ export const InputG = ({ name, label }: { name: keyof CustomerType, label: strin
     const handleChange = (value: string) => {
         setCustomer({ ...customer, [name]: value } as CustomerType)
     }
-    
+
     return (
         <div className="group">
-            <Label className="group-hover:scale-110"> {label} </Label>
-            
+            <Label className=""> {label} </Label>
+
             <input
                 name={name}
                 type='text'
