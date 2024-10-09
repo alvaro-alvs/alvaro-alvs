@@ -13,6 +13,7 @@ import { Button } from '@/components/ui/shadcn-ui/button'
 import { FaQrcode } from "react-icons/fa";
 import { BackButton } from "../../ui-assets/BackButton"
 import { useState } from "react"
+import GetProductCTA from "../../modal/GetProductCTA"
 
 
 export const TechForYouModal = ({ Product }: { Product: ForYouContentType }) => {
@@ -73,7 +74,7 @@ export const TechForYouModal = ({ Product }: { Product: ForYouContentType }) => 
                 </div>
             </DialogTrigger>
 
-            <DialogContent className="flex flex-col h-screen max-h-screen max-w-full border-none backdrop-blur-xl">
+            <DialogContent className="flex flex-col h-screen max-h-screen max-w-full border-none z-[99] backdrop-blur-xl">
 
                 <DialogHeader className="text-rose-400 space-y-5 mb-5">
                     <DialogTitle className="sm:flex text-center justify-center items-center font-thin">
@@ -106,21 +107,13 @@ export const TechForYouModal = ({ Product }: { Product: ForYouContentType }) => 
 
                     <figure className="relative flex-1 w-full overflow-hidden border-rose-900 rounded-xl">
                         {Product.image}
+
+                        {/* Modal */}
+                        <div className="absolute right-3 sm:bottom-10 bottom-3 sm:right-10">
+                            <GetProductCTA Product={Product} />
+                        </div>
                     </figure>
 
-                    <footer className="flex justify-center h-max sm:h-[5rem] space-x-5 w-full py-3 z-[100]">
-
-                        <Button className="flex flex-1 bg-rose-900/20 space-x-5 items-center border border-rose-600 h-full max-w-[20rem] hover:border-rose-600 hover:bg-rose-900/30 hover:text-rose-200 rounded-xl group" onClick={() => handleAquire()}>
-                            <FaQrcode className="sm:w-5 sm:h-5" />
-                            <p className="grid text-lg py-2">
-                                {'Obter Modelo'}
-                            </p>
-                        </Button>
-
-                        {/* <div className="border flex-1 border-rose-600 rounded-xl bg-rose-900/20 hidden">
-                            <p>Pagar Entrada</p>
-                        </div> */}
-                    </footer>
                 </div>
             </DialogContent>
         </Dialog>

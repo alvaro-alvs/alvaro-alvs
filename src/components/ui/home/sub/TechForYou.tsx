@@ -1,8 +1,8 @@
 
 import { WavyBackground } from "../../aceternity-ui/wavy-background";
-import type { ForYouContentType } from "@/types/OxxTypes";
-
 import { TechForYouModal } from "./TechForYouModal";
+
+import type { ForYouContentType } from "@/types/OxxTypes";
 import UserManagementDemo from "@/components/ui/home/demo/systems/UserManagemensDemo";
 
 //* Demos
@@ -68,7 +68,6 @@ const Content: ForYouContentType[] = [{
     icon: <img src={system.src} className="group-hover:scale-125 transition w-10 z-10" />,
     image: <UserManagementDemo />
 }]
-
 
 export const TechForYou = () => {
 

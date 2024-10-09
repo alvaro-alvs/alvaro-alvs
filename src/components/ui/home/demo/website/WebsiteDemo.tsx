@@ -11,8 +11,9 @@ export const WebsiteDemo = () => {
     return (
         <div className="relative overflow-y-scroll h-full">
             <DemoNav />
-
+            
             <DemoSection2 />
+
             <DemoSection1 />
 
             <WebsiteDemoImages />

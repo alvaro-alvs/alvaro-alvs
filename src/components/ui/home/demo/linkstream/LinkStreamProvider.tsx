@@ -73,8 +73,8 @@ export default function LinkStreamProvider({ children }: { children: any }) {
                         <ThemePicker />
 
                         {/* Links */}
-                        <div className="flex flex-col space-y-5">
-                            <LinkStream Icon={<img src={InstaIcon.src} className="h-full max-h-10" />} Label='Instagram' Content='@marcy_' />
+                        <div className="flex flex-col space-y-5 pt-3">
+                            <LinkStream Icon={<img src={InstaIcon.src} className="h-full max-h-10" />} Label='Instagram' Content='@marcy_' href="https://www.instagram.com/advtimemoments/" />
                             <LinkStream Icon={<img src={WhatsIcon.src} className="h-full max-h-10" />} Label='Whatsapp' Content='+281-541-568-180' />
                             {children}
                         </div>
