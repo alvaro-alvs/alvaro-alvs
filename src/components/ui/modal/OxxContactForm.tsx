@@ -66,7 +66,7 @@ export default function OxxContactForm() {
 
     return (
         <OxxContactContext.Provider value={{ formData, setFormData, validate, setValidate }}>
-            <div className="flex flex-col gap-y-5 p-7 text-white border- border-indigo-900 rounded h-full ">
+            <div className="flex flex-col gap-y-5 sm:p-7 text-white border- border-indigo-900 rounded h-full ">
                 <OxxInput field="nome" label="Seu Nome" type="text" placeholder="seu nome" required />
 
                 <OxxInput field="email" label="Email" type="text" placeholder="Seu Email Principal 📧" required />

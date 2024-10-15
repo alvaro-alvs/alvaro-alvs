@@ -14,6 +14,7 @@ import { LinkStreamDemo } from "@/components/ui/home/demo/linkstream/LinkStreamD
 import www from "@/assets/icons/www.png"
 import system from "@/assets/icons/system.png"
 import links from "@/assets/icons/data-link.png"
+import PaymentProvider from "@/components/providers/PaymentProvider";
 
 const Content: ForYouContentType[] = [{
     title: "Desenvolvimento de Website",
@@ -25,12 +26,18 @@ const Content: ForYouContentType[] = [{
         'Design único e personalizado, voltado para identidade visual da marca'
     ],
     description: 'Nosso foco é desenvolver sites que vão além da estética, com performance elevada e resultados mensuráveis. Trabalhe conosco para construir sua presença online de forma profissional e eficiente.',
+    pay: {
+        sightOnly: false,
+        installments: 3,
+        value: 0
+    },
     pricing: {
         correlationId: 'Compra de Website OXX',
-        value: 31900
+        value: 10
     },
     icon: <img src={www.src} className="group-hover:scale-125 transition w-10 z-10" />,
     image: <WebsiteDemo />,
+    clientMessage: 'Nome da Sua Empresa: \n\nPorte da Empresa: \n\nDescrição do Projeto: ',
 }, {
     title: "LinkStream",
     subtitle: 'Exclusividade Garantida',
@@ -42,13 +49,19 @@ const Content: ForYouContentType[] = [{
         'Plano VITALÌCIO',
         'Prioridade de desenvolvimento com pagamento adiantado para funcionalidades exclusivas'
     ],
-    description: 'Uma maneira prática e inteligente de organizar e personalizar seus links favoritos. Com suporte para armazenar até 100 links, é possível marcar os mais importantes para que estejam sempre em destaque, facilitando o acesso rápido às suas prioridades',
+    description: 'Uma maneira prática e inteligente de organizar e personalizar seus links favoritos. Com suporte para armazenar até 100 links',
+    pay: {
+        sightOnly: true,
+        installments: 3,
+        value: 0
+    },
     pricing: {
         correlationId: 'Compra-de-LinkStream-OXX',
         value: 9900
     },
     icon: <img src={links.src} className="group-hover:scale-125 transition w-10 z-10" />,
     image: <LinkStreamDemo />,
+    clientMessage: 'Nome da Sua Empresa: \n\nPorte da Empresa: \n\nDescrição do Projeto: ',
 }, {
     title: "Sistemas de Gestão Personalizados",
     subtitle: 'Exclusividade Garantida',
@@ -61,25 +74,33 @@ const Content: ForYouContentType[] = [{
         'Integração com sistemas de terceiros (APIs, ERPs, CRMs)',
     ],
     description: 'Otimize todas as operações do seu negócio, conectando áreas como controle financeiro, gestão de estoque e relacionamento com o cliente em um único sistema. Assim, você torna o gerenciamento mais simples e eficaz.',
+    pay: {
+        sightOnly: false,
+        installments: 3,
+        value: 0
+    },
     pricing: {
-        correlationId: 'Sistema de Personalizado OXX',
+        correlationId: 'Sistema Personalizado OXX',
         value: 190000
     },
     icon: <img src={system.src} className="group-hover:scale-125 transition w-10 z-10" />,
-    image: <UserManagementDemo />
+    image: <UserManagementDemo />,
+    clientMessage: 'Nome da Sua Empresa: \n\nPorte da Empresa: \n\nDescrição do Projeto: ',
 }]
 
 export const TechForYou = () => {
 
     return (
-        <WavyBackground backgroundFill="#0c0812" blur={20} colors={['#9F1111', '#570C0C', '#e11d48', '#C21A9D', '#0e0e1b']} className="w-full h-max sm:h-max sm:p-0">
+        <PaymentProvider>
+            <WavyBackground backgroundFill="#0c0812" blur={20} colors={['#9F1111', '#570C0C', '#e11d48', '#C21A9D', '#0e0e1b']} className="w-full h-max sm:h-max sm:p-0">
 
-            <div className="grid h-full gap-10 xl:grid-cols-3 xl:grid-flow-col w-full sm:h-max 2xl:gap-20 py-10 sm:py-0 sm:px-0">
-                {Content.map((product) => (
-                    <TechForYouModal key={product.title} Product={product} />
-                ))}
-            </div>
+                <div className="grid h-full gap-10 xl:grid-cols-3 xl:grid-flow-col w-full sm:h-max 2xl:gap-20 py-10 sm:py-0 sm:px-0">
+                    {Content.map((product) => (
+                        <TechForYouModal key={product.title} Product={product} />
+                    ))}
+                </div>
 
-        </WavyBackground>
+            </WavyBackground>
+        </PaymentProvider>
     )
 }

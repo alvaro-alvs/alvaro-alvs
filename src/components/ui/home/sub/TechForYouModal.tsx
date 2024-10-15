@@ -7,52 +7,21 @@ import {
     DialogTrigger,
 } from "@/components/ui/shadcn-ui/dialog"
 import type { ForYouContentType } from "@/types/OxxTypes"
-import { IoIosLink, IoMdArrowBack } from "react-icons/io"
-import { MdOutlineWeb } from "react-icons/md"
-import { Button } from '@/components/ui/shadcn-ui/button'
-import { FaQrcode } from "react-icons/fa";
-import { BackButton } from "../../ui-assets/BackButton"
+import { IoIosLink, IoMdArrowBack, IoMdExit } from "react-icons/io"
 import { useState } from "react"
-import GetProductCTA from "../../modal/GetProductCTA"
+import GetProductCTA from "../../modal/purchase/GetProductCTA"
+import PaymentProvider, { usePayment } from "@/components/providers/PaymentProvider"
+import { Button } from "../../shadcn-ui/button"
 
 
 export const TechForYouModal = ({ Product }: { Product: ForYouContentType }) => {
     const [open, setOpen] = useState(false)
-
-    const handleAquire = async () => {
-
-        const res = await fetch('api/payment', {
-            body: JSON.stringify({
-                correlationID: Product.pricing.correlationId,
-                value: Product.pricing.value
-            }),
-            method: 'POST',
-            headers: {
-                'Authorization': import.meta.env.OPEN_PIX_KEY,
-                'Content-Type': 'application/json'
-            }
-        })
-
-        if (res.ok) {
-            const data = await res.json()
-
-            console.log(data)
-        } else {
-            console.log(res)
-        }
-    }
-
-    const formatarEmReais = (valorEmCentavos: number) => {
-        // Converte de centavos para reais
-        const valorEmReais = valorEmCentavos / 100;
-        // Formata com ponto de milhar e duas casas decimais
-        return valorEmReais.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    }
+    const { setProduct, handleClose } = usePayment()
 
     return (
         <Dialog open={open} onOpenChange={setOpen}>
-            <DialogTrigger>
-                <div onClick={() => ('a')} className="text-left flex flex-col w-full h-full gap-2 p-7 sm:rounded-2xl backdrop-blur-2xl border border-transparent cursor-pointer bg-gradient-to-b from-rose-950/30 to-indigo-900/10 hover:border-rose-900 transition group">
+            <DialogTrigger onClick={() => setProduct(Product)}>
+                <div className="text-left flex flex-col w-full h-full gap-2 p-7 sm:rounded-2xl backdrop-blur-2xl border border-transparent cursor-pointer bg-gradient-to-b from-rose-950/30 to-indigo-900/10 hover:border-rose-900 transition group">
 
                     <header className="pb-5">
                         <div className="absolute -top-3 transform -translate-x-10">
@@ -64,7 +33,7 @@ export const TechForYouModal = ({ Product }: { Product: ForYouContentType }) => 
                     </header>
 
                     <ul className="space-y-2 mb-5 overflow-hidden text-left">
-                        {Product.items?.map((item) => (<li className="text">. {item}</li>))}
+                        {Product.items?.map((item, t) => (<li key={t} className="text">. {item}</li>))}
                     </ul>
 
                     <a href="#" className="flex text-xs items-center justify-center xl:justify-start space-x-1 group-hover:space-x-3 text-rose-300 mt-auto group-hover:underline">
@@ -76,15 +45,8 @@ export const TechForYouModal = ({ Product }: { Product: ForYouContentType }) => 
 
             <DialogContent className="flex flex-col h-screen max-h-screen max-w-full border-none z-[99] backdrop-blur-xl">
 
-                <DialogHeader className="text-rose-400 space-y-5 mb-5">
+                <DialogHeader className="text-rose-400 mb-5">
                     <DialogTitle className="sm:flex text-center justify-center items-center font-thin">
-
-                        {/* Botao para fechar o Modal */}
-                        <div onClick={() => setOpen(false)} className="flex self-start items-center space-x-3 border border-rose-900 p-2 px-5 rounded-xl cursor-pointer hover:bg-rose-800 transition hover:text-rose-100">
-                            <IoMdArrowBack />
-                            <p>Voltar</p>
-                        </div>
-
                         {/* Titulo do Modal */}
                         <p className="w-full text-center mx-auto text-2xl pt-10 sm:pt-0 sm:text-5xl sm:pr-24">
                             {Product.title}
@@ -109,8 +71,15 @@ export const TechForYouModal = ({ Product }: { Product: ForYouContentType }) => 
                         {Product.image}
 
                         {/* Modal */}
-                        <div className="absolute right-3 sm:bottom-10 bottom-3 sm:right-10">
+                        <div className="absolute space-y-3 right-3 sm:bottom-10 bottom-3 sm:right-10">
+                            {/* Get Website CTA */}
                             <GetProductCTA Product={Product} />
+
+                            {/* Botao para fechar o Modal */}
+                            <Button onClick={() => setOpen(false)} className="w-full h-10 flex items-center space-x-1 text-red-200 bg-red-900/80 border border-red-900 hover:bg-red-900 hover:text-red-100 backdrop-blur-xl">
+                                <IoMdExit className="" />
+                                <p className="text-xs"> Fechar </p>
+                            </Button>
                         </div>
                     </figure>
 

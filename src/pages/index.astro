@@ -6,6 +6,10 @@ import QuemSou from "../components/ui/home/articles/QuemSou.astro";
 import OxxAlvsHeader from "@/components/ui/home/articles/OxxAlvsHeader.astro";
 import TechStackSession from "@/components/ui/home/articles/FullStackArticle.astro";
 import MainTech from "@/components/ui/home/articles/TechForYouSection.astro";
+import { TiDocumentText } from "react-icons/ti";
+import OxxLogo from "@/assets/icons/icon_oxx.svg";
+import { GiAtom } from "react-icons/gi";
+import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 
 export const prefetch = true;
 ---
@@ -13,38 +17,97 @@ export const prefetch = true;
 <Layout title="Alvaro Alves - OXX - Digital Solutions">
 	<PageProvider>
 		<OxxHeader title="index">
-			<OxxAlvsHeader />
-		</OxxHeader>
+			<!-- <OxxAlvsHeader /> -->
+			<div
+				class="relative flex items-center w-full h-full min-h-[45rem] overflow-hidden"
+			>
+				<img
+					class="animate-tilt absolute -right-[40rem]"
+					src={OxxLogo.src}
+					alt=""
+				/>
+				<!-- Wrapper dos textos -->
+				<div
+					class="h-full flex flex-col px-20 text-left overflow-visible space-y-10 sm:pb-24"
+				>
+					<header class="z-10">
+						<h1
+							class="oxx-title z-10 capitalize font-semibold text-6xl bg-gradient-to-br from-rose-600 to-red-700 bg-clip-text text-transparent pb-3"
+						>
+							Soluções Completas para o seu Negócio
+						</h1>
 
+						<h2 class="z-10 text-3xl">
+							Projetos digitais sob medida, com inovação e
+							excelência técnica
+						</h2>
+					</header>
+
+					<footer class="mt-10">
+						<nav class="flex gap-10 justify-start">
+							<a
+								href="#quem-sou"
+								class="flex items-center space-x-2 border border-rose-900 rounded bg-rose-900/30 p-3 backdrop-blur-xl hover:bg-rose-950 transition"
+							>
+								<p>Sobre Mim</p>
+								<TiDocumentText className="" />
+							</a>
+
+							<a
+								href="#TechForYou"
+								class="flex items-center space-x-2 border border-rose-900 rounded bg-rose-900/30 p-3 backdrop-blur-xl hover:bg-rose-950 transition group"
+							>
+								<p>Principais Soluções</p>
+								<div
+									class="relative ml-2 w-5 flex items-center justify-center"
+								>
+									<GiAtom
+										className="absolute group-hover:opacity-0 opacity-100 transition"
+									/>
+									<MdKeyboardDoubleArrowRight
+										className="absolute group-hover:opacity-100 opacity-0 transition"
+									/>
+								</div>
+							</a>
+						</nav>
+					</footer>
+				</div>
+			</div>
+		</OxxHeader>
 		<section
 			class="z-20 flex flex-col items-center w-full mx-auto min-h-screen pt-20"
 		>
-			<div class="flex items-center lg:px-10 max-lg:px-10 max-sm:px-3 min-h-screen">
+			<div
+				class="flex items-center lg:px-10 max-lg:px-10 max-sm:px-3 min-h-screen"
+			>
 				<QuemSou />
 			</div>
 
 			<!-- tech for you -->
 			<MainTech />
-			
+
 			<TechStackSession />
 		</section>
-
 	</PageProvider>
 </Layout>
 
-
 <style>
-	.oxx-index-header {
-		/* background: url('/banner_fallback.svg') center no-repeat, url('/nasa_city.jpg') bottom no-repeat fixed; */
-		animation: showcase 9s infinite ease-in-out alternate-reverse;
+	.oxx-title {
+		user-select: none;
+		/* text-shadow: 0 0 1rem #e11d4773; */
 	}
-	
-	@keyframes showcase {
+
+	.animate-tilt {
+		animation: tilt 10s infinite ease-in-out alternate-reverse;
+		scale: 150%;
+	}
+
+	@keyframes tilt {
 		from {
-			background-position: bottom;
+			transform: rotate(-10deg);
 		}
 		to {
-			background-position: center;
+			transform: rotate(10deg);
 		}
 	}
 </style>

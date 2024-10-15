@@ -1,7 +1,7 @@
 import WebsiteDemoFooter from "./WebsiteDemoFooter"
-import DemoSection2 from "./DemoSection2"
-import DemoSection1 from "./DemoSection1"
-import DemoNav from "./DemoNav"
+import DemoSection2 from "./WebsiteDemoSection2"
+import DemoSection1 from "./WebsiteDemoSection1"
+import DemoNav from "./WebsiteDemoNav"
 import WebsiteDemoImages from "./WebsiteDemoImages"
 import WebsiteDemoForm from "./WebsiteDemoForm"
 

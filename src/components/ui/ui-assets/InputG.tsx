@@ -1,29 +1,43 @@
-import { usePayment } from "@/components/providers/PaymentProviders"
+import { usePayment } from "@/components/providers/PaymentProvider"
 import type { CustomerType } from "@/types/PaymentTypes"
 import { InputStyles } from "./OxxInput"
 import { Label } from "@radix-ui/react-dropdown-menu"
+import { useEffect } from "react"
+import { ValidateCustomer } from "@/services/ValidateCustomer"
 
-
-
-
-export const InputG = ({ name, label }: { name: keyof CustomerType, label: string }) => {
+export const InputG = ({ name, label }: { name: keyof CustomerType['validation'], label: string }) => {
     const { customer, setCustomer } = usePayment()
 
+    // Handle para mudança no input
     const handleChange = (value: string) => {
-        setCustomer({ ...customer, [name]: value } as CustomerType)
+        const isValid = ValidateCustomer(name, value);
+
+        setCustomer(prev => ({
+            ...prev,
+            [name]: value,
+            validation: {
+                ...prev.validation,
+                [name]: isValid
+            }
+        }));
     }
 
+    useEffect(() => {
+        console.log(`Campo ${name} válido: ${customer.validation[name]}`);
+    }, [customer.validation[name]]); // Monitora apenas a mudança específica de 'name'
+
     return (
-        <div className="group">
-            <Label className=""> {label} </Label>
+        <div className="group w-full">
+            <Label className="">{label}</Label>
 
             <input
                 name={name}
                 type='text'
-                value={customer[name as keyof CustomerType]}
-                className={`${InputStyles} w-full `}
+                value={customer[name]?.toString()}
+                className={`${InputStyles} w-full ${customer.validation[name] && 'ring-2 ring-red-600 border-red-500'}`}
                 onChange={(e) => handleChange(e.target.value)}
+                onBlur={(e) => handleChange(e.target.value)} // Valida ao sair do campo
             />
         </div>
-    )
+    );
 }
