@@ -21,7 +21,7 @@ export const POST: APIRoute = async ({ request }) => {
 
     // Se a validação falhar, retorna a resposta de erro
     if (validationResponse.message === 'ok') {
-        const OxxValleyResponse = await fetch('https://oxx-three.vercel.app/oxx/orders/place/', {
+        const OxxValleyResponse = await fetch('http://127.0.0.1:8000/oxx/orders/place/', {
             body: JSON.stringify({
                 customer: {
                     name: data.customer.name,
@@ -65,6 +65,7 @@ export const POST: APIRoute = async ({ request }) => {
             });
         }
     }
+    
     return new Response(JSON.stringify(validationResponse), {
         status: 400,
         headers: {

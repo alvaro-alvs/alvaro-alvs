@@ -1,3 +1,8 @@
+#! Paginas Desativadas
+.src/pages/login.astro
+.src/pages/showcase.astro
+.src/pages/links.astro
+
 # build output
 dist/
 
