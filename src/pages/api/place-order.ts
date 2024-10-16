@@ -1,101 +1,74 @@
 import { ValidateCustomer } from "@/services/ValidateCustomer";
+import { PayloadValidation } from "@/services/validation/PayloadValidation";
 import type { CustomerType } from "@/types/PaymentTypes";
 import type { APIRoute } from "astro";
 
-export const POST: APIRoute = async ({ request }) => {
-    //* https://oxx-three.vercel.app/oxx/orders/place/
 
-    //* Criar pedido de pagamento com pix via OpenPix
-    //* Criar novo usuario na OXX Valley -> se for o primeiro pedido
-    //* Criar novo pedido na conta do usuario -> se usuario estiver cadastrado
+
+//* https://oxx-three.vercel.app/oxx/orders/place/
+
+//* Criar pedido de pagamento com pix via OpenPix
+//* Criar novo usuario na OXX Valley -> se for o primeiro pedido
+//* Criar novo pedido na conta do usuario -> se usuario estiver cadastrado
+
+
+export const POST: APIRoute = async ({ request }) => {
 
     const data = await request.json();
 
-    // Função de validação
-    function PayloadValidation() {
-        if (!data) {
-            return new Response(JSON.stringify({
-                message: "No data provided"
-            }), {
-                status: 400,
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
-        }
-
-        if (!data.value) {
-            return new Response(JSON.stringify({
-                message: "Sem dados do Produto"
-            }), {
-                status: 400,
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
-        }
-
-        // Valida os campos do `customer`
-        const validationErrors: string[] = [];
-
-        Object.keys(data.customer.validation).forEach((field) => {
-            if (ValidateCustomer(field as keyof CustomerType['validation'], data.customer[field])) {
-                validationErrors.push(`Campo ${field} é inválido.`);
-            }
-        });
-
-        // Se houver erros de validação, retorna uma resposta com erro
-        if (validationErrors.length > 0) {
-            return new Response(JSON.stringify({
-                message: "Erros de validação",
-                errors: validationErrors
-            }), {
-                status: 400,
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
-        }
-
-
-        return null; // Retorna null se não houver erro
-    }
-
     // Chama a função de validação
-    const validationResponse = PayloadValidation();
+    const validationResponse = PayloadValidation({ data });
 
     // Se a validação falhar, retorna a resposta de erro
-    if (validationResponse) {
-        return validationResponse;
-    }
+    if (validationResponse.message === 'ok') {
+        const OxxValleyResponse = await fetch('https://oxx-three.vercel.app/oxx/orders/place/', {
+            body: JSON.stringify({
+                customer: {
+                    name: data.customer.name,
+                    taxID: data.customer.taxID,
+                    email: data.customer.email,
+                    phone: data.customer.phone,
+                    pix_key: ''
+                },
+                order: {
+                    correlationID: data.correlationID,
+                    value: data.value,
+                    comment: data.comment,
+                    additionalInfo: data.additionalInfo,
+                }
+            }),
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'api-key': import.meta.env.OXX_KEY
+            }
+        })
 
-    //* 10% -> cache openPix response
-    const openPixResponse = await fetch('https://api.openpix.com.br/api/v1/charge', {
-        body: JSON.stringify(data),
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `${import.meta.env.OPEN_PIX_ADDID}`
+        if (OxxValleyResponse.status === 400) {
+
+            return new Response(JSON.stringify({ error: true }), {
+                status: 400,
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
         }
-    })
 
-    if (openPixResponse.ok) {
-        const openPixData = await openPixResponse.json()
+        if (OxxValleyResponse.status === 201) {
+            const OxxValleyData = await OxxValleyResponse.json();
 
-        //* 
-        return new Response(JSON.stringify(openPixData), {
-            status: 200,
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
-    } else {
-        const errorData = await openPixResponse.json()
-        return new Response(JSON.stringify(errorData), {
-            status: openPixResponse.status,
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
+            return new Response(JSON.stringify(OxxValleyData), {
+                status: 201,
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+        }
     }
+    return new Response(JSON.stringify(validationResponse), {
+        status: 400,
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
 };

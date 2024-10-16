@@ -22,10 +22,6 @@ export const InputG = ({ name, label }: { name: keyof CustomerType['validation']
         }));
     }
 
-    useEffect(() => {
-        console.log(`Campo ${name} válido: ${customer.validation[name]}`);
-    }, [customer.validation[name]]); // Monitora apenas a mudança específica de 'name'
-
     return (
         <div className="group w-full">
             <Label className="">{label}</Label>
