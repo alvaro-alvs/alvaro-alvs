@@ -1,3 +1,10 @@
+const decoder = new TextDecoder('iso-8859-1');
+
+
+
+export const decodedString = (value: string | undefined) => {
+    return decoder.decode(new TextEncoder().encode(value))
+}
 
 export function formatCpf(cpf: string | undefined): string {
     if (!cpf) return '';

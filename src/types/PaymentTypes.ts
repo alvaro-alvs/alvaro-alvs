@@ -38,3 +38,57 @@ export type PaymentContextType = {
     setOpen: React.Dispatch<React.SetStateAction<boolean>>,
     handleClose: () => void
 }
+
+export type PaymentDataType = {
+    charge: {
+        customer: {
+            name: string;
+            email: string;
+            taxID: {
+                taxID: string;
+                type: string;
+            };
+            correlationID: string;
+            phone: string;
+        };
+        value: number;
+        comment: string;
+        identifier: string;
+        correlationID: string;
+        transactionID: string;
+        status: string;
+        additionalInfo: {
+            key: string;
+            value: string;
+        }[];
+        fee: number;
+        discount: number;
+        valueWithDiscount: number;
+        expiresDate: string;
+        type: string;
+        paymentLinkID: string;
+        createdAt: string;
+        updatedAt: string;
+        brCode: string;
+        expiresIn: number;
+        pixKey: string;
+        paymentLinkUrl: string;
+        qrCodeImage: string;
+        globalID: string;
+        paymentMethods: {
+            pix: {
+                method: string;
+                txId: string;
+                value: number;
+                status: string;
+                fee: number;
+                brCode: string;
+                transactionID: string;
+                identifier: string;
+                qrCodeImage: string;
+            };
+        };
+    };
+    correlationID: string;
+    brCode: string;
+}
