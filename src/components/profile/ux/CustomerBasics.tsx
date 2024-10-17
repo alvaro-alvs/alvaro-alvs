@@ -1,6 +1,4 @@
-import { Button } from "@/components/ui/shadcn-ui/button"
 import type { CustomerType, PaymentPayloadType } from "@/types/PaymentTypes"
-import Cookies from "js-cookie"
 import { useEffect, useState } from "react"
 import { toast } from "sonner"
 import { formatBrl, formatCpf } from "@/services/formatStrings"
