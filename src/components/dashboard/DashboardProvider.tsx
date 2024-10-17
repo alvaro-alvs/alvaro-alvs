@@ -26,7 +26,7 @@ export default function DasboardProvider({children}: any) {
 
     return (
         <DashboardContext.Provider value={{loginData, setLoginData}}>
-            {status === 'idle' ? (
+            {dashboard.status === 'idle' ? (
                 <DashboardLogin DashboardContext={{loginData, setLoginData}} />
             ) : (
                 <p> Logado </p>

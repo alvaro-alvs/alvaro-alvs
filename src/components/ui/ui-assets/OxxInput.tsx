@@ -10,11 +10,11 @@ type OxxInputType = {
 }
 
 // todo refatorar usando ZOD
+export const InputStyles = "p-2 text-indigo-100 border border-slate-800 bg-slate-950 rounded hover:scale-105 focus-visible:scale-110 hover:shadow-xl hover:shadow-indigo-700/10 focus-visible:border-[1px_solid_#3e1d63] focus-visible:ring-indigo-900 focus-visible:outline-0 focus-visible:border-indigo-700 transition-all duration-200"
 
 export const OxxInput = ({ field, type, label, placeholder, required = false }: OxxInputType) => {
     const { formData, setFormData, validate, setValidate } = useContext(OxxContactContext)
 
-    const InputStyles = "p-2 text-indigo-100 border border-indigo-900 bg-slate-950 rounded hover:scale-105 focus-visible:scale-110 hover:shadow-xl hover:shadow-indigo-700/10 focus-visible:border-[1px_solid_#3e1d63] focus-visible:ring-indigo-900 focus-visible:outline-0 focus-visible:border-indigo-700 transition-all duration-200"
 
     const validateField = (field: string): boolean => {
         if (formData[field] && formData[field].length > 2) {

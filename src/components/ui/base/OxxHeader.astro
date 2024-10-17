@@ -16,7 +16,7 @@ const opt_fallback = await getImage({ src: fallback });
 
 <header class="">
     <nav
-        class="overflow-hidden fixed bottom-0 w-full h-20 max-h-20 z-50 backdrop-blur-xl sm:backdrop-blur-md shadow-lg"
+        class="overflow-hidden fixed bottom-0 w-full h-20 max-h-20 z-40 backdrop-blur-xl sm:backdrop-blur-md shadow-lg"
     >
         <!-- border animation -->
         <div class="w-full h-px overflow-hidden bg-transparency relative">
@@ -26,7 +26,9 @@ const opt_fallback = await getImage({ src: fallback });
             </div>
         </div>
 
-        <div class="relative flex items-center justify-center h-full w-full p-3">
+        <div
+            class="relative flex items-center justify-center h-full w-full p-3"
+        >
             <OxxDefaultNav client:load />
 
             <MobileOxxHeader client:load />
@@ -60,8 +62,23 @@ const opt_fallback = await getImage({ src: fallback });
 </header>
 <style>
     /* * Hi Dev! :D */
+
+    .oxx-index-header {
+        /* background: url('/banner_fallback.svg') center no-repeat, url('/nasa_city.jpg') bottom no-repeat fixed; */
+        animation: showcase 20s infinite ease-in-out alternate-reverse;
+    }
+
     .border-animation {
         animation: animate-cross infinite alternate-reverse 5s;
+    }
+
+    @keyframes showcase {
+        from {
+            background-position: bottom;
+        }
+        to {
+            background-position: center;
+        }
     }
 
     @keyframes animate-cross {

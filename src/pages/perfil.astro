@@ -1,0 +1,24 @@
+---
+import PageProvider from "@/PageProvider.astro";
+import { CustomerBasics } from "@/components/profile/ux/CustomerBasics";
+import OxxHeader from "@/components/ui/base/OxxHeader.astro";
+
+const APPID = import.meta.env.OPEN_PIX_ADDID
+
+//* use its value as pedido.value
+const pedido = Astro.cookies.get('order')
+
+let pedidoJson = undefined
+
+if (pedido) {
+    pedidoJson = JSON.parse(pedido.value)
+}
+
+---
+
+<PageProvider title="Perfil">
+    <OxxHeader title={pedidoJson.data.customer.name}>
+        
+    </OxxHeader>
+    <CustomerBasics order={pedidoJson} app_id={APPID} client:load />
+</PageProvider>

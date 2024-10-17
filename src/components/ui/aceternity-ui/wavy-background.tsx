@@ -49,17 +49,25 @@ export const WavyBackground = ({
     const init = () => {
         canvas = canvasRef.current;
         ctx = canvas.getContext("2d");
+
+        const parent = canvas.parentElement;  // Acessa o contêiner pai
+
+        // Ajusta a largura e altura para corresponder ao contêiner pai
         w = ctx.canvas.width = window.innerWidth;
-        h = ctx.canvas.height =  window.innerHeight - 100;
+        h = ctx.canvas.height = parent.offsetHeight;
+
         ctx.filter = `blur(${blur}px)`;
         nt = 0;
+
         window.onresize = function () {
             w = ctx.canvas.width = window.innerWidth;
-            h = ctx.canvas.height = window.innerHeight  - 100;
+            h = ctx.canvas.height = parent.offsetHeight;
             ctx.filter = `blur(${blur}px)`;
         };
+
         render();
     };
+
 
     const waveColors = colors ?? [
         "#38bdf8",
@@ -117,14 +125,14 @@ export const WavyBackground = ({
             )}
         >
             <canvas
-                className="absolute inset-0 z-0"
+                className="absolute inset-0 z-0 overflow-hidden"
                 ref={canvasRef}
                 id="canvas"
                 style={{
                     ...(isSafari ? { filter: `blur(${blur}px)` } : {}),
                 }}
             ></canvas>
-            <div className={cn("relative z-10", className)} {...props}>
+            <div className={cn("relative z-10 p-0", className)} {...props}>
                 {children}
             </div>
         </div>

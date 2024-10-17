@@ -3,9 +3,13 @@ import OxxHeader from "../components/ui/base/OxxHeader.astro";
 import Layout from "../layouts/Layout.astro";
 import PageProvider from "../PageProvider.astro";
 import QuemSou from "../components/ui/home/articles/QuemSou.astro";
-import OxxAlvsHeader from "../components/ui/landing/OxxAlvsHeader.astro";
+import OxxAlvsHeader from "@/components/ui/home/articles/OxxAlvsHeader.astro";
 import TechStackSession from "@/components/ui/home/articles/FullStackArticle.astro";
-import MainTech from "@/components/ui/home/articles/MainTech.astro";
+import MainTech from "@/components/ui/home/articles/TechForYouSection.astro";
+import { TiDocumentText } from "react-icons/ti";
+import OxxLogo from "@/assets/icons/icon_oxx.svg";
+import { GiAtom } from "react-icons/gi";
+import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 
 export const prefetch = true;
 ---
@@ -13,51 +17,103 @@ export const prefetch = true;
 <Layout title="Alvaro Alves - OXX - Digital Solutions">
 	<PageProvider>
 		<OxxHeader title="index">
-			<OxxAlvsHeader />
-		</OxxHeader>
+			<!-- <OxxAlvsHeader /> -->
+			<div
+				class="relative flex items-center w-full h-full pb-24 sm:min-h-[45rem] overflow-hidden"
+			>
+				<img
+					class="animate-tilt absolute -top-52 -right-24 sm:-right-[40rem]"
+					src={OxxLogo.src}
+					alt=""
+				/>
+				<!-- Wrapper dos textos -->
+				<div
+					class="h-full flex flex-col p-5 sm:px-20 text-left overflow-visible space-y-10 pt-24 sm:pb-24"
+				>
+					<header class="z-10">
+						<h1
+							class="oxx-title text-4xl sm:text-6xl z-10 capitalize font-semibold bg-gradient-to-br from-rose-600 to-red-700 bg-clip-text text-transparent pb-3"
+						>
+							Soluções Completas para o seu Negócio
+						</h1>
 
+						<h2 class="z-10 text-xl sm:text-3xl">
+							Projetos digitais sob medida, com inovação e
+							excelência técnica
+						</h2>
+					</header>
+
+					<footer class="mt-10">
+						<nav class="space-y-5 sm:space-y-0 sm:flex gap-10 justify-start">
+							<a
+								href="#quem-sou"
+								class="flex items-center space-x-2 border border-rose-900 rounded bg-rose-900/30 p-3 backdrop-blur-xl hover:bg-rose-950 transition"
+							>
+								<p>Sobre Mim</p>
+								<TiDocumentText className="" />
+							</a>
+
+							<a
+								href="#TechForYou"
+								class="flex items-center space-x-2 border border-rose-900 rounded bg-rose-900/30 p-3 backdrop-blur-xl hover:bg-rose-950 transition group"
+							>
+								<p>Principais Soluções</p>
+								<div
+									class="relative ml-2 w-5 flex items-center justify-center"
+								>
+									<GiAtom
+										className="absolute group-hover:opacity-0 opacity-100 transition"
+									/>
+									<MdKeyboardDoubleArrowRight
+										className="absolute group-hover:opacity-100 opacity-0 transition"
+									/>
+								</div>
+							</a>
+						</nav>
+					</footer>
+				</div>
+			</div>
+		</OxxHeader>
 		<section
 			class="z-20 flex flex-col items-center w-full mx-auto min-h-screen pt-20"
 		>
-			<div class="flex items-center lg:px-10 max-lg:px-10 max-sm:px-3 min-h-screen">
+			<div
+				class="flex items-center lg:px-10 max-lg:px-10 max-sm:px-3 min-h-screen"
+			>
 				<QuemSou />
 			</div>
 
+			<!-- tech for you -->
 			<MainTech />
-			
+
 			<TechStackSession />
 		</section>
-
-		<div class="hidden w-full flex flex-col items-center mb-20">
-			<h1> Anuncie Aqui </h1>
-
-			<script type="text/javascript">
-				atOptions = {
-					'key' : 'cfe082ad2b6651889193bddccff2e443',
-					'format' : 'iframe',
-					'height' : 250,
-					'width' : 300,
-					'params' : {}
-				};
-			</script>
-			<script type="text/javascript" src="//www.topcreativeformat.com/cfe082ad2b6651889193bddccff2e443/invoke.js"></script>
-		</div>
 	</PageProvider>
 </Layout>
 
-
 <style>
-	.oxx-index-header {
-		/* background: url('/banner_fallback.svg') center no-repeat, url('/nasa_city.jpg') bottom no-repeat fixed; */
-		animation: showcase 9s infinite ease-in-out alternate-reverse;
+	.oxx-title {
+		user-select: none;
+		/* text-shadow: 0 0 1rem #e11d4773; */
 	}
-	
-	@keyframes showcase {
+
+	.animate-tilt {
+		animation: tilt 10s infinite ease-in-out alternate-reverse;
+		scale: 150%;
+	}
+
+	@media screen and (max-width: 798px) {
+		.animate-tilt {
+			scale: 250%;
+		}
+	}
+
+	@keyframes tilt {
 		from {
-			background-position: bottom;
+			transform: rotate(-10deg);
 		}
 		to {
-			background-position: center;
+			transform: rotate(10deg);
 		}
 	}
 </style>
