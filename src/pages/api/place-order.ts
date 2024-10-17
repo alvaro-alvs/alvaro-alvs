@@ -1,8 +1,5 @@
-import { ValidateCustomer } from "@/services/ValidateCustomer";
 import { PayloadValidation } from "@/services/validation/PayloadValidation";
-import type { CustomerType } from "@/types/PaymentTypes";
 import type { APIRoute } from "astro";
-
 
 
 //* https://oxx-three.vercel.app/oxx/orders/place/
@@ -21,7 +18,7 @@ export const POST: APIRoute = async ({ request }) => {
 
     // Se a validação falhar, retorna a resposta de erro
     if (validationResponse.message === 'ok') {
-        const OxxValleyResponse = await fetch('http://127.0.0.1:8000/oxx/orders/place/', {
+        const OxxValleyResponse = await fetch('https://oxx-three.vercel.app/oxx/orders/place/', {
             body: JSON.stringify({
                 customer: {
                     name: data.customer.name,
@@ -57,15 +54,20 @@ export const POST: APIRoute = async ({ request }) => {
         if (OxxValleyResponse.status === 201) {
             const OxxValleyData = await OxxValleyResponse.json();
 
+            console.log('valley res: ', OxxValleyData);
+            
             return new Response(JSON.stringify(OxxValleyData), {
-                status: 201,
+                status: 302,
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Location': '/perfil',
+                    'Set-Cookie': `order=${JSON.stringify(OxxValleyData)}; HttpOnly; SameSite=Strict; Path=/perfil; Max-Age=3600`
+                    // 'Set-Cookie': `cpf=${OxxValleyData.data.customer.taxID}; HttpOnly; SameSite=Strict; Path=/perfil; Max-Age=3600`,
                 }
             });
         }
     }
-    
+
     return new Response(JSON.stringify(validationResponse), {
         status: 400,
         headers: {

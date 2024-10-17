@@ -28,7 +28,7 @@ const Content: ForYouContentType[] = [{
     description: 'Nosso foco é desenvolver sites que vão além da estética, com performance elevada e resultados mensuráveis. Trabalhe conosco para construir sua presença online de forma profissional e eficiente.',
     pay: {
         sightOnly: false,
-        installments: 3,
+        installments: 1,
         value: 0
     },
     pricing: {
@@ -52,7 +52,7 @@ const Content: ForYouContentType[] = [{
     description: 'Uma maneira prática e inteligente de organizar e personalizar seus links favoritos. Com suporte para armazenar até 100 links',
     pay: {
         sightOnly: true,
-        installments: 3,
+        installments: 1,
         value: 0
     },
     pricing: {
@@ -61,7 +61,7 @@ const Content: ForYouContentType[] = [{
     },
     icon: <img src={links.src} className="group-hover:scale-125 transition w-10 z-10" />,
     image: <LinkStreamDemo />,
-    clientMessage: 'Nome da Sua Empresa: \n\nPorte da Empresa: \n\nDescrição do Projeto: ',
+    clientMessage: 'Seus Links: \nNome da Sua Empresa: \n\nPorte da Empresa: \n\nDescrição do Projeto: ',
 }, {
     title: "Sistemas de Gestão Personalizados",
     subtitle: 'Exclusividade Garantida',
@@ -76,7 +76,7 @@ const Content: ForYouContentType[] = [{
     description: 'Otimize todas as operações do seu negócio, conectando áreas como controle financeiro, gestão de estoque e relacionamento com o cliente em um único sistema. Assim, você torna o gerenciamento mais simples e eficaz.',
     pay: {
         sightOnly: false,
-        installments: 3,
+        installments: 1,
         value: 0
     },
     pricing: {
@@ -87,6 +87,18 @@ const Content: ForYouContentType[] = [{
     image: <UserManagementDemo />,
     clientMessage: 'Nome da Sua Empresa: \n\nPorte da Empresa: \n\nDescrição do Projeto: ',
 }]
+
+export const vistaProps = [
+    'Desenvolvimento com Prioridade',
+    'Bônus ou upgrades gratuitos',
+    'Entrega antecipada'
+]
+
+export const notVistaProps = [
+    'Parcelamento sem juros',
+    'Acesso a funcionalidades essenciais',
+    'Suporte durante o pagamento'
+]
 
 export const TechForYou = () => {
 

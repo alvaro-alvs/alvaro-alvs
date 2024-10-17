@@ -19,32 +19,32 @@ export const prefetch = true;
 		<OxxHeader title="index">
 			<!-- <OxxAlvsHeader /> -->
 			<div
-				class="relative flex items-center w-full h-full min-h-[45rem] overflow-hidden"
+				class="relative flex items-center w-full h-full pb-24 sm:min-h-[45rem] overflow-hidden"
 			>
 				<img
-					class="animate-tilt absolute -right-[40rem]"
+					class="animate-tilt absolute -top-52 -right-24 sm:-right-[40rem]"
 					src={OxxLogo.src}
 					alt=""
 				/>
 				<!-- Wrapper dos textos -->
 				<div
-					class="h-full flex flex-col px-20 text-left overflow-visible space-y-10 sm:pb-24"
+					class="h-full flex flex-col p-5 sm:px-20 text-left overflow-visible space-y-10 pt-24 sm:pb-24"
 				>
 					<header class="z-10">
 						<h1
-							class="oxx-title z-10 capitalize font-semibold text-6xl bg-gradient-to-br from-rose-600 to-red-700 bg-clip-text text-transparent pb-3"
+							class="oxx-title text-4xl sm:text-6xl z-10 capitalize font-semibold bg-gradient-to-br from-rose-600 to-red-700 bg-clip-text text-transparent pb-3"
 						>
 							Soluções Completas para o seu Negócio
 						</h1>
 
-						<h2 class="z-10 text-3xl">
+						<h2 class="z-10 text-xl sm:text-3xl">
 							Projetos digitais sob medida, com inovação e
 							excelência técnica
 						</h2>
 					</header>
 
 					<footer class="mt-10">
-						<nav class="flex gap-10 justify-start">
+						<nav class="space-y-5 sm:space-y-0 sm:flex gap-10 justify-start">
 							<a
 								href="#quem-sou"
 								class="flex items-center space-x-2 border border-rose-900 rounded bg-rose-900/30 p-3 backdrop-blur-xl hover:bg-rose-950 transition"
@@ -100,6 +100,12 @@ export const prefetch = true;
 	.animate-tilt {
 		animation: tilt 10s infinite ease-in-out alternate-reverse;
 		scale: 150%;
+	}
+
+	@media screen and (max-width: 798px) {
+		.animate-tilt {
+			scale: 250%;
+		}
 	}
 
 	@keyframes tilt {

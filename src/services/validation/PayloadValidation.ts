@@ -2,6 +2,16 @@ import type { CustomerType } from "@/types/PaymentTypes";
 import { ValidateCustomer } from "../ValidateCustomer";
 
 
+/**
+ * PayloadValidation
+ * Valida se o payload da requisi o tem todos os campos necessarios,
+ * incluindo o valor do produto e os campos do `customer`.
+ * Retorna uma resposta com o status da validacao.
+ * @param {object} data - Payload da requisi o
+ * @returns {object} - Resposta com o status da validacao
+ * @prop {string} message - Mensagem de status da validacao
+ * @prop {string[]} errors - Lista de erros de validacao
+ */
 export function PayloadValidation({ data }: { data: any }) {
     if (!data) {
         return { message: "No data provided" }

@@ -17,6 +17,8 @@ import { formatBrl } from "@/services/formatStrings";
 import { InputStyles } from "../../ui-assets/OxxInput";
 import { PurchaseButton } from "./PurchaseButton";
 
+import { vistaProps, notVistaProps } from "../../home/sub/TechForYou";
+
 export default function PurchaseControls() {
     const { product, setProduct, customer, payload, setPayload, handleClose } = usePayment()
 
@@ -40,31 +42,19 @@ export default function PurchaseControls() {
         }
     }
 
-    const vistaProps = [
-        'Desenvolvimento com Prioridade',
-        'Bônus ou upgrades gratuitos',
-        'Entrega antecipada'
-    ]
-
-    const notVistaProps = [
-        'Parcelamento sem juros',
-        'Acesso a funcionalidades essenciais',
-        'Suporte durante o pagamento'
-    ]
-
     // useEffect(() => {
     //     console.log('Payload: ', payload)
     // }, [payload])
 
     return (
         <footer className="flex flex-col justify-between sm:p-5 lg:w-1/2 h-full border-t border-slate-900 sm:border-none pt-10 sm:pt-0">
-            <h1 className="text-xl">Formas de Pagamento</h1>
+            <h1 className="">Formas de Pagamento</h1>
             <fieldset className="flex flex-col space-y-5 sm:pb-0 sm:flex items-center w-full pb-10">
                 {!product?.pay.sightOnly &&
                     <div className="flex flex-col w-full justify-center space-y-2 h-full">
                         <Button onClick={() => handleChangePay(false)} className={`flex items-center space-x-1 w-full bg-violet-900/20 border border-violet-900 hover:bg-violet-900 ${!vista && 'bg-violet-900'}`}>
                             <RiMailDownloadFill />
-                            <p>Parcelar</p>
+                            <p>Parcelado</p>
                         </Button>
 
                         {/* //* Select De parcelamento */}
@@ -74,7 +64,13 @@ export default function PurchaseControls() {
                             </SelectTrigger>
                             <SelectContent className="z-[500] bg-slate-950 border-slate-900 text-slate-100">
                                 {Array.from({ length: 12 }, (_, index) => index + 1).map((installment) => (
-                                    <SelectItem key={installment} value={installment.toString()}>{installment}x Sem Juros</SelectItem>
+                                    <SelectItem className="*:w-full" key={installment} value={installment.toString()}>
+                                        <div className="w-full">
+                                            <span className="w-max">
+                                                {installment}x Sem Juros
+                                            </span>
+                                        </div>
+                                    </SelectItem>
                                 ))}
                             </SelectContent>
                         </Select>
@@ -87,22 +83,21 @@ export default function PurchaseControls() {
                 {/* Botao de Compra a Vista */}
                 <Button onClick={() => handleChangePay(true)} className={`w-full h-full items-center space-x-1 bg-fuchsia-900/20 border border-fuchsia-900 hover:bg-fuchsia-900 ${vista && 'bg-fuchsia-900'}`}>
                     <MdOutlineLocalFireDepartment className="text-2xl text-" />
-                    <p>Comprar a Vista</p>
+                    <p>À Vista</p>
                 </Button>
             </fieldset>
 
             {/* Botao de Comprar e Cancelar */}
-            <fieldset className="space-y-3">
+            <fieldset className="space-y-3 p-5 border border-slate-950 rounded">
                 {/* Label */}
-                <h1 className="text-xl flex items-center space-x-2">
-                    <BiSolidPurchaseTag />
+                <h1 className="text- flex items-center space-x-2">
                     <p>Confirmar Compra</p>
                 </h1>
 
                 {/* Botao de Confirmaçao de Compra */}
                 <PurchaseButton vista={vista} />
 
-                <ul className="mb-5  text-xs">
+                <ul className="mb-5 text-xs">
                     {
                         vista ? (
                             vistaProps.map((item, index) => (
