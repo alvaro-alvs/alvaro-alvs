@@ -54,14 +54,15 @@ export const POST: APIRoute = async ({ request }) => {
         if (OxxValleyResponse.status === 201) {
             const OxxValleyData = await OxxValleyResponse.json();
 
-            console.log('valley res: ', OxxValleyData);
+            const encodedData = encodeURIComponent(JSON.stringify(OxxValleyData))
+            console.log('encoded valley res: ', encodedData);
             
             return new Response(JSON.stringify(OxxValleyData), {
                 status: 302,
                 headers: {
                     'Content-Type': 'application/json',
                     'Location': '/perfil',
-                    'Set-Cookie': `order=${encodeURIComponent(JSON.stringify(OxxValleyData))}; HttpOnly; SameSite=None; Path=/perfil; Max-Age=3600`
+                    'Set-Cookie': `order=${JSON.stringify(OxxValleyData)}; HttpOnly; SameSite=Strict; Path=/perfil; Max-Age=3600`
                     // 'Set-Cookie': `cpf=${OxxValleyData.data.customer.taxID}; HttpOnly; SameSite=Strict; Path=/perfil; Max-Age=3600`,
                 }
             });

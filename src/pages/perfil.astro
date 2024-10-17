@@ -11,7 +11,10 @@ const pedido = Astro.cookies.get('order')
 let pedidoJson = undefined
 
 if (pedido) {
-    pedidoJson = JSON.parse(pedido.value)
+    pedidoJson = await JSON.parse(pedido.value)
+
+    console.log('pedido: ', pedidoJson);
+    
 }
 
 ---

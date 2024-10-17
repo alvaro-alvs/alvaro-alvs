@@ -24,7 +24,7 @@ export default function CustomerForm() {
 
     return (
         <>
-            {/* <button onClick={() => handlePreencher()}> Preencher </button> */}
+            <button onClick={() => handlePreencher()}> Preencher </button>
             <form action="#" className="w-full max-w-[32rem] sm:w-2/3 space-y-3">
 
                 <h1 className="text-xl pb-3">Seus Dados</h1>
