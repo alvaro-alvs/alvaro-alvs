@@ -17,7 +17,7 @@ if (pedido) {
 ---
 
 <PageProvider title="Perfil">
-    <OxxHeader title={pedidoJson.data.customer.name}>
+    <OxxHeader title={pedidoJson.data.customer.name || 'cliente'}>
         
     </OxxHeader>
     <CustomerBasics order={pedidoJson} app_id={APPID} client:load />
