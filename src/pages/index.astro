@@ -4,7 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import PageProvider from "../PageProvider.astro";
 import QuemSou from "../components/ui/home/articles/QuemSou.astro";
 import OxxAlvsHeader from "@/components/ui/home/articles/OxxAlvsHeader.astro";
-import TechStackSession from "@/components/ui/home/articles/FullStackArticle.astro";
+import FullStackArticle from "@/components/ui/home/articles/FullStackArticle.astro";
 import MainTech from "@/components/ui/home/articles/TechForYouSection.astro";
 import { TiDocumentText } from "react-icons/ti";
 import OxxLogo from "@/assets/icons/icon_oxx.svg";
@@ -86,7 +86,7 @@ export const prefetch = true;
 			<!-- tech for you -->
 			<MainTech />
 
-			<TechStackSession />
+			<FullStackArticle />
 		</section>
 	</PageProvider>
 </Layout>

@@ -2,6 +2,10 @@
 import { GrTechnology } from "react-icons/gr";
 import ArticleHeader from "../../base/ArticleHeader.astro";
 import { TechForYou } from "../sub/TechForYou";
+
+
+//* assets
+import Wave from '@/assets/ui/wavy.svg'
 ---
 
 <div id="TechForYou"></div>
@@ -18,7 +22,12 @@ import { TechForYou } from "../sub/TechForYou";
         necessidades
     </h2>
 
-    <div class="px-3 sm:px-24 sm:py-20 overflow-hidden relative">
+    <div class="relative px-3 sm:px-24 sm:py-20 overflow-hidden">
+        <div class="absolute inset-0 w-full h-full">
+            <img class="w-full inset-0" src={Wave.src} alt="" />
+
+        </div>
+
         <TechForYou client:load />
     </div>
 </section>
