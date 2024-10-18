@@ -1,9 +1,13 @@
-<svg width="979" height="224" viewBox="0 0 979 224" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0 0V214C74.3471 167.822 273.595 221.652 482 223C673.139 224.236 872.536 169.031 978.5 214V0H0Z" fill="url(#paint0_radial_444_3)"/>
+<svg width="980" height="225" viewBox="0 0 980 225" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 1V215C75.3471 168.822 274.595 222.652 483 224C674.139 225.236 873.536 170.031 979.5 215V1H1Z" fill="url(#paint0_radial_444_3)" stroke="url(#paint1_linear_444_3)"/>
 <defs>
-<radialGradient id="paint0_radial_444_3" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(489 605.5) rotate(-90) scale(502 1020.15)">
+<radialGradient id="paint0_radial_444_3" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(490 606.5) rotate(-90) scale(502 1020.15)">
 <stop stop-color="#FF1B42"/>
 <stop offset="1" stop-color="#0C0812"/>
 </radialGradient>
+<linearGradient id="paint1_linear_444_3" x1="490" y1="156" x2="490" y2="272" gradientUnits="userSpaceOnUse">
+<stop/>
+<stop offset="1" stop-color="#FF1B42"/>
+</linearGradient>
 </defs>
 </svg>

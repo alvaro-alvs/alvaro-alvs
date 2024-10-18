@@ -34,6 +34,9 @@ export const InputG = ({ name, label }: { name: keyof CustomerType['validation']
                 onChange={(e) => handleChange(e.target.value)}
                 onBlur={(e) => handleChange(e.target.value)} // Valida ao sair do campo
             />
-        </div>
+            {customer.validation[name] &&
+                <p className="text-red-200 text-xs"> Preecha este campo</p>
+            }
+        </div >
     );
 }
