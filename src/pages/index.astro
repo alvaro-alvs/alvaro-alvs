@@ -11,6 +11,10 @@ import OxxLogo from "@/assets/icons/icon_oxx.svg";
 import { GiAtom } from "react-icons/gi";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 
+import OxxIcon from "@/assets/icons/icon_oxx.svg";
+
+const OxxIconSrc = OxxIcon.src;
+
 export const prefetch = true;
 ---
 
@@ -44,7 +48,9 @@ export const prefetch = true;
 					</header>
 
 					<footer class="mt-10">
-						<nav class="space-y-5 sm:space-y-0 sm:flex gap-10 justify-start">
+						<nav
+							class="space-y-5 sm:space-y-0 sm:flex gap-10 justify-start"
+						>
 							<a
 								href="#quem-sou"
 								class="flex items-center space-x-2 border border-rose-900 rounded bg-rose-900/30 p-3 backdrop-blur-xl hover:bg-rose-950 transition"
@@ -55,18 +61,18 @@ export const prefetch = true;
 
 							<a
 								href="#TechForYou"
-								class="flex items-center space-x-2 border border-rose-900 rounded bg-rose-900/30 p-3 backdrop-blur-xl hover:bg-rose-950 transition group"
+								class="flex items-center space-x-2 border-rose-900 rounded bg-gradient-to-br from-red-500 to-rose-700 p-3 backdrop-blur-xl hover:bg-rose-950 transition group oxx-mask"
 							>
 								<p>Principais Soluções</p>
 								<div
 									class="relative ml-2 w-5 flex items-center justify-center"
 								>
-									<GiAtom
-										className="absolute group-hover:opacity-0 opacity-100 transition"
+									<!-- <GiAtom
+										className="absolute h-7 w-7 group-hover:opacity-0 opacity-100 transition"
 									/>
 									<MdKeyboardDoubleArrowRight
 										className="absolute group-hover:opacity-100 opacity-0 transition"
-									/>
+									/> -->
 								</div>
 							</a>
 						</nav>
@@ -92,19 +98,44 @@ export const prefetch = true;
 </Layout>
 
 <style>
+	a {
+		background-size: 500%;
+	}
+
+	.oxx-mask {
+		mask-image: linear-gradient(to bottom right, #ef4444, #be123c),
+			url("../assets/icons/icon_oxx.svg");
+		mask-composite: subtract;
+		mask-size: 208%;
+		mask-position: left;
+		mask-border-width: 1rem;
+		mask-repeat: no-repeat;
+		transition: 1s mask-size mask-position mask-composite;
+	}
+	.oxx-mask:hover {
+		transform: scale(1.2) translateX(20px);
+		box-shadow: 0 0 1rem #fff;
+	}
+
 	.oxx-title {
 		user-select: none;
 		/* text-shadow: 0 0 1rem #e11d4773; */
 	}
 
 	.animate-tilt {
-		animation: tilt 10s infinite ease-in-out alternate-reverse;
+		animation: tilt 10s infinite ease-in-out;
 		scale: 150%;
 	}
 
 	@media screen and (max-width: 798px) {
 		.animate-tilt {
 			scale: 250%;
+		}
+	}
+
+	@keyframes animate-mask {
+		from {
+			mask-size: 800%;
 		}
 	}
 
