@@ -36,7 +36,7 @@ const opt_fallback = await getImage({ src: fallback });
     </nav>
 
     <header
-        style={`background: url('${opt_fallback.src}') center/cover no-repeat, url('${opt_earth.src}') center/cover no-repeat`}
+        style={`background: url('${opt_fallback.src}') center/cover no-repeat, url('${opt_earth.src}') fixed center/cover no-repeat`}
         class="oxx-index-header flex items-baseline max-sm:grid"
     >
         {
@@ -65,7 +65,7 @@ const opt_fallback = await getImage({ src: fallback });
 
     .oxx-index-header {
         /* background: url('/banner_fallback.svg') center no-repeat, url('/nasa_city.jpg') bottom no-repeat fixed; */
-        animation: showcase 20s infinite ease-in-out alternate-reverse;
+        /* animation: showcase 20s infinite ease-in-out alternate-reverse; */
     }
 
     .border-animation {
