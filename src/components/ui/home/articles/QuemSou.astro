@@ -36,58 +36,54 @@ export const icons = await Promise.all(
         return { ...image, link: icon.link };
     }),
 );
-
 ---
 
-    <!--* wrapper -->
-    <div
-        id="quem-sou"
-        class="max-lg:max-w-screen-xl lg:w-full lg:h-[35rem] xl:max-w-[75rem] flex max-lg:flex-col max-lg:h-max sm:space-x-10 max-lg:space-y-10 rounded max-sm:w-full max-sm:p-4 max-sm:space-y-3 border border-rose-900 bg-rose-900/5 p-10"
-    >
-        <figure
-            class="h-full  border-rose-900 aspect-square rounded-lg"
-        >
-            <Image class="h-full object-cover" src={profile} alt="" />
-        </figure>
+<div
+    id="quem-sou"
+    class="max-lg:max-w-screen-xl lg:w-full lg:h-[35rem] xl:max-w-[75rem] flex max-lg:flex-col max-lg:h-max sm:space-x-10 max-lg:space-y-10 rounded max-sm:w-full max-sm:p-4 max-sm:space-y-3 border border-rose-900 bg-rose-900/5 p-10"
+>
+    <figure class="h-full border-rose-900 aspect-square rounded-lg">
+        <Image class="h-full object-cover" src={profile} alt="" />
+    </figure>
 
-        <div class="lg:max-w-1/2 h- py-1 self-center">
-            <header class="space-y-2">
-                <h3 class="text- text-xl text-rose-200">Quem Sou</h3>
+    <div class="lg:max-w-1/2 h- py-1 self-center">
+        <header class="space-y-2">
+            <h3 class="text-xl bg-gradient-to-b from-red-500 to-indigo-500 bg-clip-text text-transparent w-max">Quem Sou</h3>
 
-                <h1 class="text-3xl">Álvaro Nascimento</h1>
-                <h2 class="text-md">Desenvolvedor Full Stack</h2>
-            </header>
+            <h1 class="text-3xl">Álvaro Nascimento</h1>
+            <h2 class="text-md">Desenvolvedor Full Stack</h2>
+        </header>
 
-            <p class="my-10 sm:max-w-full">
-                Desenvolvedor full stack com mais de 4 anos de experiência em
-                web e mobile, especializado em JavaScript, Python, C#, Astro e
-                TypeScript. Comprometido com a qualidade, trabalho bem em equipe
-                ou de forma independente, mantendo ótimos relacionamentos. Estou
-                sempre em busca de novos desafios e aprendizado contínuo para
-                contribuir significativamente para seu projeto.
-            </p>
+        <p class="my-10 sm:max-w-full">
+            <em class="bg-gradient-to-r from-red-500 via-rose-500 via-fuchsia-500 to-indigo-500 bg-clip-text text-transparent font-semibold text-[103%]">Desenvolvedor full stack com mais de 5 anos de experiência</em> em web e
+            mobile, especializado em JavaScript, Python, C#, Astro e TypeScript.
+            Comprometido com a qualidade, trabalho bem em equipe ou de forma
+            independente, mantendo ótimos relacionamentos. Estou sempre em busca
+            de novos desafios e aprendizado contínuo para contribuir
+            significativamente para seu projeto.
+        </p>
 
-            <footer class="flex justify-between h-14 max-sm:h-10 flex-wrap">
-                {
-                    icons.map((icon) => (
-                        <a
-                            target="_blank"
-                            class="h-full"
-                            href={icon.link}
-                            rel="noopener noreferrer"
-                        >
-                            <img
-                                class={
-                                    "h-full transition hover:scale-110 cursor-pointer"
-                                }
-                                src={icon.src}
-                                alt={""}
-                            />
-                        </a>
-                    ))
-                }
-            </footer>
+        <footer class="flex justify-between h-14 max-sm:h-10 flex-wrap">
+            {
+                icons.map((icon) => (
+                    <a
+                        target="_blank"
+                        class="h-full"
+                        href={icon.link}
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            class={
+                                "h-full transition hover:scale-110 cursor-pointer"
+                            }
+                            src={icon.src}
+                            alt={""}
+                        />
+                    </a>
+                ))
+            }
+        </footer>
 
-            <!-- <img class="" src="/OxxTechStack.svg" alt=""> -->
-        </div>
+        <!-- <img class="" src="/OxxTechStack.svg" alt=""> -->
     </div>
+</div>
