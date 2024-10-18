@@ -10,7 +10,7 @@ import {
 } from "../shadcn-ui/popover"
 import { OxxLink } from "../ui-assets/OxxLink"
 import { OxxContatoDialog } from "../modal/OxxContatoDialog";
-
+import HomeIcon from "@/assets/icons/OxxHomeIcon.svg"
 
 export default function MobileOxxHeader() {
     return (
@@ -22,7 +22,7 @@ export default function MobileOxxHeader() {
                     <span className={`items-center h-full p-2 px-5 space-x-3 rounded select-none`}>
                         <figure className="aspect-square header-content rounded-xl transition h-full">
                             <code className="text-xs text-rose-100"> Menu </code>
-                            <img className="w-12 transition duration-500 group-hover:animate-spin" src="/oxx_logo.png" alt="" />
+                            <img className="w-12 transition duration-500" src={HomeIcon.src} alt="" />
                         </figure>
                         {/* <p className="text-center">Menu</p> */}
                     </span>

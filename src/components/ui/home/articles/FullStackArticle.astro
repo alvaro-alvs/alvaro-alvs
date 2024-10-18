@@ -7,6 +7,7 @@ import { OXXAPICONSOLE } from "../OXXAPICONSOLE";
 
 //* assets
 import WaveReverse from "@/assets/ui/wavy-reverse.svg";
+import WaveReverseM from "@/assets/ui/wavy-reverse-m.svg";
 
 import FrontEnd from "@/assets/tech_stack/front.jpg";
 import BackEnd from "@/assets/tech_stack/backend.jpg";
@@ -38,8 +39,9 @@ const opt_dados = await getImage({ src: Dados });
     <section class="relative w-full">
 
         <!-- wave uuuuuh -->
-        <div class="absolute top-20 w-full h-full">
-            <img class="w-full " src={WaveReverse.src} alt=""/>
+        <div class="absolute top-20 w-full h-full px-3">
+            <img class="hidden sm:block w-full" src={WaveReverse.src} alt=""/>
+            <img class="h-full sm:hidden" src={WaveReverseM.src} alt=""/>
         </div>
 
         <div

@@ -7,7 +7,6 @@ import { OxxContatoDialog } from "../modal/OxxContatoDialog";
 
 //* Icons
 import HomeIcon from "@/assets/icons/OxxHomeIcon.svg"
-import { GoHomeFill } from "react-icons/go";
 
 export default function OxxDefaultNav({ mobile }: { mobile?: boolean | false }) {
     return (
@@ -42,7 +41,6 @@ export default function OxxDefaultNav({ mobile }: { mobile?: boolean | false }) 
                         src={HomeIcon.src}
                         alt=""
                     />
-                    {/* <GoHomeFill className="bg gradient-to-b from-rose-600 to-rose-900 bg-clip-text text-transparent" /> */}
                 </figure>
             </OxxLink>
 

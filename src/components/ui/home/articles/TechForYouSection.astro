@@ -5,6 +5,7 @@ import { TechForYou } from "../sub/TechForYou";
 
 //* assets
 import Wave from "@/assets/ui/wavy.svg";
+import WaveM from "@/assets/ui/wavy-m.svg";
 ---
 
 <div id="TechForYou"></div>
@@ -21,13 +22,19 @@ import Wave from "@/assets/ui/wavy.svg";
         necessidades
     </h2>
 
-    <div class="relative px-3 sm:px-24 sm:py-20 overflow-hidden">
+    <div class="relative px-3 sm:px-24 sm:py-20">
         <div
-            class="absolute -rotate-90 sm:rotate-0 inset-0 w-full h-full md:h-screen md:rotate-0"
+            class="absolute inset-0 top-0 sm:w-full h-full pt-10"
         >
             <img
-                class="w-full"
+                class="w-full hidden sm:block"
                 src={Wave.src}
+                alt=""
+            />
+
+            <img
+                class="sm:hidden h-full"
+                src={WaveM.src}
                 alt=""
             />
         </div>
