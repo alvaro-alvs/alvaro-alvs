@@ -3,9 +3,8 @@ import { GrTechnology } from "react-icons/gr";
 import ArticleHeader from "../../base/ArticleHeader.astro";
 import { TechForYou } from "../sub/TechForYou";
 
-
 //* assets
-import Wave from '@/assets/ui/wavy.svg'
+import Wave from "@/assets/ui/wavy.svg";
 ---
 
 <div id="TechForYou"></div>
@@ -23,9 +22,14 @@ import Wave from '@/assets/ui/wavy.svg'
     </h2>
 
     <div class="relative px-3 sm:px-24 sm:py-20 overflow-hidden">
-        <div class="absolute inset-0 w-full h-full">
-            <img class="w-full inset-0" src={Wave.src} alt="" />
-
+        <div
+            class="absolute -rotate-90 sm:rotate-0 inset-0 w-full h-full md:h-screen md:rotate-0"
+        >
+            <img
+                class="w-full"
+                src={Wave.src}
+                alt=""
+            />
         </div>
 
         <TechForYou client:load />

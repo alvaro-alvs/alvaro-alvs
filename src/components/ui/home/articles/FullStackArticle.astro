@@ -1,60 +1,88 @@
 ---
 import { GiTechnoHeart } from "react-icons/gi";
 
-import { getImage } from "astro:assets"
-import OxxTopic from "../sub/OxxTopic.astro"
-import { OXXAPICONSOLE } from "../OXXAPICONSOLE"
+import { getImage } from "astro:assets";
+import OxxTopic from "../sub/OxxTopic.astro";
+import { OXXAPICONSOLE } from "../OXXAPICONSOLE";
 
+//* assets
+import WaveReverse from "@/assets/ui/wavy-reverse.svg";
 
-import FrontEnd from '@/assets/tech_stack/front.jpg'
-import BackEnd from '@/assets/tech_stack/backend.jpg'
-import Dados from '@/assets/tech_stack/dados.jpg'
+import FrontEnd from "@/assets/tech_stack/front.jpg";
+import BackEnd from "@/assets/tech_stack/backend.jpg";
+import Dados from "@/assets/tech_stack/dados.jpg";
 import ArticleHeader from "../../base/ArticleHeader.astro";
 
-const opt_front = await getImage({src: FrontEnd})
-const opt_back = await getImage({src: BackEnd})
-const opt_dados = await getImage({src: Dados})
+const opt_front = await getImage({ src: FrontEnd });
+const opt_back = await getImage({ src: BackEnd });
+const opt_dados = await getImage({ src: Dados });
 
 // const navigatorName = navigator.userAgent
 ---
 
-<div class="flex flex-col justify-center w-full min-h-screen h-max pb-20 select-none">
-
+<div
+    class="flex flex-col justify-center w-full min-h-screen h-max pb-20 select-none"
+>
     <ArticleHeader article_title="Full Stack">
         Quem Cuida de Tudo no Mundo Digital
     </ArticleHeader>
-    
-    <header class="px-20 pb-10 max-lg:px-5">
 
+    <header class="px-20 pb-10 max-lg:px-5">
         <p class="w-1/2 mx-auto text-xs sm:text-base text-center max-lg:w-full">
-            Fullstack é o desenvolvedor que cria e gerencia tanto o visual quanto os processos internos de sites e aplicativos, garantindo o funcionamento completo.
+            Fullstack é o desenvolvedor que cria e gerencia tanto o visual
+            quanto os processos internos de sites e aplicativos, garantindo o
+            funcionamento completo.
         </p>
     </header>
 
-    <section class="grid lg:grid-cols-3 w-full gap-10 px-3 sm:gap-20 sm:px-20">
-        <OxxTopic title="Front End" bg={opt_front.src}>
-            <p class="h-full">
-                👓 O front-end é a camada da aplicação que o usuário vê e interage, responsável por exibir conteúdo de forma atraente e responsiva. Utiliza linguagens e técnicas de desenvolvimento web para criar interfaces intuitivas e acessíveis, melhorando a experiência do usuário.
-            </p>
+    <section class="relative w-full">
 
-            <a href="#TechForYou" class="bg-animate text-center rounded w-full p-3 bg-gradient-to-r from-teal-800 via-sky-500 to-rose-800 self-end">
-                Ver Interfaces
-            </a>
-        </OxxTopic>
+        <!-- wave uuuuuh -->
+        <div class="absolute top-20 w-full h-full">
+            <img class="w-full " src={WaveReverse.src} alt=""/>
+        </div>
 
-        <OxxTopic title="Back End" bg={opt_back.src}>
-            <p>
-                ⚡ Nos bastidores, onde as regras de negócio são gerenciadas e a comunicação com o banco de dados é realizada, utilizamos APIs de alta performance para garantir a máxima eficiência e velocidade de processamento.
-            </p>
+        <div
+            class="z-20 grid lg:grid-cols-3 w-full gap-10 px-3 sm:gap-20 sm:px-20"
+        >
+            <OxxTopic title="Front End" bg={opt_front.src}>
+                <p class="h-full">
+                    👓 O front-end é a camada da aplicação que o usuário vê e
+                    interage, responsável por exibir conteúdo de forma atraente
+                    e responsiva. Utiliza linguagens e técnicas de
+                    desenvolvimento web para criar interfaces intuitivas e
+                    acessíveis, melhorando a experiência do usuário.
+                </p>
 
-            <OXXAPICONSOLE client:load />
-        </OxxTopic>
+                <a
+                    href="#TechForYou"
+                    class="bg-animate text-center rounded w-full p-3 bg-gradient-to-r from-teal-800 via-sky-500 to-rose-800 self-end"
+                >
+                    Ver Interfaces
+                </a>
+            </OxxTopic>
 
-        <OxxTopic title="Dados" bg={opt_dados.src}>
-            <p>
-                📚 A camada de dados é responsável por armazenar, organizar e gerenciar as informações utilizadas pela aplicação, garantindo a integridade e a segurança dos dados. Ela suporta operações de consulta, atualização e análise, fornecendo informações precisas e em tempo real para o front-end e back-end.
-            </p>
-        </OxxTopic>
+            <OxxTopic title="Back End" bg={opt_back.src}>
+                <p>
+                    ⚡ Nos bastidores, onde as regras de negócio são gerenciadas
+                    e a comunicação com o banco de dados é realizada, utilizamos
+                    APIs de alta performance para garantir a máxima eficiência e
+                    velocidade de processamento.
+                </p>
+
+                <OXXAPICONSOLE client:load />
+            </OxxTopic>
+
+            <OxxTopic title="Dados" bg={opt_dados.src}>
+                <p>
+                    📚 A camada de dados é responsável por armazenar, organizar
+                    e gerenciar as informações utilizadas pela aplicação,
+                    garantindo a integridade e a segurança dos dados. Ela
+                    suporta operações de consulta, atualização e análise,
+                    fornecendo informações precisas e em tempo real para o
+                    front-end e back-end.
+                </p>
+            </OxxTopic>
+        </div>
     </section>
-
 </div>
