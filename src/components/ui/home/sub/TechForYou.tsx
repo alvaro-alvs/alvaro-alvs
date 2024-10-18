@@ -33,7 +33,7 @@ const Content: ForYouContentType[] = [{
     },
     pricing: {
         correlationId: 'Compra de Website OXX',
-        value: 10
+        value: 31900
     },
     icon: <img src={www.src} className="group-hover:scale-125 transition w-10 z-10" />,
     image: <WebsiteDemo />,
