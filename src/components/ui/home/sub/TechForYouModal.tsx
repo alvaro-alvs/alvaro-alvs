@@ -53,7 +53,7 @@ export const TechForYouModal = ({ Product }: { Product: ForYouContentType }) => 
 
             <DialogContent className="flex flex-col h-screen max-h-screen max-w-full border-none z-[99] backdrop-blur-xl">
 
-                <DialogHeader className="text-rose-400 mb-5">
+                <DialogHeader className="text-rose-400 mb-5 text-center">
                     <DialogTitle className="sm:flex text-center justify-center items-center font-thin">
                         {/* Titulo do Modal */}
                         <p className="w-full text-center mx-auto text-2xl pt-10 sm:pt-0 sm:text-5xl sm:pr-24">
@@ -61,7 +61,7 @@ export const TechForYouModal = ({ Product }: { Product: ForYouContentType }) => 
                         </p>
                     </DialogTitle>
 
-                    <DialogDescription className="text-rose-100 text-center">
+                    <DialogDescription className="text-rose-100 text-center md:max-w-5xl mx-auto">
                         {Product.description}
                     </DialogDescription>
 

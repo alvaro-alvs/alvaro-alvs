@@ -18,7 +18,7 @@ import PaymentProvider from "@/components/providers/PaymentProvider";
 
 const Content: ForYouContentType[] = [{
     title: "Desenvolvimento de Website",
-    subtitle: 'Exclusividade Garantida',
+    subtitle: 'Sites modernos, otimizados e totalmente personalizados para atender às necessidades específicas de cada cliente',
     header: 'Sites Responsivos',
     items: [
         'Site Global com otimização internacional',
@@ -40,7 +40,7 @@ const Content: ForYouContentType[] = [{
     clientMessage: 'Nome da Sua Empresa: \n\nPorte da Empresa: \n\nDescrição do Projeto: ',
 }, {
     title: "LinkStream",
-    subtitle: 'Exclusividade Garantida',
+    subtitle: 'Uma solução personalizada de páginas de links, ideal para concentrar e organizar os principais conteúdos e redes sociais em um só lugar',
     header: 'Modelo LinkStream',
     items: [
         'Até 100 links para organizar',
@@ -49,7 +49,7 @@ const Content: ForYouContentType[] = [{
         'Plano VITALÌCIO',
         'Prioridade de desenvolvimento com pagamento adiantado para funcionalidades exclusivas'
     ],
-    description: 'Uma maneira prática e inteligente de organizar e personalizar seus links favoritos. Com suporte para armazenar até 100 links',
+    description: 'Criado para ser intuitivo e flexível, o LinkStream permite que empresas e influenciadores compartilhem suas principais conexões de forma rápida e elegante, oferecendo uma experiência simples e funcional para os visitantes',
     pay: {
         sightOnly: true,
         installments: 1,
@@ -64,7 +64,7 @@ const Content: ForYouContentType[] = [{
     clientMessage: 'Seus Links: \nNome da Sua Empresa: \n\nPorte da Empresa: \n\nDescrição do Projeto: ',
 }, {
     title: "Sistemas de Gestão Personalizados",
-    subtitle: 'Exclusividade Garantida',
+    subtitle: 'Sistemas sob medida para otimizar os processos empresariais',
     header: 'Usuarios Cadastrados',
     items: [
         'Soluções adaptáveis para qualquer tipo de unidade (escolas, empresas, lojas, igrejas, etc.',
