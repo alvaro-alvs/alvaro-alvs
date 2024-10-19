@@ -16,7 +16,7 @@ type OxxProject = {
 //     raw_projects: OxxProject[]
 // }
 
-export default function OxxProjects({ production_projects, demo_projects }: { production_projects: OxxProject[], demo_projects: OxxProject[] }) {
+export default function OxxProjects({ production_projects }: { production_projects: OxxProject[] }) {
 
     return (
         <>

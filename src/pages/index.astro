@@ -49,11 +49,11 @@ export const prefetch = true;
 
 					<footer class="mt-10">
 						<nav
-							class="space-y-5 sm:space-y-0 sm:flex gap-10 justify-start"
+							class="space-y-5 h-[4rem] sm:space-y-0 sm:flex gap-10 justify-start"
 						>
 							<a
 								href="#quem-sou"
-								class="flex w-max border border-rose-900 items-center bg-gradient-to-r from-rose-950/40 to-indigo-950/40 space-x-2 h-[5rem] rounded p-3 backdrop-blur-xl transition group overflow-hidden"
+								class="flex w-max border border-rose-900 items-center bg-gradient-to-r from-rose-950/40 to-indigo-950/40 space-x-2 rounded px-3 backdrop-blur-xl transition group overflow-hidden"
 							>
 								<p>Sobre Mim</p>
 								<TiDocumentText className="absolute text-8xl scale-150 fill-rose-500/20 group-hover:fill-rose-500/50 transition" />
@@ -61,9 +61,9 @@ export const prefetch = true;
 
 							<a
 								href="#TechForYou"
-								class="flex flex-col sm:flex-row items-start justify-between w-full sm:w-[30rem] border border-red-500 sm:items-center bg-gradient-to-r from-red-900 to-rose-900 sm:space-x-2 h-[5rem] rounded p-3 backdrop-blur-xl transition duration-400 group oxx-mask hover:brightness-110"
+								class="flex flex-col sm:flex-row items-start justify-between w-full sm:w-[30rem] border border-red-500 sm:items-center bg-gradient-to-r from-red-900 to-rose-900 sm:space-x-2 h-full rounded p-3 backdrop-blur-xl transition duration-400 group oxx-mask hover:brightness-110"
 							>
-								<em class="text-xl font-normal">Principais Soluções</em>
+								<p class="pretty-title bg-gradient-to-r from-rose-200 to-rose-300 bg-clip-text text-transparent text-xl font-normal">Principais Soluções</p>
 								<p class="text-xs">Clique e explore </p>
 								<div
 									class="relative ml-2 w-5 flex items-center justify-center"
@@ -101,6 +101,10 @@ export const prefetch = true;
 <style>
 	a {
 		background-size: 500%;
+	}
+
+	.pretty-title {
+		text-shadow: 0 0 1rem #ffffff50;
 	}
 
 	.oxx-mask {

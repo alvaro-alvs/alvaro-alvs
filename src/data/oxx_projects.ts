@@ -60,7 +60,7 @@ export const ProductionProjects =
     },
     {
       "id": 4,
-      "title": "API OXX - Soluções Digitais",
+      "title": "OXX Valley - Soluções Back End",
       "description": "Microserviços Usados pela OXX",
       "link": "https://oxx-api.vercel.app/",
       "logo": "none",

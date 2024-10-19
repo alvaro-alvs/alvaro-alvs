@@ -1,3 +1,4 @@
+import { FaCheck } from "react-icons/fa";
 import {
     Dialog,
     DialogContent,
@@ -33,7 +34,14 @@ export const TechForYouModal = ({ Product }: { Product: ForYouContentType }) => 
                     </header>
 
                     <ul className="space-y-2 mb-5 overflow-hidden text-left">
-                        {Product.items?.map((item, t) => (<li key={t} className="text">. {item}</li>))}
+                        {
+                            Product.items?.map((item, t) => (
+                                <li key={t} className="text grid grid-flow-col justify-start items-center space-x-3">
+                                    <FaCheck className="w-4 h-4 fill-rose-500" />
+                                    <span>{item}</span>
+                                </li>
+                            ))
+                        }
                     </ul>
 
                     <a href="#" className="flex text-xs items-center justify-center xl:justify-start space-x-1 group-hover:space-x-3 text-rose-300 mt-auto group-hover:underline">

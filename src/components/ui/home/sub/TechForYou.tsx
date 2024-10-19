@@ -106,7 +106,7 @@ export const TechForYou = () => {
         <PaymentProvider>
             {/* <WavyBackground backgroundFill="#0c0812" blur={20} colors={['#9F1111', '#570C0C', '#e11d48', '#C21A9D', '#0e0e1b']} className="w-full h-max sm:h-max sm:p-0"> */}
             <section className="w-full">
-                <div className="grid h-full grid-cols-1 md:grid-cols-2 gap-10 xl:grid-cols-3 xl:grid-flow-col w-full sm:h-max 2xl:gap-20 py-10 sm:py-0 sm:px-0 ">
+                <div className="grid h-full gap-10 sm:gap-5 md:gap-7 2xl:gap-12 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:grid-flow-col w-full sm:h-max py-10 sm:py-0 sm:px-0 ">
                     {Content.map((product, index) => (
                         <TechForYouModal key={product.title} Product={product} />
                     ))}

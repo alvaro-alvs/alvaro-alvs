@@ -6,6 +6,8 @@ import OxxHeader from "../components/ui/base/OxxHeader.astro";
 import OxxProjects from "../components/ui/projects/OxxProjects";
 import { ProductionProjects, DemoProjects } from "../data/oxx_projects";
 
+import ArticleHeader from "@/components/ui/base/ArticleHeader.astro";
+
 // const oxx_response = await fetch("https://oxx-three.vercel.app/oxx/projects/", {
 //     headers: {
 //         "api-key": import.meta.env.OXX_KEY,
@@ -29,12 +31,40 @@ import { ProductionProjects, DemoProjects } from "../data/oxx_projects";
             <BackButton />
         </nav>
 
-        <div class="grid 2xl:grid-cols-2 gap-10 max-sm:gap-5 lg:py-10 lg:px-20">
-            {
-                ProductionProjects && (
-                    <OxxProjects production_projects={ProductionProjects} demo_projects={DemoProjects} client:load />
-                )
-            }
+        <div class="">
+            <ArticleHeader article_title="Web e Mobile">
+                Projetos em Produção
+            </ArticleHeader>
+
+            <div
+                class="grid 2xl:grid-cols-2 gap-10 max-sm:gap-5 lg:py-10 lg:px-20"
+            >
+                {
+                    ProductionProjects && (
+                        <OxxProjects
+                            production_projects={ProductionProjects}
+                            client:load
+                        />
+                    )
+                }
+            </div>
+
+            <ArticleHeader article_title="Em Breve">
+                Demonstrações de Interface
+            </ArticleHeader>
+            
+            <div
+                class="grid 2xl:grid-cols-2 gap-10 max-sm:gap-5 lg:py-10 lg:px-20"
+            >
+                {
+                    DemoProjects && (
+                        <OxxProjects
+                            production_projects={DemoProjects}
+                            client:load
+                        />
+                    )
+                }
+            </div>
         </div>
     </section>
 </PageProvider>
