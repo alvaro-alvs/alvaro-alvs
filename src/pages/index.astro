@@ -53,17 +53,18 @@ export const prefetch = true;
 						>
 							<a
 								href="#quem-sou"
-								class="flex items-center space-x-2 border border-rose-900 rounded bg-rose-900/30 p-3 backdrop-blur-xl hover:bg-rose-950 transition"
+								class="flex w-max border border-rose-900 items-center bg-gradient-to-r from-rose-950/40 to-indigo-950/40 space-x-2 h-[5rem] rounded p-3 backdrop-blur-xl transition group overflow-hidden"
 							>
 								<p>Sobre Mim</p>
-								<TiDocumentText className="" />
+								<TiDocumentText className="absolute text-8xl scale-150 fill-rose-500/20" />
 							</a>
 
 							<a
 								href="#TechForYou"
-								class="flex items-center space-x-2 border-rose-900 rounded bg-gradient-to-br from-red-500 to-rose-700 p-3 backdrop-blur-xl hover:bg-rose-950 transition group oxx-mask"
+								class="flex flex-col sm:flex-row items-start justify-between w-full sm:w-[30rem] border border-red-500 sm:items-center bg-gradient-to-r from-red-900 to-rose-900 sm:space-x-2 h-[5rem] rounded p-3 backdrop-blur-xl transition duration-400 group oxx-mask hover:brightness-110"
 							>
-								<p>Principais Soluções</p>
+								<p class="text-xl font-semibold">Principais Soluções</p>
+								<p class="text-xs">Clique e explore </p>
 								<div
 									class="relative ml-2 w-5 flex items-center justify-center"
 								>
@@ -103,7 +104,7 @@ export const prefetch = true;
 	}
 
 	.oxx-mask {
-		mask-image: linear-gradient(to bottom right, #ef4444, #be123c),
+		mask-image: linear-gradient(to bottom right, #850e0e, #860b2a),
 			url("../assets/icons/icon_oxx.svg");
 		mask-composite: subtract;
 		mask-size: 208%;
@@ -112,11 +113,6 @@ export const prefetch = true;
 		mask-repeat: no-repeat;
 		transition: 1s mask-size mask-position mask-composite;
 	}
-	.oxx-mask:hover {
-		transform: scale(1.2) translateX(20px);
-		box-shadow: 0 0 1rem #fff;
-	}
-
 	.oxx-title {
 		user-select: none;
 		/* text-shadow: 0 0 1rem #e11d4773; */
@@ -130,12 +126,6 @@ export const prefetch = true;
 	@media screen and (max-width: 798px) {
 		.animate-tilt {
 			scale: 250%;
-		}
-	}
-
-	@keyframes animate-mask {
-		from {
-			mask-size: 800%;
 		}
 	}
 

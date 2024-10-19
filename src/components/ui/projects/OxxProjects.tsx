@@ -1,30 +1,28 @@
 import { TechStackBadge } from "../ui-assets/TechStackBadge"
 import { FaExternalLinkAlt } from "react-icons/fa";
 
-// type OxxProject = {
-//     id: number,
-//     title: string,
-//     description: string,
-//     link: string,
-//     logo: string,
-//     tech_stack: string[],
-//     order: null,
-//     bg_public_url: string
-// }
+type OxxProject = {
+    id: number,
+    title: string,
+    description: string,
+    link: string,
+    logo: string,
+    tech_stack: string[],
+    order: null,
+    bg_public_url: string
+}
 
 // type OxxProjectProps = {
 //     raw_projects: OxxProject[]
 // }
 
-export default function OxxProjects({ raw_projects }: any) {
-    const projects = raw_projects.reverse()
+export default function OxxProjects({ production_projects, demo_projects }: { production_projects: OxxProject[], demo_projects: OxxProject[] }) {
 
     return (
         <>
             {
-                projects.map((project: any) => (
+                production_projects.map((project: any) => (
                     <a href={project.link} target="_blank">
-
                         <div key={project.id} className="h-full p-7 bg-rose-900/10 flex lg:even:flex-row-reverse grid-cols-2 rounded-lg border border-rose-900 min-sm:h-[20rem] overflow-hidden group cursor-pointer shadow-lg max-lg:flex-col">
                             <header className="lg:w-1/2 max-sm:h-56 max-sm:aspect-auto overflow-hidden flex items-center">
                                 <img

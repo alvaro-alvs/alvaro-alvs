@@ -4,7 +4,7 @@ import PageProvider from "../PageProvider.astro";
 import OxxHeader from "../components/ui/base/OxxHeader.astro";
 
 import OxxProjects from "../components/ui/projects/OxxProjects";
-import { oxx_project } from "../data/oxx_projects";
+import { ProductionProjects, DemoProjects } from "../data/oxx_projects";
 
 // const oxx_response = await fetch("https://oxx-three.vercel.app/oxx/projects/", {
 //     headers: {
@@ -31,8 +31,8 @@ import { oxx_project } from "../data/oxx_projects";
 
         <div class="grid 2xl:grid-cols-2 gap-10 max-sm:gap-5 lg:py-10 lg:px-20">
             {
-                oxx_project && (
-                    <OxxProjects raw_projects={oxx_project} client:load />
+                ProductionProjects && (
+                    <OxxProjects production_projects={ProductionProjects} demo_projects={DemoProjects} client:load />
                 )
             }
         </div>
