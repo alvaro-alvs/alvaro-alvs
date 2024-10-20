@@ -4,7 +4,6 @@ import Layout from "./layouts/Layout.astro";
 const { title } = Astro.props;
 ---
 
-<!-- Importar Page Provider e passar um children para o conteudo da pagina -->
 <Layout title={title}>
     <main class="w-full max-w-screen min-h-screen text-white scroll-smooth">
         <slot />

@@ -18,7 +18,8 @@ export type ForYouContentType = {
     icon?: React.ReactNode,
     image?: React.ReactNode,
     clientMessage?: string,
-    link?: string
+    link?: string,
+    isNew?: boolean 
 }
 
 export type ContactType = {

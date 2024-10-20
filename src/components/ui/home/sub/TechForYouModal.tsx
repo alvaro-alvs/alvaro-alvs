@@ -13,6 +13,7 @@ import { useState } from "react"
 import GetProductCTA from "../../modal/purchase/GetProductCTA"
 import PaymentProvider, { usePayment } from "@/components/providers/PaymentProvider"
 import { Button } from "../../shadcn-ui/button"
+import { PromoTag } from "../../base/tags/PromoTag";
 
 
 export const TechForYouModal = ({ Product }: { Product: ForYouContentType }) => {
@@ -23,7 +24,9 @@ export const TechForYouModal = ({ Product }: { Product: ForYouContentType }) => 
         <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger onClick={() => setProduct(Product)} className="md:last:col-span-2">
                 <div className="text-left flex flex-col w-full h-full gap-2 p-7 sm:rounded-2xl backdrop-blur-2xl border border-transparent cursor-pointer bg-gradient-to-b from-rose-950/30 to-indigo-900/10 hover:border-rose-900 transition group">
-
+                    {Product.isNew &&
+                        <PromoTag />
+                    }
                     <header className="pb-5">
                         <div className="absolute -top-3 transform -translate-x-10">
                             {/* {Product.icon ? Product.icon : <MdOutlineWeb className="text-4xl text-red-500" />} */}
