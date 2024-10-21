@@ -1,0 +1,40 @@
+---
+import PageProvider from "@/PageProvider.astro";
+import { CustomerBasics } from "@/components/profile/ux/CustomerBasics";
+import OxxHeader from "@/components/ui/base/OxxHeader.astro";
+import CustomerProfile from "@/components/ui/profile/CustomerProfile";
+import { OxxLink } from "@/components/ui/ui-assets/OxxLink";
+import { TbHandClick } from "react-icons/tb";
+
+const OPENPIXAPPID = import.meta.env.OPEN_PIX_ADDID;
+const OAUTHID = import.meta.env.OXX_DIGITAL_OAUTH_CLIENT_ID
+
+//* use its value as pedido.value
+const pedido = Astro.cookies.get("order");
+
+let pedidoJson = undefined;
+
+if (pedido) {
+    pedidoJson = await JSON.parse(pedido.value);
+}
+---
+
+<PageProvider title="Painel">
+    <OxxHeader title={pedidoJson?.data.customer.name || "Painel"}>
+        {
+            pedidoJson && (
+                <OxxLink
+                    Label="Confira o Status do Seu Ultimo Pedido"
+                    Url="/painel/#last-order"
+                >
+                    <TbHandClick />
+                </OxxLink>
+            )
+        }
+    </OxxHeader>
+
+    <CustomerProfile order={pedidoJson} open_pix_app_id={OPENPIXAPPID} oauth_id={OAUTHID} client:load />
+</PageProvider>
+
+
+<!-- <CustomerBasics order={pedidoJson} app_id={APPID} client:load /> -->

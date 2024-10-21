@@ -50,7 +50,7 @@ export const PurchaseButton = ({ vista }: { vista: boolean }) => {
         });
 
         if (res.ok) {
-            window.location.href = '/perfil'
+            window.location.href = '/painel'
         } else {
             setButtonStatus('error')
         }

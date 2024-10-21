@@ -61,7 +61,7 @@ export const POST: APIRoute = async ({ request }) => {
                 status: 302,
                 headers: {
                     'Content-Type': 'application/json',
-                    'Location': '/perfil',
+                    'Location': '/painel',
                     'Set-Cookie': `order=${encodedData}; HttpOnly; SameSite=None; Secure; Path=/perfil; Max-Age=3600`
                     // 'Set-Cookie': `cpf=${OxxValleyData.data.customer.taxID}; HttpOnly; SameSite=Strict; Path=/perfil; Max-Age=3600`,
                 }

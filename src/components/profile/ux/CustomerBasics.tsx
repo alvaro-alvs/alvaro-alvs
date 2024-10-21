@@ -6,15 +6,8 @@ import { BackButton } from "@/components/ui/ui-assets/BackButton"
 import { vistaProps, notVistaProps } from "@/components/ui/home/sub/TechForYou"
 import { FaStar } from "react-icons/fa";
 import { FaRegCopy } from "react-icons/fa";
+import type { OrderType } from "@/types/ProfileTypes"
 
-
-type OrderType = {
-    success: boolean,
-    data: {
-        customer: CustomerType,
-        order: PaymentPayloadType
-    }
-}
 
 export const CustomerBasics = ({ order, app_id }: { order: OrderType | undefined, app_id: string }) => {
     const [orderData, setOrderData] = useState<OrderType | undefined>(order)
@@ -32,7 +25,7 @@ export const CustomerBasics = ({ order, app_id }: { order: OrderType | undefined
         ((orderData?.data?.order?.additionalInfo?.find(({ key }) => key === 'installments')?.value || 1) as number);
 
 
-    async function gerarPagamento() {
+    async function gerarPagamento({ orderData, app_id }: { orderData: OrderType, }) {
 
         const payload = {
             correlationID: orderData?.data.order.correlationID,
