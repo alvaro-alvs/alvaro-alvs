@@ -3,7 +3,7 @@ import type { OrderType } from "@/types/ProfileTypes"
 
 const OPENPIXAPPID =  import.meta.env.OPEN_PIX_ADDID
 
-async function gerarPagamento({ orderData }: {orderData: OrderType}) {
+export default async function gerarPagamento({ orderData }: {orderData: OrderType}) {
     return OPENPIXAPPID
 
     const payload = {

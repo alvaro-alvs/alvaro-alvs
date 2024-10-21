@@ -1,4 +1,7 @@
 import type { CustomerType, PaymentDataType, PaymentPayloadType } from "@/types/PaymentTypes"
+
+import gerarPagamento from "@/services/pagamentos"
+
 import { useEffect, useState } from "react"
 import { toast } from "sonner"
 import { decodedString, formatBrl, formatCpf } from "@/services/formatStrings"
@@ -9,7 +12,7 @@ import { FaRegCopy } from "react-icons/fa";
 import type { OrderType } from "@/types/ProfileTypes"
 
 
-export const CustomerBasics = ({ order, app_id }: { order: OrderType | undefined, app_id: string }) => {
+const CustomerBasics = ({ order, app_id }: { order: OrderType | undefined, app_id: string }) => {
     const [orderData, setOrderData] = useState<OrderType | undefined>(order)
     const [paymentData, setPaymentData] = useState<PaymentDataType | undefined>(undefined)
 
@@ -25,7 +28,7 @@ export const CustomerBasics = ({ order, app_id }: { order: OrderType | undefined
         ((orderData?.data?.order?.additionalInfo?.find(({ key }) => key === 'installments')?.value || 1) as number);
 
 
-    async function gerarPagamento({ orderData, app_id }: { orderData: OrderType, }) {
+    async function gerarPagamento({ orderData }: { orderData: OrderType, }) {
 
         const payload = {
             correlationID: orderData?.data.order.correlationID,
@@ -73,7 +76,7 @@ export const CustomerBasics = ({ order, app_id }: { order: OrderType | undefined
 
         } else if (retrieveCharge.status === 400) {
             toast.success('Gerando seu QR-Code')
-            gerarPagamento()
+            gerarPagamento({orderData})
         } else {
             toast.error('Não foi possivel realizar o Pagamento')
         }
