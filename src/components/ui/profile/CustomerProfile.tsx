@@ -3,7 +3,8 @@ import { GoogleOAuthProvider } from "@react-oauth/google"
 import CustomerProfileProvider from "@/components/providers/CustomerProfileProvider"
 import type { OrderType } from "@/types/ProfileTypes"
 import CustomerLastOrder from "./components/CustomerLastOrder";
-import CustomerLogin from "./components/CustomerLogin";
+import CustomerLogin from "./components/auth/CustomerLogin";
+import CustomerIndex from "./CustomerIndex";
 
 
 
@@ -13,7 +14,7 @@ export default function CustomerProfile({ order, open_pix_app_id, oauth_id }: { 
     return (
         <GoogleOAuthProvider clientId={oauth_id}>
             <CustomerProfileProvider>
-                {order ? <CustomerLastOrder /> : <CustomerLogin />}
+                <CustomerIndex />
             </CustomerProfileProvider>
         </GoogleOAuthProvider>
     )

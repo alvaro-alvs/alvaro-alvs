@@ -37,6 +37,7 @@ export default function CustomerForm() {
                     <InputG name="email" label="Email" />
                     <InputG name="phone" label="Celular (com DDD)" />
                 </span>
+
                 <PurchaseComment />
             </form>
         </>

@@ -11,8 +11,14 @@ export type OrderType = {
 }
 
 export interface CustomerContextType {
-    customer: any;
-    setCustomer: React.Dispatch<React.SetStateAction<any>>;
-    order: any;
-    setOrder: React.Dispatch<React.SetStateAction<any>>;
+    customerState: {
+        email: string;
+        password: string;
+        step: 0 | 1 | 2 | 3;
+        cpf: string;
+        customer: CustomerType | undefined;
+        orders: any[]; // ou possivelmente OrderType[] se houver um tipo definido para ordens
+        keepSession: boolean;
+    },
+    setCustomerState: React.Dispatch<React.SetStateAction<any>>;
 }

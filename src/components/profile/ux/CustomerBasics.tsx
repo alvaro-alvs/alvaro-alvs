@@ -62,32 +62,6 @@ const CustomerBasics = ({ order, app_id }: { order: OrderType | undefined, app_i
         }
     }
 
-    const getCharge = async () => {
-        const retrieveCharge = await fetch(`https://api.openpix.com.br/api/v1/charge/${ORDER_ID}`, {
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': app_id,
-            }
-        })
-
-        if (retrieveCharge.ok) {
-            const chargeData = await retrieveCharge.json()
-            setPaymentData(chargeData)
-
-        } else if (retrieveCharge.status === 400) {
-            toast.success('Gerando seu QR-Code')
-            gerarPagamento({orderData})
-        } else {
-            toast.error('Não foi possivel realizar o Pagamento')
-        }
-    }
-
-    //* very Important
-    useEffect(() => {
-        getCharge()
-
-    }, [order])
-
     return (
         <main className="flex flex-col items-center min-h-screen pb-24">
             <header className="p-5 text-center">
