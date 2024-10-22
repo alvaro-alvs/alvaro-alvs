@@ -14,7 +14,6 @@ import {
 
 
 export default function OTPStep() {
-    const { cpf, setCpf, customer, setCustomer, } = useCustomer()
 
     return (
         <>
@@ -32,7 +31,7 @@ export default function OTPStep() {
                 </InputOTPGroup>
             </InputOTP>
             {/* <Input onChange={(e) => setCpf(e.target.value)} value={0} className=' ' placeholder="cpf" maxLength={15} /> */}
-            <p className="text-xs pt-5">A senha foi enviada para {customer?.email}</p>
+            {/* <p className="text-xs pt-5">A senha foi enviada para {customer?.email}</p> */}
         </>
     )
 }
