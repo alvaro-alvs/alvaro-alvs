@@ -24,7 +24,7 @@ export default function GetProductCTA({ Product }: { Product: ForYouContentType 
 
     return (
         <Dialog open={open} onOpenChange={setOpen}>
-            <DialogTrigger className="relative w-max flex space-x-3 items-center p-3 text-white rounded bg-rose-950 border border-rose-900 hover:bg-rose-900 hover:border-rose-600 transition-all backdrop-blur-lg z-[200]
+            <DialogTrigger disabled className="relative w-max flex space-x-3 items-center p-3 text-white rounded bg-rose-950 border border-rose-900 hover:bg-rose-900 hover:border-rose-600 transition-all backdrop-blur-lg z-[200]
                 shadow-[0_0_3rem] shadow-rose-500/50
             ">
                 <FaParachuteBox />
