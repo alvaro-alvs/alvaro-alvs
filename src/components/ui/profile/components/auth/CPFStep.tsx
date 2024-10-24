@@ -11,7 +11,7 @@ export const CPFStep = () => {
 
     return (
         <>
-            <p onClick={() => setCustomerState({...customerState, cpf: '51575242850'})}>fill</p>
+            {/* <p onClick={() => setCustomerState({...customerState, cpf: '51575242850'})}>fill</p> */}
             <Label>CPF</Label>
             <Input onChange={(e) => setCustomerState({...customerState, cpf: e.target.value})} value={formatCpf(customerState.cpf)} className=' border-rose-500' placeholder="cpf" maxLength={15} />
         </>
