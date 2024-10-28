@@ -1,7 +1,7 @@
 import type { ForYouContentType } from "./OxxTypes"
 
 export type CustomerType = {
-    id: number,
+    id?: number,
     name: string,
     taxID: string,
     email: string,
