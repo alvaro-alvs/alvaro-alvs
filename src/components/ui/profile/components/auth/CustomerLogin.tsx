@@ -1,16 +1,11 @@
 import { GoogleLogin } from '@react-oauth/google';
-import { Label } from '../../../shadcn-ui/label';
-import { Input } from '../../../shadcn-ui/input';
 import { Button } from '../../../shadcn-ui/button';
 import { useEffect, useState } from 'react';
-import { formatCpf } from '@/services/formatStrings';
 import { toast } from 'sonner';
 import type { CustomerType } from '@/types/PaymentTypes';
 import { useCustomer } from '@/components/providers/CustomerProfileProvider';
 import { CPFStep } from './CPFStep';
-import OTPStep from './OTPStep';
 import CustomerMailConfirm from './CustomerMailConfirm';
-import PasswordStep from './PasswordStep';
 
 
 export default function CustomerLogin() {
@@ -19,8 +14,11 @@ export default function CustomerLogin() {
     const [userData, setUserData] = useState<CustomerType | undefined>(undefined)
 
     const handleGetuserByCpf = async () => {
-        const loginRes = await fetch('api/login', {
+        const loginRes = await fetch('/actions/login', {
             method: 'post',
+            headers: {
+                'Content-Type': 'application/json',
+            },
             body: JSON.stringify(customerState.cpf),
         })
 
@@ -30,8 +28,8 @@ export default function CustomerLogin() {
             console.log('Customer from server: ', data.customer);
 
             //* Adiciona os dados do usuario no contexto do perfil
-            setCustomerState({...customerState, customer: data.customer, step: 1})
-            
+            setCustomerState({ ...customerState, customer: data.customer, step: 1 })
+
             toast.success('Confirme Seu Email')
         } else {
             console.log(loginRes);
@@ -47,17 +45,12 @@ export default function CustomerLogin() {
             handleGetuserByCpf()
         } else if (customerState.step === 1) {
             if (customerState.customer?.email === customerState.email) {
-                setCustomerState({...customerState, step: 2})
+                setCustomerState({ ...customerState, step: 2 })
             } else {
                 toast.info('Email diferente do cadastro')
             }
         }
     }
-
-    useEffect(() => {
-        console.log('Customer context: ', customerState);
-        
-    }, [customerState])
 
     return (
         <section className="text-rose-100 w-full flex flex-col items-center">
@@ -67,6 +60,7 @@ export default function CustomerLogin() {
                     {customerState.step === 0 &&
                         <CPFStep />
                     }
+
                     {customerState.step === 1 &&
                         <CustomerMailConfirm />
                     }

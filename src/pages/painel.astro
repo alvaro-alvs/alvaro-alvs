@@ -5,25 +5,20 @@ import CustomerProfile from "@/components/ui/profile/CustomerProfile";
 import { OxxLink } from "@/components/ui/ui-assets/OxxLink";
 import { TbHandClick } from "react-icons/tb";
 
-const OPENPIXAPPID = import.meta.env.OPEN_PIX_APPID;
-const OAUTHID = import.meta.env.OXX_DIGITAL_OAUTH_CLIENT_ID
+const OAUTHID = import.meta.env.OXX_DIGITAL_OAUTH_CLIENT_ID;
 
-//* use its value as pedido.value
-const pedido = Astro.cookies.get("order");
+//* Verifica a existência do cookie
+// const pedido = Astro.cookies.get("order");
 
-let pedidoJson = undefined;
-
-if (pedido) {
-    pedidoJson = await JSON.parse(pedido.value);
-}
+const cookies = Astro.cookies.get("order");
 ---
 
 <PageProvider title="Painel">
-    <OxxHeader title={pedidoJson?.data.customer.name || "Painel"}>
+    <OxxHeader title={"Painel"}>
         {
-            pedidoJson && (
+            undefined && (
                 <OxxLink
-                    Label="Confira o Status do Seu Ultimo Pedido"
+                    Label="Confira o Status do Seu Último Pedido"
                     Url="/painel/#last-order"
                 >
                     <TbHandClick />
@@ -32,8 +27,20 @@ if (pedido) {
         }
     </OxxHeader>
 
-    <CustomerProfile order={pedidoJson} open_pix_app_id={OPENPIXAPPID} oauth_id={OAUTHID} client:load />
+    {
+        cookies ? (
+            <CustomerProfile
+                order={JSON.parse(cookies!.value)}
+                oauth_id={OAUTHID}
+                client:load
+            />
+        )
+        :
+        (
+            <CustomerProfile 
+                oauth_id={OAUTHID}
+                client:load
+            />
+        )
+    }
 </PageProvider>
-
-
-<!-- <CustomerBasics order={pedidoJson} app_id={APPID} client:load /> -->

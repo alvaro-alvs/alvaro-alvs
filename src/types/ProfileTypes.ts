@@ -1,6 +1,22 @@
 import type { CustomerType, PaymentPayloadType } from "./PaymentTypes"
 
 
+export type SessionType = {
+    success: boolean,
+    message: string,
+    customer: {
+        id: number,
+        name: string,
+        taxID: string,
+        email: string,
+        phone: string,
+        pix_key: string,
+        status: string | null,
+        access: string | null,
+        created_at: string,
+        last_order_ad: string
+    }
+}
 
 export type OrderType = {
     success: boolean,

@@ -1,7 +1,7 @@
 import type { ForYouContentType } from "./OxxTypes"
 
 export type CustomerType = {
-    id?: number,
+    id: number,
     name: string,
     taxID: string,
     email: string,
@@ -25,7 +25,7 @@ export type PaymentPayloadType = {
     value: number,
     comment: string | undefined,
     customer: CustomerType,
-    additionalInfo: AdditionalInfoType[]
+    additionalInfo: AdditionalInfoType[],
 }
 
 export type PaymentContextType = {

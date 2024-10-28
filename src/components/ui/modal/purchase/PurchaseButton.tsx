@@ -31,7 +31,7 @@ export const PurchaseButton = ({ vista }: { vista: boolean }) => {
             customer: customer,
             comment: payload.comment,
             additionalInfo: [
-                { key: 'Produto-Digital', value: product!.title },
+            { key: 'Produto-Digital', value: product!.title },
                 { key: 'metodo', value: vista ? 'vista' : 'parcelado' },
                 { key: 'installments', value: product!.pay.installments.toString()},
             ]
@@ -41,7 +41,7 @@ export const PurchaseButton = ({ vista }: { vista: boolean }) => {
         setPayload(updatedPayload);
 
         // Use o `updatedPayload` diretamente na requisição
-        const res = await fetch('api/place-order/', {
+        const res = await fetch('/actions/place-order', {
             body: JSON.stringify(updatedPayload),
             method: 'POST',
             headers: {

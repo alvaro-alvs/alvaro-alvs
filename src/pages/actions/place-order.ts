@@ -1,15 +1,8 @@
 import { PayloadValidation } from "@/services/validation/PayloadValidation";
+import type { OrderType } from "@/types/ProfileTypes";
 import type { APIRoute } from "astro";
 
-
-//* https://oxx-three.vercel.app/oxx/orders/place/
-
-//* Criar pedido de pagamento com pix via OpenPix
-//* Criar novo usuario na OXX Valley -> se for o primeiro pedido
-//* Criar novo pedido na conta do usuario -> se usuario estiver cadastrado
-
-
-export const POST: APIRoute = async ({ request }) => {
+export const POST: APIRoute = async({ request, cookies, redirect }) => {
 
     const data = await request.json();
 
@@ -52,16 +45,22 @@ export const POST: APIRoute = async ({ request }) => {
         }
 
         if (OxxValleyResponse.status === 201) {
-            const OxxValleyData = await OxxValleyResponse.json();
+            const OxxValleyData: OrderType = await OxxValleyResponse.json();
 
             const encodedData = encodeURIComponent(JSON.stringify(OxxValleyData))
+
+            console.log('Data do valley: ', OxxValleyData)
+
+            cookies.set("order", OxxValleyData || "(Message not set)", {
+                httpOnly: true,
+                sameSite: "none",
+                secure: true,
+                path: '/painel'
+            })
             
             return new Response(JSON.stringify(OxxValleyData), {
                 headers: {
                     'Content-Type': 'application/json',
-                    'Location': '/painel',
-                    'Set-Cookie': `order=${encodedData}; HttpOnly; SameSite=None; Secure; Path=/painel; Max-Age=3600`
-                    // 'Set-Cookie': `cpf=${OxxValleyData.data.customer.taxID}; HttpOnly; SameSite=Strict; Path=/perfil; Max-Age=3600`,
                 }
             });
         }
@@ -73,4 +72,4 @@ export const POST: APIRoute = async ({ request }) => {
             'Content-Type': 'application/json'
         }
     });
-};
+}

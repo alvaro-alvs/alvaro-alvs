@@ -1,10 +1,15 @@
 import type { PaymentDataType } from "@/types/PaymentTypes"
 import type { OrderType } from "@/types/ProfileTypes"
 
-const OPENPIXAPPID =  import.meta.env.OPEN_PIX_ADDID
 
-export default async function gerarPagamento({ orderData }: {orderData: OrderType}) {
 
+
+const OPENPIXAPPID = import.meta.env.OPEN_PIX_ADDID
+
+
+export async function GetCreatePayment({ orderData }: { orderData: OrderType }) {
+
+    //* Seta os dados do payload
     const payload = {
         correlationID: orderData?.data.order.correlationID,
         value: orderData?.data.order.value,
@@ -16,6 +21,14 @@ export default async function gerarPagamento({ orderData }: {orderData: OrderTyp
             phone: orderData?.data.customer.phone,
         },
         additionalInfo: orderData?.data.order.additionalInfo
+    }
+
+    const getCharge = await fetch(`https://api.openpix.com.br/api/v1/charge/${payload.correlationID}`)
+
+    if (getCharge.ok) {
+        const chargeData = await getCharge.json()
+
+        return chargeData
     }
 
     const openPixResponse = await fetch('https://api.openpix.com.br/api/v1/charge', {
