@@ -5,11 +5,11 @@
 
 <p align='center'> Sou <b>Desenvolvedor Fullstack</b> com foco em tecnologia para negocios. </p>
 
- - 🖥️ Sou um desenvolvedor full stack com mais de 5 anos de experiência em web e mobile. Tenho um sólido domínio em linguagens como JavaScript, Python e C#, além de tecnologias modernas como Astro e TypeScript.
- 
- - ☯️ Com um forte compromisso com a qualidade e responsabilidade, trabalho bem tanto de forma independente quanto em equipe, e mantenho ótimos relacionamentos com clientes e colegas.
- 
- - 🏹 Sempre em busca de novos desafios e aprendizado contínuo, estou pronto para trazer contribuições valiosas para o seu projeto.
+- 🖥️ Sou um desenvolvedor full stack com mais de 5 anos de experiência em web e mobile. Especialista em linguagens modernas como JavaScript, Python e C#.
+
+- 🏹 Sempre em busca de novos desafios e aprendizado contínuo, estou pronto para trazer contribuições valiosas para o seu projeto.
+
+- ☯️ Trabalho bem tanto de forma independente quanto em equipe, e mantenho ótimos relacionamentos com clientes e colegas.
 
 ## 📠 Contato
 #### Email: alvaro.nrx88@gmail.com
