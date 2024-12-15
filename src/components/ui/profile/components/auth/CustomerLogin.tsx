@@ -55,7 +55,7 @@ export default function CustomerLogin() {
     return (
         <section className="text-rose-100 w-full flex flex-col items-center">
             <div>
-                <h1 className='text-2xl'> Login com CPF e Email </h1>
+                <h1 className='text-2xl'> Login com CPF </h1>
                 <div className='my-5'>
                     {customerState.step === 0 &&
                         <CPFStep />

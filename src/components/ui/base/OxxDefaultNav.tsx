@@ -3,7 +3,7 @@ import { PiBookOpenText } from "react-icons/pi";
 import { TbDeviceDesktopCode } from "react-icons/tb";
 import { FaLink } from "react-icons/fa6";
 import { OxxLink } from "../ui-assets/OxxLink"
-import { OxxContatoDialog } from "../modal/OxxContatoDialog";
+import { OxxContatoDialog } from "../modal/OxxContatoModal";
 import { IoMdPerson } from "react-icons/io";
 
 //* Icons

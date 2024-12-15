@@ -7,16 +7,20 @@ import { TbHandClick } from "react-icons/tb";
 
 const OAUTHID = import.meta.env.OXX_DIGITAL_OAUTH_CLIENT_ID;
 
-//* Verifica a existência do cookie
-// const pedido = Astro.cookies.get("order");
+
+let pedido: any;
 
 const cookies = Astro.cookies.get("order");
+
+if (cookies) {
+    pedido = JSON.parse(cookies.value);
+}
 ---
 
 <PageProvider title="Painel">
     <OxxHeader title={"Painel"}>
         {
-            undefined && (
+            (
                 <OxxLink
                     Label="Confira o Status do Seu Último Pedido"
                     Url="/painel/#last-order"
@@ -30,17 +34,12 @@ const cookies = Astro.cookies.get("order");
     {
         cookies ? (
             <CustomerProfile
-                order={JSON.parse(cookies!.value)}
+                order={pedido}
                 oauth_id={OAUTHID}
                 client:load
             />
-        )
-        :
-        (
-            <CustomerProfile 
-                oauth_id={OAUTHID}
-                client:load
-            />
+        ) : (
+            <CustomerProfile oauth_id={OAUTHID} client:load />
         )
     }
 </PageProvider>

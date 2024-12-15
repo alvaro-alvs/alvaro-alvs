@@ -9,12 +9,15 @@ import {
 import { OxxLink } from "../ui-assets/OxxLink"
 import { AiOutlineSend } from "react-icons/ai";
 import OxxContactForm from "./OxxContactForm";
+import { useState } from "react";
+import OxxContatoProvider from "@/components/providers/ContatoProvider";
 
 
 export const OxxContatoDialog = ({ mobile }: { mobile?: boolean }) => {
+    const [open, setOpen] = useState(false)
 
     return (
-        <Dialog modal>
+        <Dialog modal open={open} onOpenChange={setOpen}>
             <DialogTrigger className="flex justify-center h-full p-0 m-0">
                 <OxxLink Label="Contato" Right={!mobile} >
                     <AiOutlineSend
@@ -34,7 +37,9 @@ export const OxxContatoDialog = ({ mobile }: { mobile?: boolean }) => {
                 </DialogHeader>
 
                 <article className="h-max min-h-[18rem]">
-                    <OxxContactForm />
+                    <OxxContatoProvider open={open} setOpen={setOpen}>
+                        <OxxContactForm />
+                    </OxxContatoProvider>
                 </article>
             </DialogContent>
         </Dialog>

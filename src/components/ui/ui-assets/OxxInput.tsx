@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { OxxContactContext } from "../modal/OxxContactForm"
+import { useContato } from "@/components/providers/ContatoProvider"
 
 type OxxInputType = {
     field: string,
@@ -13,11 +13,11 @@ type OxxInputType = {
 export const InputStyles = "p-2 text-indigo-100 border border-slate-800 bg-slate-950 rounded hover:scale-105 focus-visible:scale-110 hover:shadow-xl hover:shadow-indigo-700/10 focus-visible:border-[1px_solid_#3e1d63] focus-visible:ring-indigo-900 focus-visible:outline-0 focus-visible:border-indigo-700 transition-all duration-200"
 
 export const OxxInput = ({ field, type, label, placeholder, required = false }: OxxInputType) => {
-    const { formData, setFormData, validate, setValidate } = useContext(OxxContactContext)
+    const { contato, setContato, validate, setValidate } = useContato()
 
 
     const validateField = (field: string): boolean => {
-        if (formData[field] && formData[field].length > 2) {
+        if (contato[field] && contato[field].length > 2) {
             setValidate({ ...validate, [field]: false })
             return true;
         } else {
@@ -29,7 +29,7 @@ export const OxxInput = ({ field, type, label, placeholder, required = false }: 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>, field: string) => {
         const value = e.target.value
 
-        setFormData({ ...formData, [field]: value })
+        setContato({ ...contato, [field]: value })
 
         function validateEmail(email: string): boolean {
             if (validateField(email) && value.includes('@')) {
@@ -37,31 +37,6 @@ export const OxxInput = ({ field, type, label, placeholder, required = false }: 
             } else {
                 return false
             }
-        }
-
-        switch (field) {
-            case 'nome':
-                if (value.length > 1) {
-                    setValidate({ ...validate, [field]: false })
-                } else {
-                    setValidate({ ...validate, [field]: true })
-                }
-                break;
-            case 'email':
-                if (validateEmail(value)) {
-                    setValidate({ ...validate, [field]: false })
-                } else {
-                    setValidate({ ...validate, [field]: true })
-                }
-                break;
-            case 'telefone':
-                if (validateField(value)) {
-                    setValidate({...validate, email: false, telefone: false})
-                } else {
-                    setValidate({...validate, email: true, telefone: true})
-                }
-            default:
-                validateField(field)
         }
     }
 
@@ -71,7 +46,7 @@ export const OxxInput = ({ field, type, label, placeholder, required = false }: 
 
             {type === "message" ? (
                 <textarea
-                    value={formData[field] || ""}
+                    value={contato[field] || ""}
                     onChange={(e) => handleChange(e, field)}
                     className={`${InputStyles} max-h-[5rem]`}
                     name={field}
@@ -83,7 +58,7 @@ export const OxxInput = ({ field, type, label, placeholder, required = false }: 
                         name={field}
                         type={type}
                         placeholder={placeholder}
-                        value={formData[field] || ""}
+                        value={contato[field] || ""}
                         className={`${InputStyles} ${validate[field] && 'border-red-500'}`}
                         onChange={(e) => handleChange(e, field)}
                     />

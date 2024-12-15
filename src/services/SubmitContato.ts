@@ -1,12 +1,12 @@
 import type { ContactType } from "@/types/OxxTypes"
 
-export const SubmitContato = async (formData: ContactType) => {
+export const SubmitContato = async (contato: ContactType) => {
     const submit_response = await fetch('/api/contato', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(contato)
     })
 
     const data = await submit_response.json()

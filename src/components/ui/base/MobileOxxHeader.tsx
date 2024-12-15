@@ -9,7 +9,7 @@ import {
     PopoverTrigger,
 } from "../shadcn-ui/popover"
 import { OxxLink } from "../ui-assets/OxxLink"
-import { OxxContatoDialog } from "../modal/OxxContatoDialog";
+import { OxxContatoDialog } from "../modal/OxxContatoModal";
 import HomeIcon from "@/assets/icons/OxxHomeIcon.svg"
 
 export default function MobileOxxHeader() {
