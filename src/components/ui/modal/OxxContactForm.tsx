@@ -19,7 +19,7 @@ export default function OxxContactForm() {
     const MensagemEnviada = () => {
 
         return (
-            <span className="w-full text-center"> 📬  Mensagem Enviada </span>
+            <span className="w-full text-center text-xl"> 📬  Mensagem Enviada </span>
         )
     }
 
@@ -39,7 +39,22 @@ export default function OxxContactForm() {
             setStatus('idle');
 
             return;
-        } else {
+        }
+
+        if (!contato.name || contato.name.length <= 2) {
+            setValidate((prevState: any) => ({
+                ...prevState,
+                name: true
+            }));
+
+            toast.warning('Preencha seu Nome');
+
+            setStatus('idle')
+
+            return
+        }
+
+        else {
             toast.info('Enviando Mensagem...')
 
             const res = await SubmitContato(contato)

@@ -48,7 +48,7 @@ export const OxxInput = ({ field, type, label, placeholder, required = false }: 
                 <textarea
                     value={contato[field] || ""}
                     onChange={(e) => handleChange(e, field)}
-                    className={`${InputStyles} max-h-[5rem]`}
+                    className={`${InputStyles} h-[10rem] max-h-[15rem]`}
                     name={field}
                     placeholder={placeholder}
                 />

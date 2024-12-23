@@ -85,6 +85,7 @@ export default function LinkStreamDemoProvider({ children }: { children: any }) 
                             <LinkButton label='Portfólio' picture={LkIcon.src} link="https://www.instagram.com/advtimemoments/" theme="neutral" desc="@marcy" stared bigIcon/>
                             <LinkButton label='Instagram' picture={InstaIcon.src} link="https://www.instagram.com/advtimemoments/" theme="rose" desc="@marcy" stared />
                             <span></span>
+                            <span></span>
                             <LinkButton label='Whatsapp' picture={WhatsappIcon.src} link="https://www.wpp.com/" theme="teal" desc="+55 (11)94545-7878" />
                             <LinkButton label='TikTok' picture={TikTok.src} link="https://www.tiktok.com/@marcyyy" theme="zinc" desc="@marcyyy" />
                             <LinkButton label='Discord' picture={DiscordIcon.src} link="https://www.discord.com/" theme="purple" desc="marcyyy#0001" />

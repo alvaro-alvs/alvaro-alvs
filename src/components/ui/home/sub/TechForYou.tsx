@@ -14,6 +14,7 @@ import www from "@/assets/icons/www.png"
 import system from "@/assets/icons/system.png"
 import links from "@/assets/icons/data-link.png"
 import PaymentProvider from "@/components/providers/PaymentProvider";
+import OxxContatoProvider from "@/components/providers/ContatoProvider";
 
 const Content: ForYouContentType[] = [
     {
@@ -103,17 +104,19 @@ export const notVistaProps = [
 export const TechForYou = () => {
 
     return (
-        <PaymentProvider>
-            {/* <WavyBackground backgroundFill="#0c0812" blur={20} colors={['#9F1111', '#570C0C', '#e11d48', '#C21A9D', '#0e0e1b']} className="w-full h-max sm:h-max sm:p-0"> */}
-            <section className="w-full">
-                <div className="grid h-full gap-10 sm:gap-5 md:gap-7 2xl:gap-12 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:grid-flow-col w-full sm:h-max py-10 sm:py-0 sm:px-0 ">
-                    {Content.map((product) => (
-                        <TechForYouModal key={product.title} Product={product} />
-                    ))}
-                </div>
-            </section>
+        <OxxContatoProvider open={false} setOpen={() => { }}>
+            <PaymentProvider>
+                {/* <WavyBackground backgroundFill="#0c0812" blur={20} colors={['#9F1111', '#570C0C', '#e11d48', '#C21A9D', '#0e0e1b']} className="w-full h-max sm:h-max sm:p-0"> */}
+                <section className="w-full">
+                    <div className="grid h-full gap-10 sm:gap-5 md:gap-7 2xl:gap-12 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:grid-flow-col w-full sm:h-max py-10 sm:py-0 sm:px-0 ">
+                        {Content.map((product) => (
+                            <TechForYouModal key={product.title} Product={product} />
+                        ))}
+                    </div>
+                </section>
 
-            {/* </WavyBackground> */}
-        </PaymentProvider>
+                {/* </WavyBackground> */}
+            </PaymentProvider>
+        </OxxContatoProvider>
     )
 }

@@ -6,13 +6,20 @@ import React, { createContext, useContext, useState } from "react";
 const OxxContactContext = createContext(null as any)
 
 
-export default function OxxContatoProvider({ children, open, setOpen }: { children: React.ReactNode, open: boolean, setOpen: React.Dispatch<React.SetStateAction<boolean>> }) {
+interface ContatoProviderInterface {
+    children: React.ReactNode;
+    open: boolean;
+    setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+    product?: string;
+}
+
+export default function OxxContatoProvider({ children, open, setOpen, product }: ContatoProviderInterface) {
     const [contato, setContato] = useState<ContactType>({
         nome: '',
         email: '',
-        message: '',
+        message: 'Olá, gostaria de saber mais sobre os serviços oferecidos e obter um orçamento. Aguardo retorno',
         telefone: '',
-        product: 'contato_simples',
+        product: product || 'contato_simples',
     })
 
     const [validate, setValidate] = useState({

@@ -10,6 +10,7 @@ import OxxLogo from "@/assets/icons/icon_oxx.svg";
 import { GiAtom } from "react-icons/gi";
 
 import OxxIcon from "@/assets/icons/icon_oxx.svg";
+import ApexTech from "@/components/ui/home/articles/ApexTech.astro";
 
 
 const OxxIconSrc = OxxIcon.src;
@@ -101,11 +102,13 @@ export const prefetch = true;
 		<section
 			class="z-20 flex flex-col items-center w-full mx-auto min-h-screen pt-20"
 		>
-			<div
+			<!-- <div
 				class="flex items-center lg:px-10 max-lg:px-10 max-sm:px-3 min-h-screen"
 			>
 				<QuemSou />
-			</div>
+			</div> -->
+
+			<ApexTech />
 
 			<!-- tech for you -->
 			<MainTech />

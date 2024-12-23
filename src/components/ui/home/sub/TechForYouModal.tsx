@@ -15,6 +15,7 @@ import PaymentProvider, { usePayment } from "@/components/providers/PaymentProvi
 import { Button } from "../../shadcn-ui/button"
 import { PromoTag } from "../../base/tags/PromoTag";
 import CTAContact from "../../modal/CTA/CTAContact";
+import OxxContatoProvider from "@/components/providers/ContatoProvider";
 
 
 export const TechForYouModal = ({ Product }: { Product: ForYouContentType }) => {
@@ -55,7 +56,7 @@ export const TechForYouModal = ({ Product }: { Product: ForYouContentType }) => 
                 </div>
             </DialogTrigger>
 
-            <DialogContent className="flex flex-col h-screen max-h-screen max-w-full border-none z-[99] backdrop-blur-xl">
+            <DialogContent className="flex flex-col h-screen max-h-screen max-w-full border-none  bg-rose-950/10 backdrop-blur-2xl">
 
                 <DialogHeader className="text-rose-400 mb-5 text-center">
                     <DialogTitle className="sm:flex text-center justify-center items-center font-thin">
