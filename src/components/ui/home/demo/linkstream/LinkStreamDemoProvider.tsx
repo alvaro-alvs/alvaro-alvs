@@ -1,25 +1,33 @@
 import { Avatar, AvatarImage, AvatarFallback } from "@radix-ui/react-avatar"
 import { createContext, useContext, useState } from "react"
 
+//* Icons
+import LkIcon from "@/assets/social-icons/LkIcon.svg"
+import InstaIcon from "@/assets/social-icons/instagram.png"
+import WhatsappIcon from "@/assets/social-icons/whats.png"
+import TikTok from "@/assets/social-icons/tiktok.svg"
+import GithubIcon from "@/assets/social-icons/github.svg"
+import DiscordIcon from "@/assets/social-icons/discord.svg"
+
+
 import MarcyIcon from "@/assets/icons/marcy.jpeg"
 
 //* Icons
-import InstaIcon from "@/assets/icons/instagram.png"
-import WhatsIcon from "@/assets/icons/whats.png"
 import { LinkStream } from "./LinkStream"
 import { ThemePicker } from "./ThemePicker"
+import { LinkButton } from "@/components/linkstream/LinkButton"
 
-type LinkStreamContextType = {
+type LinkStreamDemoType = {
     addedLinks: any[],
     setAddedLinks: any,
     theme: string,
     setTheme: any
 }
 
-const LinkStreamContext = createContext<LinkStreamContextType | null>(null)
+const LinkStreamDemo = createContext<LinkStreamDemoType | null>(null)
 
-export const useLinkStream = () => {
-    const context = useContext(LinkStreamContext)
+export const useLinkStreamDemo = () => {
+    const context = useContext(LinkStreamDemo)
 
     if (!context) {
         throw new Error('useLinkStream must be used within a LinkStreamProvider')
@@ -28,7 +36,7 @@ export const useLinkStream = () => {
     return context
 }
 
-export default function LinkStreamProvider({ children }: { children: any }) {
+export default function LinkStreamDemoProvider({ children }: { children: any }) {
     //* States
     const [addedLinks, setAddedLinks] = useState([
 
@@ -39,7 +47,7 @@ export default function LinkStreamProvider({ children }: { children: any }) {
     const Links = ['Instagram', 'Linkedin', 'Portfólio', 'Whatsapp']
 
     return (
-        <LinkStreamContext.Provider value={{ addedLinks, setAddedLinks, theme, setTheme }}>
+        <LinkStreamDemo.Provider value={{ addedLinks, setAddedLinks, theme, setTheme }}>
             <div className="relative flex flex-col h-full space-y-10 overflow-hidden">
 
                 <section className="relative flex flex-col items-center rounded overflow-y-scroll">
@@ -74,14 +82,19 @@ export default function LinkStreamProvider({ children }: { children: any }) {
 
                         {/* Links */}
                         <div className="flex flex-col space-y-5 pt-3">
-                            <LinkStream Icon={<img src={InstaIcon.src} className="h-full max-h-10" />} Label='Instagram' Content='@marcy_' href="https://www.instagram.com/advtimemoments/" stared />
-                            <LinkStream Icon={<img src={WhatsIcon.src} className="h-full max-h-10" />} Label='Whatsapp' Content='+281-541-568-180' />
+                            <LinkButton label='Portfólio' picture={LkIcon.src} link="https://www.instagram.com/advtimemoments/" theme="neutral" desc="@marcy" stared bigIcon/>
+                            <LinkButton label='Instagram' picture={InstaIcon.src} link="https://www.instagram.com/advtimemoments/" theme="rose" desc="@marcy" stared />
+                            <span></span>
+                            <LinkButton label='Whatsapp' picture={WhatsappIcon.src} link="https://www.wpp.com/" theme="teal" desc="+55 (11)94545-7878" />
+                            <LinkButton label='TikTok' picture={TikTok.src} link="https://www.tiktok.com/@marcyyy" theme="zinc" desc="@marcyyy" />
+                            <LinkButton label='Discord' picture={DiscordIcon.src} link="https://www.discord.com/" theme="purple" desc="marcyyy#0001" />
+                            <LinkButton label='Github' picture={GithubIcon.src} link="https://www.github.com/" theme="zinc" desc="@marcyyy" />
                             {children}
                         </div>
                     </div>
                 </section>
             </div>
 
-        </LinkStreamContext.Provider>
+        </LinkStreamDemo.Provider>
     )
 }

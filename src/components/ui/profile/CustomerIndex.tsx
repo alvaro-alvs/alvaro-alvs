@@ -1,7 +1,7 @@
 import { useCustomer } from "@/components/providers/CustomerProfileProvider"
 import CustomerLogin from "./components/auth/CustomerLogin"
 import CustomerLastOrder from "./components/CustomerLastOrder"
-import type { OrderType, SessionType } from "@/types/ProfileTypes"
+import type { OrderType } from "@/types/ProfileTypes"
 
 
 import { useEffect } from "react";

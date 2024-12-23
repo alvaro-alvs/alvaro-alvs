@@ -1,12 +1,12 @@
 import { useEffect } from "react"
-import { useLinkStream } from "./LinkStreamProvider"
+import { useLinkStreamDemo } from "./LinkStreamDemoProvider"
 
 
 
 export const ThemePicker = () => {
     const ThemeColors = ['slate', 'blue', 'cyan', 'teal', 'indigo', 'fuchsia', 'yellow', 'rose',]
 
-    const { theme, setTheme } = useLinkStream()
+    const { theme, setTheme } = useLinkStreamDemo()
 
 
     useEffect(() => {

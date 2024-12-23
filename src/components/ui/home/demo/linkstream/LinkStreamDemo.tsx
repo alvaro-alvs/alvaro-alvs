@@ -1,6 +1,4 @@
-import { useState, type ReactNode } from "react"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/shadcn-ui/avatar"
-import LinkStreamProvider, { useLinkStream } from "./LinkStreamProvider"
+import LinkStreamDemoProvider from "./LinkStreamDemoProvider"
 import { NewLinkStream } from "./NewLinkStream"
 
 
@@ -8,8 +6,8 @@ export const LinkStreamDemo = () => {
 
     
     return (
-        <LinkStreamProvider>
+        <LinkStreamDemoProvider>
             <NewLinkStream />
-        </LinkStreamProvider >
+        </LinkStreamDemoProvider >
     )
 }

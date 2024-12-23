@@ -1,5 +1,5 @@
 import { useEffect, type ReactNode } from "react"
-import { useLinkStream } from "./LinkStreamProvider"
+import { useLinkStreamDemo } from "./LinkStreamDemoProvider"
 import { FaStar } from "react-icons/fa";
 
 
@@ -12,7 +12,7 @@ export type LinkStreamProps = {
 }
 
 export const LinkStream = ({ Label, Icon, Content, href, stared }: LinkStreamProps) => {
-    const { theme } = useLinkStream()
+    const { theme } = useLinkStreamDemo()
 
     return (
         <a href={href} target="_blank" className={`relative  text-white bg-${theme}-900/20 border border-${theme}-500 rounded-xl p-3 w-full sm:min-w-[20rem] cursor-pointer hover:scale-110 hover:-rotate-2 transition`}>

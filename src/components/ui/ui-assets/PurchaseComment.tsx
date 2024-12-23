@@ -5,7 +5,7 @@ import { InputStyles } from "./OxxInput"
 import { usePayment } from "@/components/providers/PaymentProvider"
 import { useEffect } from "react"
 
-
+//todo -> isso nao deveria estar aqui....
 
 
 export const PurchaseComment = () => {
@@ -25,7 +25,9 @@ export const PurchaseComment = () => {
             <p className=" capitalize text-xs pb03">detalhes sobre seu projeto</p>
 
             <div className="relative h-max">
-                <Textarea onChange={(e) => handleChange(e.target.value)} value={payload?.comment} className={`h-[12rem] max-h-[20rem] bg-gradient-to-b from-slate-950 to-slate-900 border-slate-900 hover:scale-105 transition`} placeholder={product?.title} />
+                <Textarea onChange={(e) => handleChange(e.target.value)} value={payload?.comment} className={`h-[12rem] max-h-[20rem] bg-gradient-to-b from-slate-950 to-slate-900 border-slate-900 hover:scale-105 transition`}
+                    placeholder={product?.title}
+                />
             </div>
         </div>
     )

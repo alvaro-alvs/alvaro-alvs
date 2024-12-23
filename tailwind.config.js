@@ -3,7 +3,9 @@
 /** @type {import('tailwindcss').Config} */
 export const safelist = [
 	{
-		pattern: /(bg|border|text)-(slate|rose|teal|indigo|fuchsia|yellow|blue|cyan)-(100|500|600|800|900)/,
+		//* isso pode impactar no desempenho,
+		//* mas nao é meu trabalho saber disso :D
+		pattern: /(bg|border|text|shadow)-(slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(100|300|500|600|800|900|950)/,
 	},
 ];
 export const darkMode = ["class"];
@@ -100,4 +102,3 @@ export const theme = {
 		}
 	}
 };
-export const plugins = [require("tailwindcss-animate")];

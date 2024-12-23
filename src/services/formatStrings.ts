@@ -12,6 +12,12 @@ export function formatCpf(cpf: string | undefined): string {
     return cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
 }
 
+export function unformatCpf(cpf: string | undefined): string {
+    if (!cpf) return '';
+
+    return cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1$2$3$4');
+}
+
 export const formatBrl = (valorEmCentavos: number | undefined) => {
     if (!valorEmCentavos) return 'R$ 0,00';
     // Converte de centavos para reais

@@ -53,7 +53,7 @@ export default function OxxDefaultNav({ mobile }: { mobile?: boolean | false }) 
 
             <OxxContatoDialog />
 
-            <OxxLink Label="Painel do Usuário" Url="/painel" Right>
+            <OxxLink Label="Painel do Usuário" Url="/painel" Right disabled>
                 <IoMdPerson
                     className="w-6 h-6 group-hover:fill-rose-100 transition duration-300"
                 />

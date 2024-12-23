@@ -1,4 +1,4 @@
-import { createContext, useState, useContext, useEffect } from 'react'
+import { createContext, useState, useContext } from 'react'
 import type { CustomerType, PaymentContextType, PaymentPayloadType } from '@/types/PaymentTypes';
 import type { ForYouContentType } from '@/types/OxxTypes';
 

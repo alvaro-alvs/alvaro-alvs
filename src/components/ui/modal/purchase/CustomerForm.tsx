@@ -7,6 +7,7 @@ import { PurchaseComment } from "../../ui-assets/PurchaseComment";
 export default function CustomerForm() {
     const { setCustomer } = usePayment()
 
+    //todo remover -> DEV MODE
     const handlePreencher = () => {
         setCustomer({
             name: 'Alvaro',

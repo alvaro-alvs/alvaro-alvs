@@ -1,5 +1,4 @@
 
-import { WavyBackground } from "../../aceternity-ui/wavy-background";
 import { TechForYouModal } from "./TechForYouModal";
 
 import type { ForYouContentType } from "@/types/OxxTypes";
@@ -40,7 +39,7 @@ const Content: ForYouContentType[] = [
         },
         icon: <img src={links.src} className="group-hover:scale-125 transition w-10 z-10" />,
         image: <LinkStreamDemo />,
-        clientMessage: 'Seus Links: \nNome da Sua Empresa: \n\nPorte da Empresa: \n\nDescrição do Projeto: ',
+        clientMessage: '',
         isNew: true
     }, {
         title: "Desenvolvimento de Website",
@@ -63,7 +62,7 @@ const Content: ForYouContentType[] = [
         },
         icon: <img src={www.src} className="group-hover:scale-125 transition w-10 z-10" />,
         image: <WebsiteDemo />,
-        clientMessage: 'Nome da Sua Empresa: \n\nPorte da Empresa: \n\nDescrição do Projeto: ',
+        clientMessage: '',
     }, {
         title: "Sistemas de Gestão Personalizados",
         subtitle: 'Sistemas sob medida para otimizar os processos empresariais',
@@ -86,7 +85,7 @@ const Content: ForYouContentType[] = [
         },
         icon: <img src={system.src} className="group-hover:scale-125 transition w-10 z-10" />,
         image: <UserManagementDemo />,
-        clientMessage: 'Nome da Sua Empresa: \n\nPorte da Empresa: \n\nDescrição do Projeto: ',
+        clientMessage: '',
     }]
 
 export const vistaProps = [
@@ -108,7 +107,7 @@ export const TechForYou = () => {
             {/* <WavyBackground backgroundFill="#0c0812" blur={20} colors={['#9F1111', '#570C0C', '#e11d48', '#C21A9D', '#0e0e1b']} className="w-full h-max sm:h-max sm:p-0"> */}
             <section className="w-full">
                 <div className="grid h-full gap-10 sm:gap-5 md:gap-7 2xl:gap-12 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:grid-flow-col w-full sm:h-max py-10 sm:py-0 sm:px-0 ">
-                    {Content.map((product, index) => (
+                    {Content.map((product) => (
                         <TechForYouModal key={product.title} Product={product} />
                     ))}
                 </div>

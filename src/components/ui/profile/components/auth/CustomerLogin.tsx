@@ -6,6 +6,8 @@ import type { CustomerType } from '@/types/PaymentTypes';
 import { useCustomer } from '@/components/providers/CustomerProfileProvider';
 import { CPFStep } from './CPFStep';
 import CustomerMailConfirm from './CustomerMailConfirm';
+import PasswordStep from './PasswordStep';
+import { unformatCpf } from '@/services/formatStrings';
 
 
 export default function CustomerLogin() {
@@ -19,7 +21,7 @@ export default function CustomerLogin() {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(customerState.cpf),
+            body: JSON.stringify(unformatCpf(customerState.cpf)),
         })
 
         if (loginRes.ok) {
@@ -62,10 +64,10 @@ export default function CustomerLogin() {
                     }
 
                     {customerState.step === 1 &&
-                        <CustomerMailConfirm />
+                        <PasswordStep />
                     }
 
-                    <Button onClick={() => handleConfirm()} className='w-full bg-fuchsia-900/20 hover:bg-fuchsia-900/50 mt-5'>
+                    <Button onClick={() => handleConfirm()} className='bg-gradient-to-r from-fuchsia-500 to-rose-500 text-2xl font-thin p-3 py-5 w-full hover:brightness-125 transition mt-5'>
                         login
                     </Button>
                 </div>
