@@ -16,6 +16,7 @@ import { Button } from "../../shadcn-ui/button"
 import { PromoTag } from "../../base/tags/PromoTag";
 import CTAContact from "../../modal/CTA/CTAContact";
 import OxxContatoProvider from "@/components/providers/ContatoProvider";
+import { LiaShippingFastSolid } from "react-icons/lia";
 
 
 export const TechForYouModal = ({ Product }: { Product: ForYouContentType }) => {
@@ -87,7 +88,17 @@ export const TechForYouModal = ({ Product }: { Product: ForYouContentType }) => 
                         <div className="absolute w-full flex flex-col items-end space-y-3 right-3 sm:bottom-10 bottom-3 sm:right-10">
                             {/* Get Website CTA */}
                             {/* <GetProductCTA Product={Product} /> */}
-                            <CTAContact />
+                            <CTAContact>
+                                <div className="p-2 flex flex-col items-center gap-1 text-white w-[15rem] border-none bg-gradient-to-r from-fuchsia-600 via-rose-500 to-red-600
+                                    rounded
+                                    hover:brightness-150 hover:shadow-[0_0_10rem_#f43fcf]
+                                    transition duration-500
+                                    font-thin text-xl text-center cursor-pointer
+                                ">
+                                    <LiaShippingFastSolid />
+                                    <p className="text-center">Aquirir Site</p>
+                                </div>
+                            </CTAContact>
 
                             {/* Botao para fechar o Modal */}
                             <Button onClick={() => setOpen(false)} className="w-full max-w-[15rem] h-10 flex items-center space-x-1 text-red-200 bg-red-900/80 border border-red-900 hover:bg-red-900 hover:text-red-100 backdrop-blur-xl rounded-sm">

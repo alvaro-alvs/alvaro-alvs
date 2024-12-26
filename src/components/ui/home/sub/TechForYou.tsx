@@ -15,6 +15,7 @@ import system from "@/assets/icons/system.png"
 import links from "@/assets/icons/data-link.png"
 import PaymentProvider from "@/components/providers/PaymentProvider";
 import OxxContatoProvider from "@/components/providers/ContatoProvider";
+import { useState } from "react";
 
 const Content: ForYouContentType[] = [
     {
@@ -25,8 +26,7 @@ const Content: ForYouContentType[] = [
             'Até 100 links para organizar',
             'Links destacados por estrelas, mostrados no topo',
             'Cores e temas personalizáveis para links e fundo',
-            'Plano VITALÌCIO',
-            'Prioridade de desenvolvimento com pagamento adiantado para funcionalidades exclusivas'
+            'Prioridade de desenvolvimento com pagamento adiantado para recursos exclusivos'
         ],
         description: 'Criado para ser intuitivo e flexível, o LinkStream permite que empresas e influenciadores compartilhem suas principais conexões de forma rápida e elegante, oferecendo uma experiência simples e funcional para os visitantes',
         pay: {
@@ -102,9 +102,10 @@ export const notVistaProps = [
 ]
 
 export const TechForYou = () => {
+    const [open, setOpen] = useState(false)
 
     return (
-        <OxxContatoProvider open={false} setOpen={() => { }}>
+        <OxxContatoProvider open={open} setOpen={setOpen}>
             <PaymentProvider>
                 {/* <WavyBackground backgroundFill="#0c0812" blur={20} colors={['#9F1111', '#570C0C', '#e11d48', '#C21A9D', '#0e0e1b']} className="w-full h-max sm:h-max sm:p-0"> */}
                 <section className="w-full">

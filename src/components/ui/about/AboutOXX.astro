@@ -1,0 +1,80 @@
+---
+import OxxArticle from "../home/sub/OxxArticle.astro";
+import OxxLogo from "@/assets/icons/icon_oxx.svg";
+import ArticleHeader from "../base/ArticleHeader.astro";
+import CTAAbout from "./CTAAbout";
+---
+
+<section class="w-full min-h-full">
+    <article
+        id="oxx-sobre"
+        class="grid w-full xl:grid-cols-2 items-center relative border-rose-900 overflow-hidden"
+    >
+        <img
+            class="absolute inset-0 w-full h-full object-cover scale-[5] z-0 xl:static"
+            src={OxxLogo.src}
+            alt=""
+        />
+
+        <div
+            class="relative text-left p-5 flex flex-col items-center justify-center h-full space-y-10 z-10 bg-gradient-to-l from-[#0c0812] via-[#0c0812]/50 to-[#0c0812]/0 backdrop-blur-sm"
+        >
+            <ArticleHeader
+                article_title="Transformando ideias em soluções digitais"
+            >
+                <h1 class="text-4xl sm:text-7xl text-nowrap">
+                    OXX Digital Solutions
+                </h1>
+            </ArticleHeader>
+
+            <p>
+                Somos uma software house com 3 anos de mercado, especializada em
+                desenvolvimento web, sistemas de gestão personalizados e
+                soluções em nuvem. Criamos ferramentas que simplificam
+                processos, conectam pessoas e impulsionam negócios.
+            </p>
+            <p>
+                Com inovação, experiência e paixão pela tecnologia, entregamos
+                resultados que fazem a diferença. Seja um site, um sistema ou
+                uma solução sob medida, estamos prontos para levar seu projeto a
+                um novo nível!
+            </p>
+
+            <CTAAbout client:load>
+                <footer class="flex flex-col items-center group mt-10 backdrop-blur p-3 rounded-sm hover:brightness-125 transition">
+                    <p
+                        class="text-xl font-normal animated-text cursor-pointer text-center"
+                    >
+                        Vamos construir o futuro digital da sua empresa!
+                    </p>
+                    <div
+                        class="h-[2px] w-0 bg-rose-900 group-hover:w-full transition-all duration-[1s] shadow-xl shadow-rose-500 rounded-full"
+                    >
+                    </div>
+                </footer>
+            </CTAAbout>
+        </div>
+    </article>
+</section>
+
+<style>
+    .animated-text {
+        background: linear-gradient(to right, #f12256, #fad8d8, #eb27da);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 200% 100%;
+        animation: animate 5s ease-in-out infinite alternate-reverse;
+    }
+
+    @keyframes animate {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+</style>

@@ -25,6 +25,7 @@ export default function OxxContactForm() {
 
     const handleSubmit = async () => {
         setStatus('enviando')
+        console.log(contato)
 
         //* Validação de meio de contato -> Verifica se Email ou Telefone estão preenchidos, senão gera um erro
         if (contato.email === '' && contato.telefone === '') {
@@ -41,7 +42,7 @@ export default function OxxContactForm() {
             return;
         }
 
-        if (!contato.name || contato.name.length <= 2) {
+        if (!contato.nome || contato.nome.length <= 2) {
             setValidate((prevState: any) => ({
                 ...prevState,
                 name: true

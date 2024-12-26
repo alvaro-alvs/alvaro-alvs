@@ -8,8 +8,8 @@ const OxxContactContext = createContext(null as any)
 
 interface ContatoProviderInterface {
     children: React.ReactNode;
-    open: boolean;
-    setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+    open?: boolean;
+    setOpen?: React.Dispatch<React.SetStateAction<boolean>>;
     product?: string;
 }
 

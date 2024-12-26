@@ -17,7 +17,7 @@ export const LinkButton = ({ label, link, desc, stared, picture, theme, bigIcon 
 
             {stared &&
                 <div className="absolute -top-3 -right-1">
-                    <div className="w-px h-px shadow-[0_0_3rem_1rem_#ff3e00]"></div>
+                    <div className="w-px h-px shadow-[.5rem_.5rem_5rem_1rem_#f70c4e]"></div>
                     <img src={ImFire.src} className="w-6 h-6" alt="" />
                 </div>
             }

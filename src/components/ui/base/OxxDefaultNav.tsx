@@ -1,10 +1,10 @@
 import { IoMdPaper } from "react-icons/io";
-import { PiBookOpenText } from "react-icons/pi";
 import { TbDeviceDesktopCode } from "react-icons/tb";
 import { FaLink } from "react-icons/fa6";
 import { OxxLink } from "../ui-assets/OxxLink"
 import { OxxContatoDialog } from "../modal/OxxContatoModal";
 import { IoMdPerson } from "react-icons/io";
+import { FaInfo } from "react-icons/fa6";
 
 //* Icons
 import HomeIcon from "@/assets/icons/OxxHomeIcon.svg"
@@ -14,11 +14,11 @@ export default function OxxDefaultNav({ mobile }: { mobile?: boolean | false }) 
         <nav
             className={`${mobile ? 'grid' : 'flex max-lg:hidden'} space-x-20 justify-center w-full h-full max-xl:w-full `}
         >
-            {/* <OxxLink Label="Sobre" Url="/sobre">
-                <PiBookOpenText
+            <OxxLink Label="Sobre" Url="/sobre#sobre-oxx">
+                <FaInfo
                     className="w-6 h-6 group-hover:fill-rose-100 transition duration-300"
                 />
-            </OxxLink> */}
+            </OxxLink>
 
             <OxxLink Label="Termos" Url="/termos">
                 <IoMdPaper
@@ -26,12 +26,7 @@ export default function OxxDefaultNav({ mobile }: { mobile?: boolean | false }) 
                 />
             </OxxLink>
 
-            <OxxLink Label="Projetos" Url="/projetos">
-                <TbDeviceDesktopCode
-                    className="w-6 h-6 group-hover:stroke-rose-300 transition duration-300"
-                />
-            </OxxLink>
-
+            {/* //* Pagina de links oxx? */}
             {/* <OxxLink Label="Links" Url="/links">
                 <FaLink 
                     className="w-6 h-6 group-hover:fill-rose-100 transition duration-300"
@@ -51,13 +46,22 @@ export default function OxxDefaultNav({ mobile }: { mobile?: boolean | false }) 
                 </figure>
             </OxxLink>
 
+            <OxxLink Label="Projetos" Url="/projetos" Right>
+                <TbDeviceDesktopCode
+                    className="w-6 h-6 group-hover:stroke-rose-300 transition duration-300"
+                />
+            </OxxLink>
+
             <OxxContatoDialog />
 
-            <OxxLink Label="Painel do Usuário" Url="/painel" Right disabled>
+            
+
+            {/* //! Link de painel do usuario */}
+            {/* <OxxLink Label="Painel do Usuário" Url="/painel" Right disabled>
                 <IoMdPerson
                     className="w-6 h-6 group-hover:fill-rose-100 transition duration-300"
                 />
-            </OxxLink>
+            </OxxLink> */}
 
         </nav>
     )
