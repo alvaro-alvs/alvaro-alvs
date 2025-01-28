@@ -1,5 +1,5 @@
 
-![tech stack banner](https://kphlyejmohszzhqnexpf.supabase.co/storage/v1/object/sign/oxx-assets/banner_techstack.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJveHgtYXNzZXRzL2Jhbm5lcl90ZWNoc3RhY2suanBnIiwiaWF0IjoxNzM4MDYwNDg0LCJleHAiOjE3Njk1OTY0ODR9.dETJaVTBEhOLynk7o0cHDF6tOLq64xBBx8gbDDJ_nr4)
+![tech stack banner](https://kphlyejmohszzhqnexpf.supabase.co/storage/v1/object/sign/oxx-assets/banner_atom.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJveHgtYXNzZXRzL2Jhbm5lcl9hdG9tLnBuZyIsImlhdCI6MTczODA2MDU4OCwiZXhwIjoxNzY5NTk2NTg4fQ.jKU7L-06Qyyq7tlOW7IRnFwICw0rXBnP1tFHgJdDRCA)
 
 <h1 align='center'>Bem vindo! ✌️ Eu sou o Álvaro Nascimento</h1>
 
