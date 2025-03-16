@@ -5,7 +5,7 @@
 
 <p align='center'> Sou <b>Desenvolvedor Fullstack</b> com foco em tecnologia para negocios. </p>
 
-- 🛠️ Mais de 5 anos desenvolvendo soluções web e mobile como full stack. Minhas principais tecnologias incluem JavaScript, Python e Go.
+- 🛠️ Mais de 5 anos desenvolvendo soluções web e mobile como full stack. Minhas principais tecnologias incluem TypeScript, Python e Go.
 - 💡 A paixão por aprender e superar desafios me motiva a contribuir significativamente para os projetos em que eu trabalho.
 - 💬 Possuo forte comunicação e espírito de equipe, me adaptando bem ao ambiente de trabalho.
 
