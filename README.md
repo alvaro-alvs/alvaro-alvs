@@ -5,11 +5,9 @@
 
 <p align='center'> Sou <b>Desenvolvedor Fullstack</b> com foco em tecnologia para negocios. </p>
 
-- 🖥️ Sou um desenvolvedor full stack com mais de 5 anos de experiência em web e mobile. Especialista em linguagens modernas como JavaScript, Python e C#.
-
-- 🏹 Sempre em busca de novos desafios e aprendizado contínuo, estou pronto para trazer contribuições valiosas para o seu projeto.
-
-- ☯️ Trabalho bem tanto de forma independente quanto em equipe, e mantenho ótimos relacionamentos com clientes e colegas.
+- 🛠️ Mais de 5 anos desenvolvendo soluções web e mobile como full stack. Minhas principais tecnologias incluem JavaScript, Python e C#.
+- 💡 A paixão por aprender e superar desafios me motiva a contribuir significativamente para seus projetos.
+- 💬 Possuo forte comunicação e espírito de equipe, adaptando-me bem a diferentes dinâmicas de trabalho.
 
 ## 📠 Contato
 #### Email: alvaro.nrx88@gmail.com
@@ -20,8 +18,11 @@
 
 
 ## 🧩 Tech Stack
-Em computação, um conjunto de soluções, também conhecido como pilha de soluções ou pilha de software é um conjunto de subsistemas ou componentes de software necessários para criar uma plataforma completa, de modo que nenhum software adicional seja necessário para suportar os aplicativos. [Wikipédia](https://pt.wikipedia.org/wiki/Conjunto_de_solu%C3%A7%C3%B5es_(computa%C3%A7%C3%A3o))!
+Desenvolvo sites rápidos e eficientes com Astro, que entrega páginas leves ee otimizadas. Para partes interativas e modernas, uso React, criando blocos de código reutilizáveis para uma navegação suave.
 
+No Backend, uso Python para diversas tarefas, como automatizar processos, analisar dados e até aplicar inteligência artificial, aproveitando suas muitas ferramentas.
+
+Em resumo, sou focado em criar soluções web, automação e organização de dados. 😊
 
 <p align="center">
   <img src="https://kphlyejmohszzhqnexpf.supabase.co/storage/v1/object/sign/oxx-assets/OxxTechStack.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJveHgtYXNzZXRzL094eFRlY2hTdGFjay5wbmciLCJpYXQiOjE3MjUxNDM0MjksImV4cCI6MTc1NjY3OTQyOX0.hqTb_obAXpwAeDsbRSU9kRlIf2faBXDM6SIynO1eRRM&t=2024-08-31T22%3A14%3A49.961Z" alt="Tech Stack Alvaro Nascimento (Astro, React, Typescript, Python, C sharp e SQL)" />
@@ -60,5 +61,3 @@ Em computação, um conjunto de soluções, também conhecido como pilha de solu
   - *Gerenciamento de banco de dados*  
   - *Consulta de dados*  
   - *Relacional*
-
-##### Essas tecnologias se complementam perfeitamente. Por exemplo, Astro pode usar React para construir componentes interativos, e TypeScript pode ser usado para garantir que esses componentes sejam robustos e livres de erros. Python pode ser usado no back-end para processar dados e executar lógica complexa, enquanto SQL gerencia o armazenamento e recuperação de dados. Essa integração permite criar aplicações completas, desde a interface do usuário até o processamento e armazenamento de dados, garantindo que os negócios possam oferecer soluções eficazes e escaláveis.
