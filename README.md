@@ -5,9 +5,9 @@
 
 <p align='center'> Sou <b>Desenvolvedor Fullstack</b> com foco em tecnologia para negocios. </p>
 
-- 🛠️ Mais de 5 anos desenvolvendo soluções web e mobile como full stack. Minhas principais tecnologias incluem JavaScript, Python e C#.
-- 💡 A paixão por aprender e superar desafios me motiva a contribuir significativamente para seus projetos.
-- 💬 Possuo forte comunicação e espírito de equipe, adaptando-me bem a diferentes dinâmicas de trabalho.
+- 🛠️ Mais de 5 anos desenvolvendo soluções web e mobile como full stack. Minhas principais tecnologias incluem JavaScript, Python e Go.
+- 💡 A paixão por aprender e superar desafios me motiva a contribuir significativamente para os projetos em que eu trabalho.
+- 💬 Possuo forte comunicação e espírito de equipe, me adaptando bem ao ambiente de trabalho.
 
 ## 📠 Contato
 #### Email: alvaro.nrx88@gmail.com
@@ -35,7 +35,7 @@ Em resumo, sou focado em criar soluções web, automação e organização de da
   - *HTML otimizado*  
   - *Framework-agnostic*
 
-- **React**:  
+- **React**:
   - *Interfaces dinâmicas*  
   - *Componentes reutilizáveis*  
   - *SPA (Single Page Applications)*
