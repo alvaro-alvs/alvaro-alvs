@@ -15,15 +15,18 @@
 
 ## 📠 Contato  
 
-<a href="mailto:alvaro.nrx88@gmail.com">📧 **Email:** [alvaro.nrx88@gmail.com] </a>
+<a href="mailto:alvaro.nrx88@gmail.com">📧 **Email:** alvaro.nrx88@gmail.com </a>
+<br />
 <a href="https://alvaro-alvs.vercel.app">
   <img width="40" src="https://alvaro-alvs.vercel.app/pfp.png" />
   **Portfolio**
 </a>
+<br />
 <a href="https://www.linkedin.com/in/alvaro-nascimento-986407286/">
   <img width="35" src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" />
  **LinkedIn**
  </a>
+ <br />
 
 ---
 
