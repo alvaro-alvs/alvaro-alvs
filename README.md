@@ -10,7 +10,7 @@
 - +5 anos desenvolvendo **soluções web e mobile** como desenvolvedor Fullstack.
 - Experiência sólida com **TypeScript, Python e Go**.
 - Apaixonado por **aprender novas tecnologias** e enfrentar desafios.
-- Transformo desafios em soluções digitais inteligentes e escaláveis para negócios**.
+- Transformo desafios em soluções digitais inteligentes e escaláveis para negócios.
 ---
 
 ## 📠 Contato  
