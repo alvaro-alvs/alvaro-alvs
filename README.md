@@ -42,4 +42,4 @@
     NodeJs, Typescript, Python, C, Golang, Bancos de dados NoSQL e SQL.
 </h2>
 
-![Top Linguagens](https://github-readme-stats.vercel.app/api/top-langs/?username=alvaro-alvs&hide=javascript,css,scss,html&theme=tokyonight)
+![Top Linguagens](<img src="https://github-profile-trophy.vercel.app/?username=alvaro-alvs&theme=juicyfresh&no-bg=true" />)
