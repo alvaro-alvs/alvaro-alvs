@@ -36,7 +36,7 @@
 
 ## 🧩 Programming Language Tech Stack
 <p align="center">
-  <img src="https://kphlyejmohszzhqnexpf.supabase.co/storage/v1/object/sign/oxx-assets/AlvsTechStack.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xYzY2MGFkZC02YWE2LTQ4MzQtOWZjMy1lMTE5YTJiMjE1NGIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJveHgtYXNzZXRzL0FsdnNUZWNoU3RhY2sucG5nIiwiaWF0IjoxNzU4ODQ3Mzg0LCJleHAiOjE3OTAzODMzODR9.XOtoJr3dVH_954I3MZZk33mo1iih19M8BLZBUdK-pYA" alt="Tech Stack" />
+  <img src="[https://kphlyejmohszzhqnexpf.supabase.co/storage/v1/object/sign/oxx-assets/AlvsTechStack.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xYzY2MGFkZC02YWE2LTQ4MzQtOWZjMy1lMTE5YTJiMjE1NGIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJveHgtYXNzZXRzL0FsdnNUZWNoU3RhY2sucG5nIiwiaWF0IjoxNzU4ODQ3Mzg0LCJleHAiOjE3OTAzODMzODR9.XOtoJr3dVH_954I3MZZk33mo1iih19M8BLZBUdK-pYA](https://i.imgur.com/ZmjSBVB.png)" alt="Tech Stack" />
 </p>
 <h2>
     NodeJs, Typescript, Python, C, Golang, Java.
